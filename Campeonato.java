@@ -24,7 +24,9 @@ public class Campeonato
         competidores = new ArrayList <Tenista>();
         eliminados = new ArrayList <Tenista>();
     }
-    
+    /**
+     * 
+     */
     public void inscripcion (Tenista t1)
     {
         competidores.add(t1);
