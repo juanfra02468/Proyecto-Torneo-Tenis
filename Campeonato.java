@@ -130,7 +130,7 @@ public class Campeonato
      * Metodo que añade a la lista de eliminados al tenista perdedor eliminandolo del campeonato,
      * añade a la lista de competidores al ganador  y muestra llamando a GanadorYperdedor
      * @param ganador hace referencia al Tenista que gana el partido
-     * @param ganador hace referencia al Tenista que pierde el partido
+     * @param perdedor hace referencia al Tenista que pierde el partido
      * @param indice hace referencia a la posicion del tenista que se va a borrar.
      */
     public void ganaUltimo(Tenista ganador, Tenista perdedor, int indice)
@@ -145,7 +145,7 @@ public class Campeonato
      * Metodo que imprime por pantalla la informacion referida a el tenista ganador y al perdedor,
      * siendo esta , el nombre y los puntos acumulados
      * @param ganador hace referencia al Tenista que gana el partido
-     * @param ganador hace referencia al Tenista que pierde el partido
+     * @param perdedor hace referencia al Tenista que pierde el partido
      */
     public void mostrarGanadoryPerdedor(Tenista ganador, Tenista perdedor)
     {
