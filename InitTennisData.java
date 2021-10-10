@@ -6,7 +6,7 @@
  * @version 1.0
  */
 public class InitTennisData {
-
+    
     public InitTennisData(Campeonato campeonato) {
     //Descomentar la carga de datos que se quiera probar
         cargarDatos1(campeonato);//Produce la salida Salida1_EC1
@@ -77,4 +77,4 @@ public class InitTennisData {
 }
     */
     
-}
+   }
