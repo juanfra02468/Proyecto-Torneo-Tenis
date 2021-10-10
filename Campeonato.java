@@ -32,7 +32,12 @@ public class Campeonato
     {
         competidores.add(t1);
     }
-        
+    
+    /**
+     * Método que simula un partido entre dos tenistas
+     * @param t1 Hace referencia a un tenista
+     *        t2 Hace referencia a un tenista
+     */   
     public void juego(Tenista t1, Tenista t2)
     {
         System.out.println("## Tenista1 ---->>>: "+t1.getNombre());
@@ -43,7 +48,9 @@ public class Campeonato
         t1.restar(t2);
         
     }
-    
+    /**
+     * Método que muestra por pantalla el avance de los partidos, las rondas, quien ha ganado y el listado de eliminados
+     */
     public void controlDeCampeonato()
     {
         int i = 1;
@@ -63,7 +70,10 @@ public class Campeonato
         listaTenistas_eliminados();
     
     }
-    
+    /**
+     * Método que muestra el ganador del torneo
+     * @param ganador hace referencia el tenista ganador
+     */
     public void mostrarganadorTorneo (Tenista ganador)
     {
         System.out.println("\n");
@@ -71,7 +81,9 @@ public class Campeonato
         ganador.mostrarTenista();
         System.out.println("\n"); 
     }
-    
+    /**
+     * Método que gestiona la puntuacion de los tenistas tras los partidos y muestra por pantalla quien ha ganado y quien ha perdido
+     */
     public void partidos()
     {   
         Tenista t1;
@@ -105,7 +117,9 @@ public class Campeonato
            
         }
     }
-    
+    /**
+     * Método que muestra el ganador y perdedor en el caso de que gane el primer tenista situado en la lista
+     */
     public void ganaPrimero(Tenista ganador, Tenista perdedor)
     {
        eliminados.add(perdedor);
