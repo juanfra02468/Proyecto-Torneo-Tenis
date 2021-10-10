@@ -143,7 +143,7 @@ public class Campeonato
     }
     /**
      * Metodo que imprime por pantalla la informacion referida a el tenista ganador y al perdedor,
-     * siendo esta , el nombre y los puntos acumulados.
+     * siendo esta , el nombre y los puntos acumulados
      * @param ganador hace referencia al Tenista que gana el partido
      * @param ganador hace referencia al Tenista que pierde el partido
      */
