@@ -6,6 +6,8 @@
  * @version 1.0
  */
 public class InitTennisData {
+
+
     /**
      * Metodo que llama a la funcion cargar datos de un campeonato concreto
      * @param campeonato Se le pasa el campeonato al que se hace referencia
@@ -13,6 +15,7 @@ public class InitTennisData {
     public InitTennisData(Campeonato campeonato) {
         cargarDatos1(campeonato);//Produce la salida Salida1_EC1
     }
+    
     /**
      * Metodo que se encarga de cargar los datos referentes a un campeonato concreto
      * @param campeonato Se le pasa el campeonato al que se hace referencia
