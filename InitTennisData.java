@@ -11,14 +11,11 @@ public class InitTennisData {
      * @param campeonato Se le pasa el campeonato al que se hace referencia
      */
     public InitTennisData(Campeonato campeonato) {
-    //Descomentar la carga de datos que se quiera probar
         cargarDatos1(campeonato);//Produce la salida Salida1_EC1
-        //cargarDatos2(campeonato);/Produce la salida Salida2_EC1
-        
     }
     /**
      * Metodo que se encarga de cargar los datos referentes a un campeonato concreto
-     * @param Campeonato Se le pasa el campeonato al que se hace referencia
+     * @param campeonato Se le pasa el campeonato al que se hace referencia
      */
     private void cargarDatos1(Campeonato campeonato) {
         //Instanciamos 8 zapatillas: (Los parámetros están en el orden: modelo, número, tipo valor)
@@ -53,5 +50,4 @@ public class InitTennisData {
          campeonato.inscripcion(t7);
          campeonato.inscripcion(t8);
     }
-
 }

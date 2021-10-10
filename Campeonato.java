@@ -26,7 +26,8 @@ public class Campeonato
         eliminados = new ArrayList <Tenista>();
     }
     /**
-     * 
+     * Método que inscribe a un Tenista
+     * @param t1 Hace referencia a un tenista
      */
     public void inscripcion (Tenista t1)
     {
