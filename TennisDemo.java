@@ -2,7 +2,7 @@
 /**
  * Clase que lanza la simulación del campeonato de tenis
  * 
- * @author Equipo Docente DP 
+ * @author David Bonilla, Antonio Javier Hidalgo y Juan Francisco García 
  * @version 1.0
  */
 
