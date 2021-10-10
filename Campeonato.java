@@ -112,7 +112,13 @@ public class Campeonato
        competidores.remove(competidores.size()-1);
        mostrarGanadoryPerdedor(ganador, perdedor);
     }
-    
+    /**
+     * Metodo que añade a la lista de eliminados al tenista perdedor eliminandolo del campeonato,
+     * añade a la lista de competidores al ganador  y muestra llamando a GanadorYperdedor
+     * @param ganador hace referencia al Tenista que gana el partido
+     * @param ganador hace referencia al Tenista que pierde el partido
+     * @param indice hace referencia a la posicion del tenista que se va a borrar.
+     */
     public void ganaUltimo(Tenista ganador, Tenista perdedor, int indice)
     {
        eliminados.add(perdedor);
@@ -121,7 +127,12 @@ public class Campeonato
        competidores.remove(competidores.size()-1);
        mostrarGanadoryPerdedor(ganador, perdedor);
     }
-    
+    /**
+     * Metodo que imprime por pantalla la informacion referida a el tenista ganador y al perdedor,
+     * siendo esta , el nombre y los puntos acumulados.
+     * @param ganador hace referencia al Tenista que gana el partido
+     * @param ganador hace referencia al Tenista que pierde el partido
+     */
     public void mostrarGanadoryPerdedor(Tenista ganador, Tenista perdedor)
     {
        System.out.println("## Gana este juego: "+ganador.getNombre()+" con: "
@@ -131,7 +142,9 @@ public class Campeonato
        +perdedor.getPuntosAcumulados()+" puntos acumulados. Tenista eliminado num: "+eliminados.size());
        ganador.resetPuntosAcumulados();        
     }
-    
+    /**
+     * Metodo encargado de mostrar la lista de tenistas que compiten en el campeonato
+     */
     public void listaTenistas_competidores ()
     {
         for(Tenista tenistas: competidores)
@@ -139,6 +152,9 @@ public class Campeonato
             tenistas.mostrarTenista();
         }
     }
+    /**
+     * Metodo encargado de mostrar la lista de tenistas eliminados en el campeonato
+     */
     public void listaTenistas_eliminados ()
     {
         for(Tenista tenistas: eliminados)
