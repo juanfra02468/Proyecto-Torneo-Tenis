@@ -2,16 +2,16 @@
    /**
  * Clase que carga los datos con los que simular un campeonato de tenis
  * 
- * @author David Bonilla, Antonio Javier Hidalgo y Juan Francisco García
+ * @author David Bonilla, Antonio Javier Hidalgo y Juan Francisco García.
  * @version 1.0
  */
 public class InitTennisData {
+
 
     /**
      * Metodo que llama a la funcion cargar datos de un campeonato concreto
      * @param Se le pasa el campeonato al que se hace referencia
      */
-
     public InitTennisData(Campeonato campeonato) {
     //Descomentar la carga de datos que se quiera probar
         cargarDatos1(campeonato);//Produce la salida Salida1_EC1
