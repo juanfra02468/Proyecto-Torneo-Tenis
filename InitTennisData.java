@@ -14,6 +14,7 @@ public class InitTennisData {
         
     }
     
+    
     private void cargarDatos1(Campeonato campeonato) {
         //Instanciamos 8 zapatillas: (Los parámetros están en el orden: modelo, número, tipo valor)
          Zapatillas z1 = new Zapatillas("Air Zoom Vapor Pro", 41, "amortiguacion", 5);
