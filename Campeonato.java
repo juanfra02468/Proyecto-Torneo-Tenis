@@ -72,7 +72,7 @@ public class Campeonato
     }
     /**
      * Método que muestra el ganador del torneo
-     * @param ganador hace referencia el tenista ganador
+     * @param ganador Hace referencia el tenista ganador
      */
     public void mostrarganadorTorneo (Tenista ganador)
     {
@@ -153,6 +153,7 @@ public class Campeonato
             tenistas.mostrarTenista();
         }
     }
+    
     public void listaTenistas_eliminados ()
     {
         for(Tenista tenistas: eliminados)
