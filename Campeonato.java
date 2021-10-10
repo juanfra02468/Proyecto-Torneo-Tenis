@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Campeonato here.
+ * La clase Campeonato representa el torneo que se va a disputar entre los distintos tenistas que participan
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author David Bonilla, Antonio Javier Hidalgo y Juan Francisco García 
+ * @version 09-10-2021
  */
 import java.util.ArrayList;
 import java.util.*;
@@ -25,7 +25,7 @@ public class Campeonato
         eliminados = new ArrayList <Tenista>();
     }
     /**
-     * Método que inscribe a un Tenista
+     * Método que inscribe a un Tenista al campeonato, añadiendolo a la lista de competidores
      * @param t1 Hace referencia a un tenista
      */
     public void inscripcion (Tenista t1)
@@ -36,7 +36,7 @@ public class Campeonato
     /**
      * Método que simula un partido entre dos tenistas
      * @param t1 Hace referencia a un tenista
-     *        t2 Hace referencia a un tenista
+     * @param t2 Hace referencia a un tenista
      */   
     public void juego(Tenista t1, Tenista t2)
     {
