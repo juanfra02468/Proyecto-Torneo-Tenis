@@ -17,6 +17,7 @@ public class Campeonato
     
     /**
      * Constructor for objects of class Campeonato
+     * holaaa
      */
     public Campeonato(String nombre)
     {
