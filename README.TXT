@@ -9,4 +9,6 @@ PURPOSE OF PROJECT: Aprender a programar en java, hacer uso de bibliotecas dispo
 VERSION or DATE: 12/10/2021
 HOW TO START THIS PROJECT: 
 AUTHORS: Antonio Javier Hidalgo, David Bonilla y Juan Francisco García
-USER INSTRUCTIONS: Para realizar la simulación del campeonato, puedes ejecutar el TennisDemo, que este llama al procedimiento que controla el campeonato
+USER INSTRUCTIONS: Para realizar la simulación del campeonato, puedes ejecutar el TennisDemo, que este llama al procedimiento que controla el campeonato.
+
+El fichero de inicialización lo contiene la clase InitTennisData, creado a partir del conjunto de datos proporcionado.
