@@ -123,6 +123,7 @@ public class Campeonato
     public void ganaPrimero(Tenista ganador, Tenista perdedor)
     {
        eliminados.add(perdedor);
+       perdedor.setposEliminado(eliminados.size());
        competidores.remove(competidores.size()-1);
        mostrarGanadoryPerdedor(ganador, perdedor);
     }
@@ -136,6 +137,7 @@ public class Campeonato
     public void ganaUltimo(Tenista ganador, Tenista perdedor, int indice)
     {
        eliminados.add(perdedor);
+       perdedor.setposEliminado(eliminados.size());
        competidores.remove(indice);
        competidores.add(indice, ganador);
        competidores.remove(competidores.size()-1);

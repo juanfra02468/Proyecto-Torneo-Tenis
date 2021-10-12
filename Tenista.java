@@ -17,6 +17,7 @@ public class Tenista
     private int ranking;
     private String pais;
     private double puntosAcumulados;
+    private int posEliminado;
 
     /**
      * Constructor por defecto de la clase Tenista
@@ -31,6 +32,7 @@ public class Tenista
         this.ranking = 0;
         this.pais = "";
         this.puntosAcumulados = 0;
+        this.posEliminado = 0;
         
     }
     /**
@@ -112,5 +114,20 @@ public class Tenista
     public String getNombre()
     {
         return this.nombre;
+    }
+    /**
+     * Este método permite cambiar la posicion de eliminado del Tenista
+     * @param posEliminado hace referencia a la posicion de eliminado en el torneo 
+     */     
+    public void setposEliminado(int posEliminado){
+        this.posEliminado = posEliminado;
+    }
+    /**
+     * Este método devuelve la posicion de eliminacion del tenista
+     * @return int, que hace referencia a la posicion en la que fue eliminado en el torneo
+     */     
+    public int getposEliminado()
+    {
+        return this.posEliminado;
     }
 }
