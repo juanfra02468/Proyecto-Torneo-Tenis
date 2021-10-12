@@ -1,5 +1,5 @@
 
-   /**
+/**
  * Clase que carga los datos con los que simular un campeonato de tenis
  * 
  * @author David Bonilla, Antonio Javier Hidalgo y Juan Francisco García.
