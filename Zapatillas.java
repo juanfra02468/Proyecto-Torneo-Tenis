@@ -95,7 +95,7 @@ public class Zapatillas
     public double calcularValorSaque(double saque)
     {
         double valorSaque;
-        if (getTipo()=="amortiguacion")
+        if (getTipo().equals("amortiguacion"))
         {
             valorSaque = saque*valor*2;
         }
@@ -113,7 +113,7 @@ public class Zapatillas
     public double calcularValorResto(double resto)
     {
         double valorResto;
-        if (getTipo()=="agarre")
+        if (getTipo().equals("agarre"))
         {
             valorResto = resto*valor*1.5;
         }
