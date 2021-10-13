@@ -13,8 +13,8 @@ public class InitTennisData {
      * @param campeonato Se le pasa el campeonato al que se hace referencia
      */
     public InitTennisData(Campeonato campeonato) {
-        cargarDatos2(campeonato);//Produce la salida Salida2_EC1
-        //cargarDatos1(campeonato);//Produce la salida Salida1_EC2
+        //cargarDatos2(campeonato);//Produce la salida Salida2_EC1
+        cargarDatos1(campeonato);//Produce la salida Salida1_EC2
     }
     
     /**
