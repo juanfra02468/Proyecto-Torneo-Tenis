@@ -67,6 +67,7 @@ public class Campeonato
         Tenista ganador = competidores.get(0);
         mostrarganadorTorneo(ganador);
         System.out.println("***** Listado de eliminados: ");
+        Collections.sort(eliminados, Collections.reverseOrder(new PosicionComparator()));
         listaTenistas_eliminados();
     
     }
@@ -114,7 +115,6 @@ public class Campeonato
            else{
                     ganaUltimo(t2,t1,i);                    
            }  
-           
         }
     }
     /**
