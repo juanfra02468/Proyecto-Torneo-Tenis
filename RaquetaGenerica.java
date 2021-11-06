@@ -31,7 +31,7 @@ public abstract class RaquetaGenerica implements Raqueta
         this.modelo = modelo;
     }
     
-    public double getPeso(){
+    public int getPeso(){
         return peso;
     }
     
@@ -39,7 +39,7 @@ public abstract class RaquetaGenerica implements Raqueta
         this.peso = peso;
     }
     
-    public double getLongitud(){
+    public int getLongitud(){
         return longitud;
     }
     
@@ -47,7 +47,7 @@ public abstract class RaquetaGenerica implements Raqueta
         this.longitud = longitud;
     }
     
-    public double getTamañoCabeza(){
+    public int getTamañoCabeza(){
         return tamañoCabeza;
     }
     

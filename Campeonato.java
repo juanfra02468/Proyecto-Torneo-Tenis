@@ -6,6 +6,7 @@
  * @version 09-10-2021
  */
 import java.util.ArrayList;
+import java.util.List;
 import java.util.*;
 
 
@@ -14,6 +15,8 @@ public class Campeonato
     private String nombre;
     private ArrayList <Tenista> competidores;
     private ArrayList <Tenista> eliminados;
+    private ArrayList <Zapatilla> zapatillasCampeonato;
+    private TreeSet <Raqueta> raquetasCampeonato;
     
     /**
      * Constructor for objects of class Campeonato
@@ -23,21 +26,63 @@ public class Campeonato
         this.nombre = nombre;
         competidores = new ArrayList <Tenista>();
         eliminados = new ArrayList <Tenista>();
+        zapatillasCampeonato = new ArrayList <Zapatilla>();
+        raquetasCampeonato = new TreeSet <Raqueta> (new PotenciaComparator());
     }
     /**
      * Método que inscribe a un Tenista al campeonato, añadiendolo a la lista de competidores
      * @param t1 Hace referencia a un tenista
      */
-    public void inscripcion (Tenista t1)
+    public void inscripcionCompetidores (Tenista t1)
     {
         competidores.add(t1);
     }
     
+    public void añadirZapatilla (Zapatilla z1)
+    {
+        zapatillasCampeonato.add(z1);
+    }
+    
+    public void añadirRaquetas (Raqueta r1)
+    {
+        raquetasCampeonato.add(r1);
+    }
+    
+    public void asignarRaquetas (){
+        
+        if (raquetasCampeonato.size()>=competidores.size()){
+                for (int i = 0; i<zapatillasCampeonato.size(); i++){
+                        Tenista t = competidores.get(i);
+                        competidores.remove(i);
+                        t.setRaqueta(raquetasCampeonato.first());
+                        competidores.add(i,t);
+                        raquetasCampeonato.remove(raquetasCampeonato.first());
+                }
+            }
+            
+        else{
+        System.out.println("## CAMPEONATO ANULADO POR FALTA DE RAQUETAS ");
+        }
+    }
+    public void buscarZapatillaTenista(){
+        boolean bandera = false;
+        for (int i = 0; i<competidores.size(); i++){
+            Tenista t = competidores.get(i);
+            bandera = false;
+            for (int j = 0; j<zapatillasCampeonato.size() && !bandera; j++){
+                if (t.getNumPie()==zapatillasCampeonato.get(j).getNumero()){
+                    t.setZapatilla(zapatillasCampeonato.get(j));
+                    zapatillasCampeonato.remove(j);
+                    bandera = true;
+                }
+            }
+        }
+    }
     /**
      * Método que simula un partido entre dos tenistas
      * @param t1 Hace referencia a un tenista
      * @param t2 Hace referencia a un tenista
-     */   
+     */  
     private void juego(Tenista t1, Tenista t2)
     {
         System.out.println("## Tenista1 ---->>>: "+t1.getNombre());
@@ -87,6 +132,8 @@ public class Campeonato
         Tenista t2;
         Tenista ganador;
         Tenista perdedor;
+        buscarZapatillaTenista();
+        asignarRaquetas();
         for(int i = 0; i<competidores.size(); i++){
            t1 = competidores.get(i);
            t2 = competidores.get(competidores.size()-1);

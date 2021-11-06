@@ -23,4 +23,7 @@ public interface Zapatilla
     
     public abstract void mostrarZapatilla();
     
+    public abstract double getNumero();
+    
+    public abstract void setNumero(double numero);
 }

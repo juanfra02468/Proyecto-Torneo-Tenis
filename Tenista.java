@@ -11,7 +11,7 @@ public class Tenista
 {
     // instance variables - replace the example below with your own
     private String nombre;
-    private ZapatillaGenerica zapatilla;
+    private Zapatilla zapatilla;
     private double saque;
     private double resto;
     private int ranking;
@@ -43,7 +43,7 @@ public class Tenista
      */   
     private void sacar()
     {   
-        this.puntosAcumulados += zapatilla.calcularValorSaque(this.saque);
+        this.puntosAcumulados += raqueta.calcularVelocidad(raqueta.getPeso())*raqueta.calcularPotencia(raqueta.getLongitud())*zapatilla.calcularValorSaque(this.saque);
     }
     /**
      * Este método compara el resto de un tenista con el saque del otro, dependiendo del resultado, el tenista que resta puede aumentar sus puntos o no
@@ -52,7 +52,7 @@ public class Tenista
     private void restar(Tenista t1)
     {
         if(this.zapatilla.calcularValorResto(this.resto) > t1.zapatilla.calcularValorSaque(t1.saque)){
-            this.puntosAcumulados+= this.zapatilla.calcularValorResto(this.resto);
+            this.puntosAcumulados+= raqueta.calcularControl(raqueta.getTamañoCabeza())*raqueta.calcularVelocidad(raqueta.getPeso())*this.zapatilla.calcularValorResto(this.resto);
         }
     }
    public void jugar(Tenista t2)
@@ -131,8 +131,28 @@ public class Tenista
         return numPie;
     }
     
+    public void setZapatilla (Zapatilla zapatilla)
+    {
+        this.zapatilla = zapatilla;
+    }
+
+    public Zapatilla getZapatilla ()
+    {
+        return this.zapatilla;
+    }
+    
     public void setNumPie (double numPie)
     {
         this.numPie = numPie;
+    }
+    
+    public Raqueta getRaqueta ()
+    {
+        return this.raqueta;
+    }
+    
+    public void setRaqueta (Raqueta raqueta)
+    {
+        this.raqueta = raqueta;
     }
 }

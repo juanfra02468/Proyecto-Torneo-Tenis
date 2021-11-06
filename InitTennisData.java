@@ -35,6 +35,15 @@ public class InitTennisData {
                Tenista t6 = new Tenista("Alexander Zverev", z8, 59, 49.5, 4, "Alemania", 42);
                Tenista t7 = new Tenista("Aryna Sabalenka", z3, 67.5, 79.5, 2, "Bielorrusia", 40);
                Tenista t8 = new Tenista("Daniil Medvedev", z4, 79, 68, 2, "Rusia", 42);
+               
+        campeonato.inscripcionCompetidores(t1);
+        campeonato.inscripcionCompetidores(t2);
+        campeonato.inscripcionCompetidores(t3);
+        campeonato.inscripcionCompetidores(t4);
+        campeonato.inscripcionCompetidores(t5);
+        campeonato.inscripcionCompetidores(t6);
+        campeonato.inscripcionCompetidores(t7);
+        campeonato.inscripcionCompetidores(t8);
          
          //A continuación se inscribirán a los 8 tenistas en el campeonato
 
@@ -55,8 +64,23 @@ public class InitTennisData {
          ZapatillaGenerica z21 = new ZapatillasConAgarre("Nike Zoom Vapor", 42,  4);
          ZapatillaGenerica z22 = new ZapatillasConAgarre("Wilson Kaos", 41,  5);
          ZapatillaGenerica z23 = new ZapatillasConAgarre("Head Revolt Pro", 42,  4.5);
-    
-    
+         
+         campeonato.añadirZapatilla(z9);
+         campeonato.añadirZapatilla(z10);
+         campeonato.añadirZapatilla(z11);
+         campeonato.añadirZapatilla(z12);
+         campeonato.añadirZapatilla(z13);
+         campeonato.añadirZapatilla(z14);
+         campeonato.añadirZapatilla(z15);
+         campeonato.añadirZapatilla(z16);
+         campeonato.añadirZapatilla(z17);
+         campeonato.añadirZapatilla(z18);
+         campeonato.añadirZapatilla(z19);
+         campeonato.añadirZapatilla(z20);
+         campeonato.añadirZapatilla(z21);
+         campeonato.añadirZapatilla(z22);
+         campeonato.añadirZapatilla(z23);
+
         //Instanciamos raquetas para ser usadas en el campeonato: 
         //(Los parámetros están en el orden: Modelo, peso, longitud, tamaño de cabeza, tipo de encordado)
         //Además en el caso de raquetas equilibradas también se indican al final los valores potencia y control
@@ -73,6 +97,23 @@ public class InitTennisData {
         RaquetaGenerica r10 =  new RaquetaEquilibrada("Head Graphene", 320, 690, 630, Encordado.ABIERTO, 6, 2);
         RaquetaGenerica r11 =  new RaquetaEquilibrada("Prince TT Bandit", 220, 680, 680, Encordado.CERRADO, 6, 3);
         RaquetaGenerica r12 =  new RaquetaEquilibrada("Class 100L", 320, 680, 720, Encordado.ABIERTO, 8, 1);
+        
+        
+        
+        
+        
+         campeonato.añadirRaquetas(r1);
+         campeonato.añadirRaquetas(r2);
+         campeonato.añadirRaquetas(r3);
+         campeonato.añadirRaquetas(r4);
+         campeonato.añadirRaquetas(r5);
+         campeonato.añadirRaquetas(r6);
+         campeonato.añadirRaquetas(r7);
+         campeonato.añadirRaquetas(r8);
+         campeonato.añadirRaquetas(r9);
+         campeonato.añadirRaquetas(r10);
+         campeonato.añadirRaquetas(r11);
+         campeonato.añadirRaquetas(r12);
     }
     
     /*private void cargarDatos2(Campeonato campeonato) {

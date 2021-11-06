@@ -18,15 +18,15 @@ public interface Raqueta
        
     public void setModelo(String modelo);
     
-    public double getPeso();
+    public int getPeso();
     
     public void setPeso(int peso);
     
-    public double getLongitud();
+    public int getLongitud();
     
     public void setLongitud(int longitud);
     
-    public double getTamañoCabeza();  
+    public int getTamañoCabeza();  
     
     public void setTamañoCabeza(int tamañoCabeza);
     

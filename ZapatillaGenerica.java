@@ -9,7 +9,7 @@ public abstract class ZapatillaGenerica implements Zapatilla
 {
     // instance variables - replace the example below with your own
     private String modelo;
-    private int numero;
+    private double numero;
     private double valor;
 
     /**
@@ -28,7 +28,7 @@ public abstract class ZapatillaGenerica implements Zapatilla
      * Constructor parametrizado de la clase Zapatilla
      * Este constructor crea un nuevo objeto de la clase Zapatilla con los valores pasados por parametro
      */    
-    public ZapatillaGenerica(String modelo,int numero,double valor)
+    public ZapatillaGenerica(String modelo,double numero,double valor)
     {
         this.modelo = modelo;
         this.numero = numero;
@@ -88,6 +88,14 @@ public abstract class ZapatillaGenerica implements Zapatilla
         double valorResto;
             valorResto = resto*valor*1.3;
         return valorResto;
+    }
+    
+    public double getNumero(){
+        return numero;
+    }
+    
+    public void setNumero(double numero){
+        this.numero=numero;
     }
     /**
      * Este método muestra todos los campos de una zapatilla
