@@ -1,4 +1,3 @@
-
 /**
  * La clase Zapatilla representa las zapatillas que llevan puesta los tenistas participantes del campeonato
  * 
@@ -6,12 +5,11 @@
  * @author David Bonilla, Antonio Javier Hidalgo y Juan Francisco García 
  * @version 09-10-2021
  */
-public class Zapatillas
+public abstract class Zapatillas implements Zapatilla
 {
     // instance variables - replace the example below with your own
     private String modelo;
     private int numero;
-    private String tipo;
     private double valor;
 
     /**
@@ -22,7 +20,6 @@ public class Zapatillas
     {
         // initialise instance variables
         this.modelo = "";
-        this.tipo = "";
         this.valor = 0;
         this.numero = 40;
     }
@@ -31,11 +28,10 @@ public class Zapatillas
      * Constructor parametrizado de la clase Zapatilla
      * Este constructor crea un nuevo objeto de la clase Zapatilla con los valores pasados por parametro
      */    
-    public Zapatillas(String modelo,int numero, String tipo, double valor)
+    public Zapatillas(String modelo,int numero,double valor)
     {
         this.modelo = modelo;
         this.numero = numero;
-        this.tipo = tipo;
         this.valor = valor;
     }
        
@@ -54,22 +50,6 @@ public class Zapatillas
     public String getModelo()
     {
         return this.modelo; 
-    }
-    /**
-     * Este método permite cambiar el tipo de la zapatilla
-     * @param tipo Hace referencia al tipo de la zapatilla
-     */     
-    public void setTipo(String tipo)
-    {
-        this.tipo = tipo;    
-    }
-    /**
-     * Este método devuelve el tipo de la zapatilla
-     * @return String, que hace referencia al tipo de la zapatilla
-     */    
-    public String getTipo()
-    {
-        return this.tipo; 
     }
     /**
      * Este método permite cambiar el valor de la zapatilla
@@ -94,16 +74,9 @@ public class Zapatillas
      */
     public double calcularValorSaque(double saque)
     {
-        double valorSaque;
-        if (getTipo().equals("amortiguacion"))
-        {
-            valorSaque = saque*valor*2;
-        }
-        else
-        {
-            valorSaque = saque*valor;
-        }
-        return valorSaque;
+     double valorSaque;
+        valorSaque = saque*valor*1.2;
+     return valorSaque;
     }
     /**
      * Este método devuelve el valor del resto de dicha zapatilla, cuando se invoca al metodo restar de la clase Tenista
@@ -113,14 +86,7 @@ public class Zapatillas
     public double calcularValorResto(double resto)
     {
         double valorResto;
-        if (getTipo().equals("agarre"))
-        {
-            valorResto = resto*valor*1.5;
-        }
-        else
-        {
-            valorResto = resto*valor;
-        }
+            valorResto = resto*valor*1.3;
         return valorResto;
     }
     /**
@@ -128,7 +94,7 @@ public class Zapatillas
      */    
     public void mostrarZapatilla()
     {
-        System.out.println("Zapatillas [modelo="+this.modelo+", numero="+this.numero+
-        ", tipo="+this.tipo+", valor="+this.valor+"]");
+        System.out.println("[modelo="+this.modelo+", numero="+this.numero+
+        ", valor="+this.valor+"]");
     }
 }

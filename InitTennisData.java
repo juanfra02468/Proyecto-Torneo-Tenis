@@ -2,93 +2,133 @@
 /**
  * Clase que carga los datos con los que simular un campeonato de tenis
  * 
- * @author David Bonilla, Antonio Javier Hidalgo y Juan Francisco García.
- * @version 1.0
+ * @author Equipo Docente DP 
+ * @version 2.0
  */
 public class InitTennisData {
 
-
-    /**
-     * Metodo que llama a la funcion cargar datos de un campeonato concreto
-     * @param campeonato Se le pasa el campeonato al que se hace referencia
-     */
     public InitTennisData(Campeonato campeonato) {
-        //cargarDatos2(campeonato);//Produce la salida Salida2_EC1
+    //Descomentar la carga de datos que se quiera probar
         cargarDatos1(campeonato);//Produce la salida Salida1_EC2
+    //cargarDatos2(campeonato);/Produce la salida Salida2_EC2
+        
     }
     
-    /**
-     * Metodo que se encarga de cargar los datos referentes a un campeonato concreto
-     * @param campeonato Se le pasa el campeonato al que se hace referencia
-     */
     private void cargarDatos1(Campeonato campeonato) {
-        //Instanciamos 8 zapatillas: (Los parámetros están en el orden: modelo, número, tipo valor)
-         Zapatillas z1 = new Zapatillas("Air Zoom Vapor Pro", 41, "amortiguacion", 5);
-         Zapatillas z2 = new Zapatillas("Court Vapor React", 41, "agarre", 5);
-         Zapatillas z3 = new Zapatillas("Gel-Resolution 8 GS", 41, "agarre", 4);
-         Zapatillas z4 = new Zapatillas("Vapor Lite", 41, "amortiguacion", 3);
-         Zapatillas z5 = new Zapatillas("Court Lite", 41, "agarre", 3);
-         Zapatillas z6 = new Zapatillas("UberSonic 4K", 41, "amortiguacion", 5.5);
-         Zapatillas z7 = new Zapatillas("Zoom GP Turbo", 41, "amortiguacion", 6);
-         Zapatillas z8 = new Zapatillas("CourtJam Bounce", 41, "agarre", 3.5);
+        //Instanciamos 8 zapatillas: (Los parámetros están en el orden: tipo, modelo, número y valor)
+                Zapatillas z1 = new ZapatillasAmortiguadas("Air Zoom Vapor Pro", 42,  5);
+                Zapatillas z2 = new ZapatillasConAgarre("Court Vapor React", 40,  5);
+                Zapatillas z3 = new ZapatillasConAgarre("Gel-Resolution 8 GS", 40,  4);
+                Zapatillas z4 = new ZapatillasAmortiguadas("Vapor Lite", 42,  3);
+                Zapatillas z5 = new ZapatillasConAgarre("Court Lite", 39, 3);
+                Zapatillas z6 = new ZapatillasAmortiguadas("UberSonic 4K", 40, 6);
+                Zapatillas z7 = new ZapatillasAmortiguadas("Zoom GP Turbo", 43, 3.5);
+                Zapatillas z8 = new ZapatillasConAgarre("CourtJam Bounce", 42, 3.5);
 
 
-
-        //Instanciamos 8 tenistas: (Los parámetros están en el orden nombre, zapatillas, saque, resto, ranking, pais)
-         Tenista t1 = new Tenista("Novak Djokovic", z1, 90, 80, 1, "Serbia");
-         Tenista t2 = new Tenista("Ashleigh Barty", z3, 70, 80, 1, "Australia");
-         Tenista t3 = new Tenista("Stefanos Tsitsipas", z7, 55, 48, 3, "Grecia");
-         Tenista t4 = new Tenista("Karolina Pliskova", z5, 67, 68.5, 3, "Rep Checa");
-         Tenista t5 = new Tenista("Elina Svitolina", z6, 55.5, 68.5, 4, "Ucrania"); //El saque es 55.5 pero da error 
-         Tenista t6 = new Tenista("Alexander Zverev", z8, 59, 49.5, 4, "Alemania");
-         Tenista t7 = new Tenista("Aryna Sabalenka", z2, 67.5, 79.5, 2, "Bielorrusia");//El saque es 67.5 pero da error
-         Tenista t8 = new Tenista("Daniil Medvedev", z4, 79, 68, 2, "Rusia");
+        //Instanciamos 8 tenistas: (Los parámetros están en el orden nombre, zapatillas, saque, resto, ranking, pais y número de pie)
+               Tenista t1 = new Tenista("Novak Djokovic", z1, 90, 80, 1, "Serbia", 42);
+               Tenista t2 = new Tenista("Ashleigh Barty", z2, 70, 80, 1, "Australia", 40);
+               Tenista t3 = new Tenista("Stefanos Tsitsipas", z7, 55, 48, 3, "Grecia", 43);
+               Tenista t4 = new Tenista("Karolina Pliskova", z5, 67, 68.5, 3, "Rep Checa", 39);
+               Tenista t5 = new Tenista("Elina Svitolina", z6, 55.5, 68.5, 4, "Ucrania", 40);
+               Tenista t6 = new Tenista("Alexander Zverev", z8, 59, 49.5, 4, "Alemania", 42);
+               Tenista t7 = new Tenista("Aryna Sabalenka", z3, 67.5, 79.5, 2, "Bielorrusia", 40);
+               Tenista t8 = new Tenista("Daniil Medvedev", z4, 79, 68, 2, "Rusia", 42);
          
          //A continuación se inscribirán a los 8 tenistas en el campeonato
-         campeonato.inscripcion(t1);
-         campeonato.inscripcion(t2);
-         campeonato.inscripcion(t3);
-         campeonato.inscripcion(t4);
-         campeonato.inscripcion(t5);
-         campeonato.inscripcion(t6);
-         campeonato.inscripcion(t7);
-         campeonato.inscripcion(t8);
+
+        //Instanciamos zapatillas para ser usadas en el campeonato: 
+        //(Los parámetros están en el orden: tipo, modelo, número y valor)
+          z9 = ZapatillasAmortiguadas("Lotto Space", 40,  5);
+        z10 = ZapatillasAmortiguadas("K-Swiss Express", 42,  3);
+        z11 = ZapatillasAmortiguadas("Babolat Jet Tere", 42, 5.5);
+        z12 = ZapatillasAmortiguadas("Lotto Mirage", 40, 6);
+        z13 = ZapatillasAmortiguadas("K-Swiss Hypercourt", 40,  5);
+        z14 = ZapatillasAmortiguadas("Wilson Rush", 42,  3.5);
+        z15 = ZapatillasAmortiguadas("Head Revolt", 40,  5);
+        z16 = ZapatillasConAgarre("Joma Slam", 40, 3);
+        z17 = ZapatillasConAgarre("Adidas Gamecourt", 40,  5);
+        z18 = ZapatillasConAgarre("Asics Gel-Game", 42,  4.5);
+        z19 = ZapatillasConAgarre("Asics Solution", 42, 3);
+        z20 = ZapatillasConAgarre("Nike Air Zoom", 40,  5);
+        z21 = ZapatillasConAgarre("Nike Zoom Vapor", 42,  4);
+        z22 = ZapatillasConAgarre("Wilson Kaos", 41,  5);
+        z23 = ZapatillasConAgarre("Head Revolt Pro", 42,  4.5);
+    
+    
+        //Instanciamos raquetas para ser usadas en el campeonato: 
+        //(Los parámetros están en el orden: Modelo, peso, longitud, tamaño de cabeza, tipo de encordado)
+        //Además en el caso de raquetas equilibradas también se indican al final los valores potencia y control
+
+        r1 =  RaquetaPotente("Head Radical", 260, 680, 680,Encordado.ABIERTO);
+        r2 =  RaquetaPotente("Wilson Blade", 260, 690, 680, Encordado.ABIERTO);
+        r3 =  RaquetaPotente("Dunlop CX200", 300, 700, 630, Encordado.ABIERTO);
+        r4 =  RaquetaPotente("Yonex Vcore", 300, 680, 650, Encordado.CERRADO);
+        r5 =  RaquetaControlada("Babolat Drive", 340, 740, 600, Encordado.CERRADO);
+        r6 =  RaquetaControlada("Pure Aero", 340, 680, 720, Encordado.CERRADO);
+        r7 =  RaquetaControlada("TFlash 300", 300, 680, 680, Encordado.CERRADO);
+        r8 =  RaquetaControlada("Wilson Silver", 220, 690, 650, Encordado.ABIERTO);
+        r9 =  RaquetaEquilibrada("Prince Hornet 100", 220, 690, 600, Encordado.CERRADO, 2.5, 4);
+        r10 =  RaquetaEquilibrada("Head Graphene", 320, 690, 630, Encordado.ABIERTO, 6, 2);
+        r11 =  RaquetaEquilibrada("Prince TT Bandit", 220, 680, 680, Encordado.CERRADO, 6, 3);
+        r12 =  RaquetaEquilibrada("Class 100L", 320, 680, 720, Encordado.ABIERTO, 8, 1);
     }
     
-    private void cargarDatos2(Campeonato campeonato) {
-        //Instanciamos 8 zapatillas: (Los parámetros están en el orden: modelo, número, tipo valor)
-        Zapatillas z1 = new Zapatillas("Air Zoom Vapor Pro", 41, "amortiguacion", 5);
-        Zapatillas z2 = new Zapatillas("Court Vapor React", 41, "agarre", 5);
-        Zapatillas z3 = new Zapatillas("Gel-Resolution 8 GS", 41, "agarre", 4);
-        Zapatillas z4 = new Zapatillas("Vapor Lite", 41, "amortiguacion", 3);
-        Zapatillas z5 = new Zapatillas("Court Lite", 41, "agarre", 3);
-        Zapatillas z6 = new Zapatillas("UberSonic 4K", 41, "amortiguacion", 5.5);
-        Zapatillas z7 = new Zapatillas("Zoom GP Turbo", 41, "amortiguacion", 6);
-        Zapatillas z8 = new Zapatillas("CourtJam Bounce", 41, "agarre", 3.5);
-
-
+    /*private void cargarDatos2(Campeonato campeonato) {
+            //Instanciamos 8 zapatillas: (Los parámetros están en el orden: modelo, número, tipo valor)
+             z1 =  ZapatillasAmortiguadas("Air Zoom Vapor Pro", 42,  5);
+            z2 =  ZapatillasConAgarre("Court Vapor React", 40,  5);
+            z3 =  ZapatillasConAgarre("Gel-Resolution 8 GS", 40,  4);
+            z4 =  ZapatillasAmortiguadas("Vapor Lite", 42,  3);
+            z5 =  ZapatillasConAgarre("Court Lite", 39, 3);
+            z6 =  ZapatillasAmortiguadas("UberSonic 4K", 40, 5.5);
+            z7 =  ZapatillasAmortiguadas("Zoom GP Turbo", 43, 7);
+            z8 =  ZapatillasConAgarre("CourtJam Bounce", 42, 3.5);
 
         //Instanciamos 8 tenistas: (Los parámetros están en el orden nombre, zapatillas, saque, resto, ranking, pais)
-        Tenista t1 = new Tenista("Novak Djokovic", z3, 90, 80, 1, "Serbia");
-        Tenista t2 = new Tenista("Ashleigh Barty", z1, 70, 80, 1, "Australia");
-        Tenista t3 = new Tenista("Stefanos Tsitsipas", z7, 55, 48, 3, "Grecia");
-        Tenista t4 = new Tenista("Karolina Pliskova", z5, 67, 68.5, 3, "Rep Checa");
-        Tenista t5 = new Tenista("Elina Svitolina", z6, 55.5, 68.5, 4, "Ucrania");
-        Tenista t6 = new Tenista("Alexander Zverev", z8, 59, 49.5, 4, "Alemania");
-        Tenista t7 = new Tenista("Aryna Sabalenka", z2, 67.5, 79.5, 2, "Bielorrusia");
-        Tenista t8 = new Tenista("Daniil Medvedev", z4, 79, 68, 2, "Rusia");
- 
-        //A continuación se inscribirán a los 8 tenistas en el campeonato
-        
-                 //A continuación se inscribirán a los 8 tenistas en el campeonato
-             campeonato.inscripcion(t1);
-             campeonato.inscripcion(t2);
-             campeonato.inscripcion(t3);
-             campeonato.inscripcion(t4);
-             campeonato.inscripcion(t5);
-             campeonato.inscripcion(t6);
-             campeonato.inscripcion(t7);
-             campeonato.inscripcion(t8);
-    }
+             t1 =   Tenista("Novak Djokovic", z1, 90, 80, 1, "Serbia", 42);
+              t2 =   Tenista("Ashleigh Barty", z6, 70, 80, 1, "Australia", 40);
+             t3 =   Tenista("Stefanos Tsitsipas", z7, 55, 48, 3, "Grecia", 43);
+             t4 =   Tenista("Karolina Pliskova", z5, 67, 68.5, 3, "Rep Checa", 39);
+             t5 =   Tenista("Elina Svitolina", z3, 55.5, 68.5, 4, "Ucrania", 40);
+             t6 =   Tenista("Alexander Zverev", z8, 59, 49.5, 4, "Alemania", 42);
+             t7 =   Tenista("Aryna Sabalenka", z2, 67.5, 79.5, 2, "Bielorrusia", 40);
+             t8 =   Tenista("Daniil Medvedev", z4, 79, 68, 2, "Rusia", 42);
 
+        //A continuación se inscribirán a los 8 tenistas en el campeonato
+         //Instanciamos zapatillas para ser usadas en el campeonato: 
+        //(Los parámetros están en el orden: tipo, modelo, número y valor)
+        z9 = ZapatillasAmortiguadas("Lotto Space", 40,  5);
+            z10 = ZapatillasConAgarre("Adidas Gamecourt", 40,  5);
+            z11 = ZapatillasConAgarre("Asics Gel-Game", 42,  4.5);
+            z12 = ZapatillasAmortiguadas("K-Swiss Express", 42,  3);
+            z13 = ZapatillasConAgarre("Joma Slam", 40, 3);
+            z14 = ZapatillasAmortiguadas("Babolat Jet Tere", 42, 5.5);
+            z15 = ZapatillasConAgarre("Asics Solution", 42, 3);
+            z16 = ZapatillasAmortiguadas("K-Swiss Hypercourt", 40,  5);
+            z17 = ZapatillasConAgarre("Nike Air Zoom", 40,  5);
+            z18 = ZapatillasConAgarre("Nike Zoom Vapor", 42,  4);
+            z19 = ZapatillasAmortiguadas("Wilson Rush", 42,  3.5);
+            z20 = ZapatillasAmortiguadas("Head Revolt", 40,  3);
+            z21 = ZapatillasAmortiguadas("Lotto Mirage", 40, 6);
+            z22 = ZapatillasConAgarre("Wilson Kaos", 41,  5);
+            z23 = ZapatillasConAgarre("Head Revolt Pro", 42,  4.5);
+    
+        //Instanciamos raquetas para ser usadas en el campeonato: 
+        //(Los parámetros están en el orden: Modelo, peso, longitud, tamaño de cabeza, tipo de encordado)
+        //Además en el caso de raquetas equilibradas también se indican al final los valores potencia y control
+        r1 = RaquetaPotente("Head Radical", 260, 680, 680,Encordado.ABIERTO);
+            r2 = RaquetaPotente("Wilson Blade", 260, 690, 680, Encordado.ABIERTO);
+            r3 = RaquetaPotente("Dunlop CX200", 300, 700, 630, Encordado.ABIERTO);
+            r4 = RaquetaPotente("Yonex Vcore", 300, 680, 650, Encordado.CERRADO);
+            r5 = RaquetaControlada("Babolat Drive", 340, 740, 600, Encordado.CERRADO);
+            r6 = RaquetaControlada("Pure Aero", 340, 680, 720, Encordado.CERRADO);
+            r7 = RaquetaControlada("TFlash 300", 300, 680, 680, Encordado.CERRADO);
+            r8 = RaquetaControlada("Wilson Silver", 220, 690, 650, Encordado.ABIERTO);
+            r9 = RaquetaEquilibrada("Prince Hornet 100", 220, 690, 600, Encordado.CERRADO, 2.5, 4);
+            r10 = RaquetaEquilibrada("Head Graphene", 320, 690, 630, Encordado.ABIERTO, 6, 2);
+            r11 = RaquetaEquilibrada("Prince TT Bandit", 220, 680, 680, Encordado.CERRADO, 6, 3);
+            r12 = RaquetaEquilibrada("Class 100L", 320, 680, 720, Encordado.ABIERTO, 8, 1);
+               }*/
 }

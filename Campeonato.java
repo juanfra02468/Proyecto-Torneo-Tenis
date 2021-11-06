@@ -38,15 +38,11 @@ public class Campeonato
      * @param t1 Hace referencia a un tenista
      * @param t2 Hace referencia a un tenista
      */   
-    public void juego(Tenista t1, Tenista t2)
+    private void juego(Tenista t1, Tenista t2)
     {
         System.out.println("## Tenista1 ---->>>: "+t1.getNombre());
         System.out.println("## Tenista2 ---->>>: "+t2.getNombre());
-        t1.sacar();
-        t2.restar(t1);
-        t2.sacar();
-        t1.restar(t2);
-        
+        t1.jugar(t2);      
     }
     /**
      * Método que muestra por pantalla el avance de los partidos, las rondas, quien ha ganado y el listado de eliminados
@@ -75,7 +71,7 @@ public class Campeonato
      * Método que muestra el ganador del torneo
      * @param ganador Hace referencia el tenista ganador
      */
-    public void mostrarganadorTorneo (Tenista ganador)
+    private void mostrarganadorTorneo (Tenista ganador)
     {
         System.out.println("\n");
         System.out.println("---->>>> Gana la competición:"); 
@@ -120,12 +116,10 @@ public class Campeonato
     /**
      * Método que muestra el ganador y perdedor en el caso de que gane el primer tenista situado en la lista
      */
-    public void ganaPrimero(Tenista ganador, Tenista perdedor)
+    private void ganaPrimero(Tenista ganador, Tenista perdedor)
     {
-       eliminados.add(perdedor);
-       perdedor.setposEliminado(eliminados.size());
-       competidores.remove(competidores.size()-1);
-       mostrarGanadoryPerdedor(ganador, perdedor);
+       añadirEliminado(perdedor);        
+       borrarUltimoymostrar(ganador, perdedor);
     }
     /**
      * Metodo que añade a la lista de eliminados al tenista perdedor eliminandolo del campeonato,
@@ -134,14 +128,22 @@ public class Campeonato
      * @param perdedor hace referencia al Tenista que pierde el partido
      * @param indice hace referencia a la posicion del tenista que se va a borrar.
      */
-    public void ganaUltimo(Tenista ganador, Tenista perdedor, int indice)
+    private void ganaUltimo(Tenista ganador, Tenista perdedor, int indice)
     {
-       eliminados.add(perdedor);
-       perdedor.setposEliminado(eliminados.size());
+       añadirEliminado(perdedor);
        competidores.remove(indice);
        competidores.add(indice, ganador);
+       borrarUltimoymostrar(ganador, perdedor);       
+    }
+    
+    private void añadirEliminado(Tenista perdedor){
+       eliminados.add(perdedor);
+       perdedor.setposEliminado(eliminados.size());        
+    }
+    
+    private void borrarUltimoymostrar (Tenista ganador, Tenista perdedor){
        competidores.remove(competidores.size()-1);
-       mostrarGanadoryPerdedor(ganador, perdedor);
+       mostrarGanadoryPerdedor(ganador, perdedor);        
     }
     /**
      * Metodo que imprime por pantalla la informacion referida a el tenista ganador y al perdedor,
@@ -149,7 +151,7 @@ public class Campeonato
      * @param ganador hace referencia al Tenista que gana el partido
      * @param perdedor hace referencia al Tenista que pierde el partido
      */
-    public void mostrarGanadoryPerdedor(Tenista ganador, Tenista perdedor)
+    private void mostrarGanadoryPerdedor(Tenista ganador, Tenista perdedor)
     {
        System.out.println("## Gana este juego: "+ganador.getNombre()+" con: "
        +ganador.getPuntosAcumulados()+" puntos acumulados.");
@@ -161,7 +163,7 @@ public class Campeonato
     /**
      * Metodo encargado de mostrar la lista de tenistas que compiten en el campeonato
      */
-    public void listaTenistas_competidores ()
+    private void listaTenistas_competidores ()
     {
         for(Tenista tenistas: competidores)
         {
@@ -172,7 +174,7 @@ public class Campeonato
      * Metodo encargado de mostrar la lista de tenistas eliminados en el campeonato
      */
 
-    public void listaTenistas_eliminados ()
+    private void listaTenistas_eliminados ()
     {
         for(Tenista tenistas: eliminados)
         {

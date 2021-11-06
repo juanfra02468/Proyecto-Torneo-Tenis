@@ -18,29 +18,14 @@ public class Tenista
     private String pais;
     private double puntosAcumulados;
     private int posEliminado;
+    private double numPie;
 
-    /**
-     * Constructor por defecto de la clase Tenista
-     * Este constructor crea un nuevo objeto de la clase Tenista e invoca al constructor de clase zapatilla
-     */
-    public Tenista()
-    {
-        this.nombre = "";
-        this.zapatilla =  new Zapatillas();
-        this.saque = 0.0;
-        this.resto = 0.0;
-        this.ranking = 0;
-        this.pais = "";
-        this.puntosAcumulados = 0;
-        this.posEliminado = 0;
-        
-    }
     /**
      * Constructor parametrizado de la clase Tenista
      * Este constructor crea un nuevo objeto de la clase Tenista e invoca al constructor de la clase Zapatilla, con los valores pasados por parametro
      */     
     public Tenista(String nombre, Zapatillas zapatilla, double saque,
-    double resto,int ranking, String pais)
+    double resto,int ranking, String pais, double numPie)
     {
         this.nombre = nombre;
         this.zapatilla = zapatilla;
@@ -49,11 +34,12 @@ public class Tenista
         this.ranking = ranking;
         this.pais = pais;
         this.puntosAcumulados = 0;
+        this.numPie = numPie;
     }
     /**
      * Este método invoca al método calcularValorSaque de la clase Zapatilla y almacena el resultado en el campo puntosAcumulados
      */   
-    public void sacar()
+    private void sacar()
     {   
         this.puntosAcumulados += zapatilla.calcularValorSaque(this.saque);
     }
@@ -61,11 +47,18 @@ public class Tenista
      * Este método compara el resto de un tenista con el saque del otro, dependiendo del resultado, el tenista que resta puede aumentar sus puntos o no
      * @param t1 Hace referencia al Tenista que saca
      */        
-    public void restar(Tenista t1)
+    private void restar(Tenista t1)
     {
         if(this.zapatilla.calcularValorResto(this.resto) > t1.zapatilla.calcularValorSaque(t1.saque)){
             this.puntosAcumulados+= this.zapatilla.calcularValorResto(this.resto);
         }
+    }
+   public void jugar(Tenista t2)
+    {
+        this.sacar();
+        t2.restar(this);
+        t2.sacar();
+        this.restar(t2);  
     }
     /**
      * Este método muestra todos los campos de un Tenista
