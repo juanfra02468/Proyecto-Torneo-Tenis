@@ -1,0 +1,36 @@
+
+/**
+ * Write a description of class RaquetaEquilibrada here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class RaquetaEquilibrada extends RaquetaGenerica
+{
+    // instance variables - replace the example below with your own
+    private double multiplicadorControl;
+    private double multiplicadorPotencia;
+    /**
+     * Constructor for objects of class RaquetaPotente
+     */
+    public RaquetaEquilibrada(String modelo, int peso, int longitud, int tamañoCabeza, Encordado encordado, double multiplicadorPotencia, double multiplicadorControl)
+    {
+        super(modelo, peso, longitud, tamañoCabeza, encordado);
+        this.multiplicadorPotencia = multiplicadorPotencia;
+        this.multiplicadorControl = multiplicadorControl;
+    }
+    
+    @Override
+    public double calcularPotencia (int longitud)
+    {
+        double resultado = super.calcularPotencia(longitud);
+        return multiplicadorPotencia*resultado;
+    }
+    @Override
+    public double calcularControl (int tamañoCabeza)
+    {
+        double resultado = super.calcularControl(tamañoCabeza);
+        return multiplicadorControl*resultado;
+    }
+  
+}

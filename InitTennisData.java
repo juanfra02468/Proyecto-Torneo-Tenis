@@ -61,18 +61,18 @@ public class InitTennisData {
         //(Los parámetros están en el orden: Modelo, peso, longitud, tamaño de cabeza, tipo de encordado)
         //Además en el caso de raquetas equilibradas también se indican al final los valores potencia y control
 
-        r1 =  RaquetaPotente("Head Radical", 260, 680, 680,Encordado.ABIERTO);
-        r2 =  RaquetaPotente("Wilson Blade", 260, 690, 680, Encordado.ABIERTO);
-        r3 =  RaquetaPotente("Dunlop CX200", 300, 700, 630, Encordado.ABIERTO);
-        r4 =  RaquetaPotente("Yonex Vcore", 300, 680, 650, Encordado.CERRADO);
-        r5 =  RaquetaControlada("Babolat Drive", 340, 740, 600, Encordado.CERRADO);
-        r6 =  RaquetaControlada("Pure Aero", 340, 680, 720, Encordado.CERRADO);
-        r7 =  RaquetaControlada("TFlash 300", 300, 680, 680, Encordado.CERRADO);
-        r8 =  RaquetaControlada("Wilson Silver", 220, 690, 650, Encordado.ABIERTO);
-        r9 =  RaquetaEquilibrada("Prince Hornet 100", 220, 690, 600, Encordado.CERRADO, 2.5, 4);
-        r10 =  RaquetaEquilibrada("Head Graphene", 320, 690, 630, Encordado.ABIERTO, 6, 2);
-        r11 =  RaquetaEquilibrada("Prince TT Bandit", 220, 680, 680, Encordado.CERRADO, 6, 3);
-        r12 =  RaquetaEquilibrada("Class 100L", 320, 680, 720, Encordado.ABIERTO, 8, 1);
+        RaquetaGenerica r1 =  new RaquetaPotente("Head Radical", 260, 680, 680,Encordado.ABIERTO);
+        RaquetaGenerica r2 =  new RaquetaPotente("Wilson Blade", 260, 690, 680, Encordado.ABIERTO);
+        RaquetaGenerica r3 =  new RaquetaPotente("Dunlop CX200", 300, 700, 630, Encordado.ABIERTO);
+        RaquetaGenerica r4 =  new RaquetaPotente("Yonex Vcore", 300, 680, 650, Encordado.CERRADO);
+        RaquetaGenerica r5 =  new RaquetaControlada("Babolat Drive", 340, 740, 600, Encordado.CERRADO);
+        RaquetaGenerica r6 =  new RaquetaControlada("Pure Aero", 340, 680, 720, Encordado.CERRADO);
+        RaquetaGenerica r7 =  new RaquetaControlada("TFlash 300", 300, 680, 680, Encordado.CERRADO);
+        RaquetaGenerica r8 =  new RaquetaControlada("Wilson Silver", 220, 690, 650, Encordado.ABIERTO);
+        RaquetaGenerica r9 =  new RaquetaEquilibrada("Prince Hornet 100", 220, 690, 600, Encordado.CERRADO, 2.5, 4);
+        RaquetaGenerica r10 =  new RaquetaEquilibrada("Head Graphene", 320, 690, 630, Encordado.ABIERTO, 6, 2);
+        RaquetaGenerica r11 =  new RaquetaEquilibrada("Prince TT Bandit", 220, 680, 680, Encordado.CERRADO, 6, 3);
+        RaquetaGenerica r12 =  new RaquetaEquilibrada("Class 100L", 320, 680, 720, Encordado.ABIERTO, 8, 1);
     }
     
     /*private void cargarDatos2(Campeonato campeonato) {

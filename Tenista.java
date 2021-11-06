@@ -19,6 +19,7 @@ public class Tenista
     private double puntosAcumulados;
     private int posEliminado;
     private double numPie;
+    private Raqueta raqueta;
 
     /**
      * Constructor parametrizado de la clase Tenista
@@ -35,6 +36,7 @@ public class Tenista
         this.pais = pais;
         this.puntosAcumulados = 0;
         this.numPie = numPie;
+        this.raqueta = null;
     }
     /**
      * Este método invoca al método calcularValorSaque de la clase Zapatilla y almacena el resultado en el campo puntosAcumulados
@@ -122,5 +124,15 @@ public class Tenista
     public int getposEliminado()
     {
         return this.posEliminado;
+    }
+    
+    public double getNumPie ()
+    {
+        return numPie;
+    }
+    
+    public void setNumPie (double numPie)
+    {
+        this.numPie = numPie;
     }
 }
