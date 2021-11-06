@@ -51,7 +51,7 @@ public class Campeonato
     public void asignarRaquetas (){
         
         if (raquetasCampeonato.size()>=competidores.size()){
-                for (int i = 0; i<zapatillasCampeonato.size(); i++){
+                for (int i = 0; i<competidores.size(); i++){
                         Tenista t = competidores.get(i);
                         competidores.remove(i);
                         t.setRaqueta(raquetasCampeonato.first());
@@ -98,6 +98,8 @@ public class Campeonato
         System.out.println("***** Inicio del campeonato: "+nombre+" *****\n");
         System.out.println("***** Listado de competidores: ");
         listaTenistas_competidores();
+        buscarZapatillaTenista();
+        asignarRaquetas();
         while(competidores.size() != 1){
            System.out.println("\n"); 
            System.out.println("***** Ronda---->>>: "+i);
@@ -132,8 +134,6 @@ public class Campeonato
         Tenista t2;
         Tenista ganador;
         Tenista perdedor;
-        buscarZapatillaTenista();
-        asignarRaquetas();
         for(int i = 0; i<competidores.size(); i++){
            t1 = competidores.get(i);
            t2 = competidores.get(competidores.size()-1);
