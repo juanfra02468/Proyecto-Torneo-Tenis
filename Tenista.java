@@ -11,7 +11,7 @@ public class Tenista
 {
     // instance variables - replace the example below with your own
     private String nombre;
-    private Zapatillas zapatilla;
+    private ZapatillaGenerica zapatilla;
     private double saque;
     private double resto;
     private int ranking;
@@ -24,7 +24,7 @@ public class Tenista
      * Constructor parametrizado de la clase Tenista
      * Este constructor crea un nuevo objeto de la clase Tenista e invoca al constructor de la clase Zapatilla, con los valores pasados por parametro
      */     
-    public Tenista(String nombre, Zapatillas zapatilla, double saque,
+    public Tenista(String nombre, ZapatillaGenerica zapatilla, double saque,
     double resto,int ranking, String pais, double numPie)
     {
         this.nombre = nombre;

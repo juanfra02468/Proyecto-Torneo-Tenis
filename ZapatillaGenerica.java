@@ -5,7 +5,7 @@
  * @author David Bonilla, Antonio Javier Hidalgo y Juan Francisco García 
  * @version 09-10-2021
  */
-public abstract class Zapatillas implements Zapatilla
+public abstract class ZapatillaGenerica implements Zapatilla
 {
     // instance variables - replace the example below with your own
     private String modelo;
@@ -16,7 +16,7 @@ public abstract class Zapatillas implements Zapatilla
      * Constructor por defecto de la clase Zapatilla
      * Este constructor crea un nuevo objeto de la clase Zapatilla
      */
-    public Zapatillas()
+    public ZapatillaGenerica()
     {
         // initialise instance variables
         this.modelo = "";
@@ -28,7 +28,7 @@ public abstract class Zapatillas implements Zapatilla
      * Constructor parametrizado de la clase Zapatilla
      * Este constructor crea un nuevo objeto de la clase Zapatilla con los valores pasados por parametro
      */    
-    public Zapatillas(String modelo,int numero,double valor)
+    public ZapatillaGenerica(String modelo,int numero,double valor)
     {
         this.modelo = modelo;
         this.numero = numero;

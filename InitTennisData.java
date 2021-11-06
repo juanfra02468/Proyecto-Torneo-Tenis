@@ -16,14 +16,14 @@ public class InitTennisData {
     
     private void cargarDatos1(Campeonato campeonato) {
         //Instanciamos 8 zapatillas: (Los parámetros están en el orden: tipo, modelo, número y valor)
-                Zapatillas z1 = new ZapatillasAmortiguadas("Air Zoom Vapor Pro", 42,  5);
-                Zapatillas z2 = new ZapatillasConAgarre("Court Vapor React", 40,  5);
-                Zapatillas z3 = new ZapatillasConAgarre("Gel-Resolution 8 GS", 40,  4);
-                Zapatillas z4 = new ZapatillasAmortiguadas("Vapor Lite", 42,  3);
-                Zapatillas z5 = new ZapatillasConAgarre("Court Lite", 39, 3);
-                Zapatillas z6 = new ZapatillasAmortiguadas("UberSonic 4K", 40, 6);
-                Zapatillas z7 = new ZapatillasAmortiguadas("Zoom GP Turbo", 43, 3.5);
-                Zapatillas z8 = new ZapatillasConAgarre("CourtJam Bounce", 42, 3.5);
+                ZapatillaGenerica z1 = new ZapatillasAmortiguadas("Air Zoom Vapor Pro", 42,  5);
+                ZapatillaGenerica z2 = new ZapatillasConAgarre("Court Vapor React", 40,  5);
+                ZapatillaGenerica z3 = new ZapatillasConAgarre("Gel-Resolution 8 GS", 40,  4);
+                ZapatillaGenerica z4 = new ZapatillasAmortiguadas("Vapor Lite", 42,  3);
+                ZapatillaGenerica z5 = new ZapatillasConAgarre("Court Lite", 39, 3);
+                ZapatillaGenerica z6 = new ZapatillasAmortiguadas("UberSonic 4K", 40, 6);
+                ZapatillaGenerica z7 = new ZapatillasAmortiguadas("Zoom GP Turbo", 43, 3.5);
+                ZapatillaGenerica z8 = new ZapatillasConAgarre("CourtJam Bounce", 42, 3.5);
 
 
         //Instanciamos 8 tenistas: (Los parámetros están en el orden nombre, zapatillas, saque, resto, ranking, pais y número de pie)
@@ -40,21 +40,21 @@ public class InitTennisData {
 
         //Instanciamos zapatillas para ser usadas en el campeonato: 
         //(Los parámetros están en el orden: tipo, modelo, número y valor)
-          z9 = ZapatillasAmortiguadas("Lotto Space", 40,  5);
-        z10 = ZapatillasAmortiguadas("K-Swiss Express", 42,  3);
-        z11 = ZapatillasAmortiguadas("Babolat Jet Tere", 42, 5.5);
-        z12 = ZapatillasAmortiguadas("Lotto Mirage", 40, 6);
-        z13 = ZapatillasAmortiguadas("K-Swiss Hypercourt", 40,  5);
-        z14 = ZapatillasAmortiguadas("Wilson Rush", 42,  3.5);
-        z15 = ZapatillasAmortiguadas("Head Revolt", 40,  5);
-        z16 = ZapatillasConAgarre("Joma Slam", 40, 3);
-        z17 = ZapatillasConAgarre("Adidas Gamecourt", 40,  5);
-        z18 = ZapatillasConAgarre("Asics Gel-Game", 42,  4.5);
-        z19 = ZapatillasConAgarre("Asics Solution", 42, 3);
-        z20 = ZapatillasConAgarre("Nike Air Zoom", 40,  5);
-        z21 = ZapatillasConAgarre("Nike Zoom Vapor", 42,  4);
-        z22 = ZapatillasConAgarre("Wilson Kaos", 41,  5);
-        z23 = ZapatillasConAgarre("Head Revolt Pro", 42,  4.5);
+         ZapatillaGenerica z9 = new ZapatillasAmortiguadas("Lotto Space", 40,  5);
+         ZapatillaGenerica z10 = new ZapatillasAmortiguadas("K-Swiss Express", 42,  3);
+         ZapatillaGenerica z11 = new ZapatillasAmortiguadas("Babolat Jet Tere", 42, 5.5);
+         ZapatillaGenerica z12 = new ZapatillasAmortiguadas("Lotto Mirage", 40, 6);
+         ZapatillaGenerica z13 = new ZapatillasAmortiguadas("K-Swiss Hypercourt", 40,  5);
+         ZapatillaGenerica z14 = new ZapatillasAmortiguadas("Wilson Rush", 42,  3.5);
+         ZapatillaGenerica z15 = new ZapatillasAmortiguadas("Head Revolt", 40,  5);
+         ZapatillaGenerica z16 = new ZapatillasConAgarre("Joma Slam", 40, 3);
+         ZapatillaGenerica z17 = new ZapatillasConAgarre("Adidas Gamecourt", 40,  5);
+         ZapatillaGenerica z18 = new ZapatillasConAgarre("Asics Gel-Game", 42,  4.5);
+         ZapatillaGenerica z19 = new ZapatillasConAgarre("Asics Solution", 42, 3);
+         ZapatillaGenerica z20 = new ZapatillasConAgarre("Nike Air Zoom", 40,  5);
+         ZapatillaGenerica z21 = new ZapatillasConAgarre("Nike Zoom Vapor", 42,  4);
+         ZapatillaGenerica z22 = new ZapatillasConAgarre("Wilson Kaos", 41,  5);
+         ZapatillaGenerica z23 = new ZapatillasConAgarre("Head Revolt Pro", 42,  4.5);
     
     
         //Instanciamos raquetas para ser usadas en el campeonato: 
