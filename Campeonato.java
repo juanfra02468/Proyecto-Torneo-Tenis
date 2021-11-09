@@ -8,6 +8,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.*;
+import java.util.Iterator;
 
 
 public class Campeonato
@@ -53,9 +54,7 @@ public class Campeonato
         if (raquetasCampeonato.size()>=competidores.size()){
                 for (int i = 0; i<competidores.size(); i++){
                         Tenista t = competidores.get(i);
-                        competidores.remove(i);
                         t.setRaqueta(raquetasCampeonato.first());
-                        competidores.add(i,t);
                         raquetasCampeonato.remove(raquetasCampeonato.first());
                 }
             }
@@ -65,19 +64,12 @@ public class Campeonato
         }
     }
     public void buscarZapatillaTenista(){
-        boolean bandera = false;
-        for (int i = 0; i<competidores.size(); i++){
-            Tenista t = competidores.get(i);
-            bandera = false;
-            for (int j = 0; j<zapatillasCampeonato.size() && !bandera; j++){
-                if (t.getNumPie()==zapatillasCampeonato.get(j).getNumero()){
-                    t.setZapatilla(zapatillasCampeonato.get(j));
-                    zapatillasCampeonato.remove(j);
-                    bandera = true;
-                }
-            }
+
+        for (Tenista jugadores: competidores) {
+           jugadores.elegirZapatillaTenista(zapatillasCampeonato);
         }
     }
+
     /**
      * Método que simula un partido entre dos tenistas
      * @param t1 Hace referencia a un tenista

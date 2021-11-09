@@ -1,4 +1,6 @@
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.*;
 /**
  * La clase Tenista representa los distintos tenistas que competirán en el campeonato
  * 
@@ -155,4 +157,17 @@ public class Tenista
     {
         this.raqueta = raqueta;
     }
+
+    public void elegirZapatillaTenista (ArrayList <Zapatilla> zapatillasCampeonato){
+        boolean bandera = false;
+            Iterator <Zapatilla> it = zapatillasCampeonato.iterator();
+            while(it.hasNext() && !bandera){
+                Zapatilla z = it.next();
+                    if (this.getNumPie()==z.getNumero()){
+                        this.setZapatilla(z);
+                        zapatillasCampeonato.remove(z);
+                        bandera=true;
+                    }
+                }
+            }
 }
