@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 /**
  * Abstract class RaquetaGenerica - write a description of the class here
  * 
@@ -12,8 +14,29 @@ public abstract class RaquetaGenerica implements Raqueta
     private int peso;
     private int longitud;
     private int tamañoCabeza;
+    private static final Map<Integer, Integer> mapaLongitudPotencia = Map.of(
+        680, 2, 
+        690, 4, 
+        700, 6, 
+        720, 8, 
+        740, 10
+    );
+    private static final Map<Integer, Integer> mapaCabezaControl = Map.of(
+        600, 10, 
+        630, 8, 
+        650, 6, 
+        680, 4, 
+        720, 2
+    );
+    private static final Map<Integer, Integer> mapaPesoVelocidad = Map.of(
+        220, 10, 
+        260, 8, 
+        300, 6, 
+        320, 4, 
+        340, 2
+    );
     
-
+    
     public RaquetaGenerica(String modelo, int peso, int longitud, int tamañoCabeza, Encordado encordado)
     {
         this.modelo = modelo;
