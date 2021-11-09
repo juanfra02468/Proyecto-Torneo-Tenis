@@ -87,87 +87,19 @@ public abstract class RaquetaGenerica implements Raqueta
         this.encordado = encordado;
     }
     
-    /*public Integer calcularPotencia(int longitud){
-        boolean bandera = false;
-        Iterator it = mapaLongitudPotencia.entrySet().iterator();
-        while (it.hasNext() && !bandera){
-            Map.Entry raqueta = (Map.Entry)it.next();
-            Integer potencia = (Integer)raqueta.get(longitud);
-                bandera=true;
-            }
-        return potencia;
-        }*/
-
-
     public double calcularPotencia(int longitud){
-        double potencia = 0.0;
-        switch (tamañoCabeza)
-        {
-            case 600 :
-                potencia = 10;
-                break;
-            case 630 :
-                potencia = 8;
-                break;
-            case 650 :
-                potencia = 6;
-                break;
-            case 680 :
-                potencia = 4;
-                break;
-            case 720 :
-                potencia = 2;
-                break;
-        }
+        double potencia=(double)mapaLongitudPotencia.get((Integer)longitud);
         return potencia;
-    }
-    
-        
-        
-    public double calcularControl(int tamañoCabeza){
-        double control = 0.0;
-        switch (tamañoCabeza)
-        {
-            case 600 :
-                control = 10;
-                break;
-            case 630 :
-                control = 8;
-                break;
-            case 650 :
-                control = 6;
-                break;
-            case 680 :
-                control = 4;
-                break;
-            case 720 :
-                control = 2;
-                break;
         }
-        return control;
-    }
+
+     public double calcularControl(int TamCabeza){
+         double control=(double)mapaCabezaControl.get((Integer)TamCabeza);
+         return control;
+         }
     
-    public double calcularVelocidad(int peso){
-        double velocidad = 0;
-        switch (peso)
-        {
-            case 220 :
-                velocidad = 10;
-                break;
-            case 260 :
-                velocidad = 8;
-                break;
-            case 300 :
-                velocidad = 6;
-                break;
-            case 320 :
-                velocidad = 4;
-                break;
-            case 340 :
-                velocidad = 2;
-                break;
-        }
-        return velocidad;
-    }
+        public double calcularVelocidad(int peso){
+         double velocidad=(double)mapaPesoVelocidad.get((Integer)peso);
+         return velocidad;
+         }
           
 }
