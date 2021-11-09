@@ -25,10 +25,10 @@ public class ZapatillasAmortiguadas extends ZapatillaGenerica
      * @return     the sum of x and y 
      */
     @Override
-    public double calcularValorSaque(double saque)
+    public double calcularValorSaque()
     {
         double valorSaque;
-        valorSaque = multiplicadorSaque*super.calcularValorSaque(saque);
+        valorSaque = multiplicadorSaque*super.calcularValorSaque();
         return valorSaque;
     }
     @Override

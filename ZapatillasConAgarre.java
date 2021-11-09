@@ -26,10 +26,10 @@ public class ZapatillasConAgarre extends ZapatillaGenerica
      * @return     the sum of x and y 
      */
     @Override
-    public double calcularValorResto(double resto)
+    public double calcularValorResto()
     {
         double valorResto;
-        valorResto = multiplicadorResto*super.calcularValorSaque(resto);
+        valorResto = multiplicadorResto*super.calcularValorSaque();
         return valorResto;
     }
     @Override

@@ -17,9 +17,9 @@ public interface Zapatilla
     
     public abstract double getValor();
     
-    public abstract double calcularValorSaque(double saque);
+    public abstract double calcularValorSaque();
     
-    public abstract double calcularValorResto(double resto);
+    public abstract double calcularValorResto();
     
     public abstract void mostrarZapatilla();
     

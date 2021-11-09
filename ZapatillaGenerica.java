@@ -72,10 +72,10 @@ public abstract class ZapatillaGenerica implements Zapatilla
      * @param saque Hace referencia al valor del saque de un Tenista
      * @return Double, que hace referencia al valor del saque segun el tipo de zapatilla
      */
-    public double calcularValorSaque(double saque)
+    public double calcularValorSaque()
     {
      double valorSaque;
-        valorSaque = saque*valor*1.2;
+        valorSaque = valor*1.2;
      return valorSaque;
     }
     /**
@@ -83,10 +83,10 @@ public abstract class ZapatillaGenerica implements Zapatilla
      * @param resto Hace referencia al valor del resto de un Tenista
      * @return Double, que hace referencia al valor del resto segun el tipo de zapatilla
      */    
-    public double calcularValorResto(double resto)
+    public double calcularValorResto()
     {
         double valorResto;
-            valorResto = resto*valor*1.3;
+            valorResto = valor*1.3;
         return valorResto;
     }
     
