@@ -32,10 +32,19 @@ public class ZapatillasConAgarre extends ZapatillaGenerica
         valorResto = multiplicadorResto*super.calcularValorSaque();
         return valorResto;
     }
+
     @Override
-    public void mostrarZapatilla()
-    {
-        System.out.println("ZapatillasConAgarre ");
-        super.mostrarZapatilla();
-    }
+public String toString(){
+    StringBuilder builder = new StringBuilder();
+    builder.append("*** ZapatillasConAgarre ");
+    builder.append(" [modelo= ");
+    builder.append(getModelo()+", ");
+    builder.append("numero= ");
+    builder.append(getNumero()+", ");
+    builder.append("valor= ");
+    builder.append(getValor()+"]");
+    builder.append("\n");
+    return builder.toString();
+}
+
 }

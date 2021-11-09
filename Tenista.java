@@ -71,7 +71,7 @@ public class Tenista
     {
         System.out.println("Tenista [nombre="+this.nombre+", saque="+this.saque+
         ", resto="+this.resto+", ranking="+this.ranking+", pais="+this.pais+"]");
-        this.zapatilla.mostrarZapatilla();
+        System.out.println(this.zapatilla.toString());
     }
     /**
      * Este método devuelve el valor del resto de un Tenista

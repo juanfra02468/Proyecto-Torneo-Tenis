@@ -99,10 +99,7 @@ public abstract class ZapatillaGenerica implements Zapatilla
     }
     /**
      * Este método muestra todos los campos de una zapatilla
-     */    
-    public void mostrarZapatilla()
-    {
-        System.out.println("[modelo="+this.modelo+", numero="+this.numero+
-        ", valor="+this.valor+"]");
-    }
+     */
+    
+    public abstract String toString();
 }

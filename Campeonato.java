@@ -78,7 +78,9 @@ public class Campeonato
     private void juego(Tenista t1, Tenista t2)
     {
         System.out.println("## Tenista1 ---->>>: "+t1.getNombre());
+        System.out.println(t1.getZapatilla().toString());
         System.out.println("## Tenista2 ---->>>: "+t2.getNombre());
+        System.out.println(t2.getZapatilla().toString());
         t1.jugar(t2);      
     }
     /**

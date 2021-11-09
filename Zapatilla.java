@@ -21,9 +21,9 @@ public interface Zapatilla
     
     public double calcularValorResto();
     
-    public void mostrarZapatilla();
-    
     public double getNumero();
     
     public void setNumero(double numero);
+    
+    public String toString();
 }

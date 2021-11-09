@@ -31,10 +31,19 @@ public class ZapatillasAmortiguadas extends ZapatillaGenerica
         valorSaque = multiplicadorSaque*super.calcularValorSaque();
         return valorSaque;
     }
+    
     @Override
-    public void mostrarZapatilla()
-    {
-        System.out.println("ZapatillasAmortiguadas ");
-        super.mostrarZapatilla();
-    }
+public String toString(){
+    StringBuilder builder = new StringBuilder();
+    builder.append("*** ZapatillasAmortiguadas ");
+    builder.append(" [modelo= ");
+    builder.append(getModelo()+", ");
+    builder.append("numero= ");
+    builder.append(getNumero()+", ");
+    builder.append("valor= ");
+    builder.append(getValor()+"]");
+    builder.append("\n");
+    return builder.toString();
+}
+
 }
