@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Iterator;
 /**
  * Abstract class RaquetaGenerica - write a description of the class here
  * 
@@ -86,29 +87,43 @@ public abstract class RaquetaGenerica implements Raqueta
         this.encordado = encordado;
     }
     
+    /*public Integer calcularPotencia(int longitud){
+        boolean bandera = false;
+        Iterator it = mapaLongitudPotencia.entrySet().iterator();
+        while (it.hasNext() && !bandera){
+            Map.Entry raqueta = (Map.Entry)it.next();
+            Integer potencia = (Integer)raqueta.get(longitud);
+                bandera=true;
+            }
+        return potencia;
+        }*/
+
+
     public double calcularPotencia(int longitud){
         double potencia = 0.0;
-        switch (longitud)
+        switch (tamañoCabeza)
         {
-            case 680 :
-                potencia = 2;
+            case 600 :
+                potencia = 10;
                 break;
-            case 690 :
-                potencia = 4;
-                break;
-            case 700 :
-                potencia = 6;
-                break;
-            case 720 :
+            case 630 :
                 potencia = 8;
                 break;
-            case 740 :
-                potencia = 10;
+            case 650 :
+                potencia = 6;
+                break;
+            case 680 :
+                potencia = 4;
+                break;
+            case 720 :
+                potencia = 2;
                 break;
         }
         return potencia;
     }
-
+    
+        
+        
     public double calcularControl(int tamañoCabeza){
         double control = 0.0;
         switch (tamañoCabeza)

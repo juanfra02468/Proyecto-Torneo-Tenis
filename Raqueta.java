@@ -8,11 +8,11 @@
 
 public interface Raqueta
 {
-    public abstract double calcularPotencia(int longitud);
+    public double calcularPotencia(int longitud);
     
-    public abstract double calcularControl(int tamañoCabeza);
+    public double calcularControl(int tamañoCabeza);
     
-    public abstract double calcularVelocidad(int peso);
+    public double calcularVelocidad(int peso);
     
     public String getModelo();
        

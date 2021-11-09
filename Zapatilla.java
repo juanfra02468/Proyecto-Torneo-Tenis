@@ -9,21 +9,21 @@
 
 public interface Zapatilla
 {
-    public abstract void setModelo(String modelo);
+    public void setModelo(String modelo);
     
-    public abstract String getModelo();
+    public String getModelo();
     
-    public abstract void setValor(int valor);
+    public void setValor(int valor);
     
-    public abstract double getValor();
+    public double getValor();
     
-    public abstract double calcularValorSaque();
+    public double calcularValorSaque();
     
-    public abstract double calcularValorResto();
+    public double calcularValorResto();
     
-    public abstract void mostrarZapatilla();
+    public void mostrarZapatilla();
     
-    public abstract double getNumero();
+    public double getNumero();
     
-    public abstract void setNumero(double numero);
+    public void setNumero(double numero);
 }
