@@ -86,12 +86,13 @@ public class Campeonato
      */
     public void controlDeCampeonato()
     {
+        asignarRaquetas();
+        mostrarRaquetas();
         int i = 1;
         System.out.println("***** Inicio del campeonato: "+nombre+" *****\n");
         System.out.println("***** Listado de competidores: ");
         listaTenistas_competidores();
         buscarZapatillaTenista();
-        asignarRaquetas();
         while(competidores.size() != 1){
            System.out.println("\n"); 
            System.out.println("***** Ronda---->>>: "+i);
@@ -219,6 +220,13 @@ public class Campeonato
         {
             tenistas.mostrarTenista();
         }
+    }
+    
+    public void mostrarRaquetas(){
+        for(Tenista tenistas: competidores)
+        {
+            System.out.println(tenistas.getRaqueta().toString()+ " -->> "+tenistas.getNombre());
+        }        
     }
     
 }

@@ -32,5 +32,35 @@ public class RaquetaControlada extends RaquetaGenerica
         double resultado = super.calcularVelocidad(peso);
         return multiplicadorVelocidad*resultado;
     }
+    
+    @Override
+public String toString(){
+    StringBuilder builder = new StringBuilder();
+    builder.append("*** RaquetaControlada(Encordado:");
+    builder.append(getEncordado()+")");
+    builder.append(" (MultiplicadorDePotencia: ");
+    builder.append(getEncordado().getMultiplicadorPotencia()+")");
+    builder.append(" (MultiplicadorDeControl: ");
+    builder.append(getEncordado().getMultiplicadorControl()+")");
+    builder.append("\n");
+    builder.append(" [modelo= ");
+    builder.append(getModelo());
+    builder.append("\n");
+    builder.append(" longitud: ");
+    builder.append(getLongitud() +", ");
+    builder.append(" potencia asociada: ");
+    builder.append(calcularPotencia(getLongitud()));
+    builder.append("\n");
+    builder.append(" tamaño: ");
+    builder.append(getTamañoCabeza() +", ");
+    builder.append(" control asociado: ");
+    builder.append(calcularControl(getTamañoCabeza()));
+    builder.append("\n");
+    builder.append(" peso: ");
+    builder.append(getPeso() +", ");
+    builder.append(" velocidad asoaciada: ");
+    builder.append(calcularVelocidad(getPeso()));
+    return builder.toString();
+}
   
 }

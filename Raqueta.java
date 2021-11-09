@@ -33,5 +33,7 @@ public interface Raqueta
     public Encordado getEncordado();
    
     public void setEncordado(Encordado encordado);
+    
+    public String toString();
 
 }

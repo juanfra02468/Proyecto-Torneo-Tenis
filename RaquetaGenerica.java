@@ -97,9 +97,11 @@ public abstract class RaquetaGenerica implements Raqueta
          return control;
          }
     
-        public double calcularVelocidad(int peso){
-         double velocidad=(double)mapaPesoVelocidad.get((Integer)peso);
-         return velocidad;
-         }
+    public double calcularVelocidad(int peso){
+     double velocidad=(double)mapaPesoVelocidad.get((Integer)peso);
+     return velocidad;
+     }
+     
+    public abstract String toString();        
           
 }
