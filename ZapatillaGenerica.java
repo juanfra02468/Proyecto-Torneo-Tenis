@@ -69,7 +69,6 @@ public abstract class ZapatillaGenerica implements Zapatilla
     }   
     /**
      * Este método devuelve el valor del saque de dicha zapatilla, cuando se invoca al metodo sacar de la clase Tenista
-     * @param saque Hace referencia al valor del saque de un Tenista
      * @return Double, que hace referencia al valor del saque segun el tipo de zapatilla
      */
     public double calcularValorSaque()
@@ -79,8 +78,7 @@ public abstract class ZapatillaGenerica implements Zapatilla
      return valorSaque;
     }
     /**
-     * Este método devuelve el valor del resto de dicha zapatilla, cuando se invoca al metodo restar de la clase Tenista
-     * @param resto Hace referencia al valor del resto de un Tenista
+     * Este método devuelve el valor del resto de dicha zapatilla, cuando se invoca al metodo restar de la clase Tenista.
      * @return Double, que hace referencia al valor del resto segun el tipo de zapatilla
      */    
     public double calcularValorResto()
@@ -89,11 +87,17 @@ public abstract class ZapatillaGenerica implements Zapatilla
             valorResto = valor*1.3;
         return valorResto;
     }
-    
+    /**
+     * Este método devuelve el numero de pie de un modelo de zapatillas. 
+     * @return Double, que hace referencia al numero de de pie de un modelo de zapatillas.
+     */  
     public double getNumero(){
         return numero;
     }
-    
+    /**
+     * Este método permite cambiar el numero de pie de la zapatilla.
+     * @param valor Hace referencia al numero de pie de la zapatilla.
+     */    
     public void setNumero(double numero){
         this.numero=numero;
     }
@@ -113,6 +117,9 @@ public abstract class ZapatillaGenerica implements Zapatilla
         builder.append("\n");
         return builder.toString();
     }
-    
+    /**
+     * Este método permite obtener el tipo de zapatilla.
+     * @return devuelve el tipo de zapatilla que tenemos.
+     */ 
     public abstract String getTipo();
 }
