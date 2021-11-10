@@ -47,61 +47,98 @@ public abstract class RaquetaGenerica implements Raqueta
         this.encordado = encordado;
     }
     
-    public String getModelo(){
+    public String getModelo()
+    {
         return modelo;
     }
     
-    public void setModelo(String modelo){
+    public void setModelo(String modelo)
+    {
         this.modelo = modelo;
     }
     
-    public int getPeso(){
+    public int getPeso()
+    {
         return peso;
     }
     
-    public void setPeso(int peso){
+    public void setPeso(int peso)
+    {
         this.peso = peso;
     }
     
-    public int getLongitud(){
+    public int getLongitud()
+    {
         return longitud;
     }
     
-    public void setLongitud(int longitud){
+    public void setLongitud(int longitud)
+    {
         this.longitud = longitud;
     }
     
-    public int getTamañoCabeza(){
+    public int getTamañoCabeza()
+    {
         return tamañoCabeza;
     }
     
-    public void setTamañoCabeza(int tamañoCabeza){
+    public void setTamañoCabeza(int tamañoCabeza)
+    {
         this.tamañoCabeza = tamañoCabeza;
     }
     
-   public Encordado getEncordado(){
+    public Encordado getEncordado()
+    {
         return encordado;
-    }
+     }
     
-    public void setEncordado(Encordado encordado){
+    public void setEncordado(Encordado encordado)
+    {
         this.encordado = encordado;
     }
     
-    public double calcularPotencia(int longitud){
+    public double calcularPotencia(int longitud)
+    {
         double potencia=(double)mapaLongitudPotencia.get((Integer)longitud);
         return potencia;
-        }
+    }
 
-     public double calcularControl(int TamCabeza){
-         double control=(double)mapaCabezaControl.get((Integer)TamCabeza);
-         return control;
-         }
+    public double calcularControl(int TamCabeza)
+    {
+        double control=(double)mapaCabezaControl.get((Integer)TamCabeza);
+        return control;
+    }
     
-    public double calcularVelocidad(int peso){
-     double velocidad=(double)mapaPesoVelocidad.get((Integer)peso);
-     return velocidad;
-     }
+    public double calcularVelocidad(int peso)
+    {
+        double velocidad=(double)mapaPesoVelocidad.get((Integer)peso);
+        return velocidad;
+    }
      
-    public abstract String toString();        
+    public abstract String getTipo();  
+    
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append(getTipo());
+        builder.append("        [modelo= ");
+        builder.append(getModelo());
+        builder.append("\n");
+        builder.append("        longitud: ");
+        builder.append(getLongitud() +", ");
+        builder.append(" potencia asociada: ");
+        builder.append(calcularPotencia(getLongitud()));
+        builder.append("\n");
+        builder.append("        tamaño: ");
+        builder.append(getTamañoCabeza() +", ");
+        builder.append(" control asociado: ");
+        builder.append(calcularControl(getTamañoCabeza()));
+        builder.append("\n");
+        builder.append("        peso: ");
+        builder.append(getPeso() +", ");
+        builder.append(" velocidad asociada: ");
+        builder.append(calcularVelocidad(getPeso())+"]");
+        return builder.toString();
+    }
           
 }

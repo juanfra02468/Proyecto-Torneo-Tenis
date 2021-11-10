@@ -227,7 +227,7 @@ public class Campeonato
     public void mostrarRaquetas(){
         for(Tenista tenistas: competidores)
         {
-            System.out.println(tenistas.getRaqueta().toString()+ " -->> "+tenistas.getNombre());
+            System.out.println(tenistas.getRaqueta().toString()+ " asignada a -->>\n "+tenistas.getNombre());
         }        
     }
     

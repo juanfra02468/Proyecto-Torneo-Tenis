@@ -34,33 +34,15 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     }
     
     @Override
-public String toString(){
-    StringBuilder builder = new StringBuilder();
-    builder.append("*** RaquetaEquilibrada(Encordado:");
-    builder.append(getEncordado()+")");
-    builder.append(" (MultiplicadorDePotencia: ");
-    builder.append(this.multiplicadorPotencia+")");
-    builder.append(" (MultiplicadorDeControl: ");
-    builder.append(this.multiplicadorControl+")");
-    builder.append("\n");
-    builder.append(" [modelo= ");
-    builder.append(getModelo());
-    builder.append("\n");
-    builder.append(" longitud: ");
-    builder.append(getLongitud() +", ");
-    builder.append(" potencia asociada: ");
-    builder.append(calcularPotencia(getLongitud()));
-    builder.append("\n");
-    builder.append(" tamaño: ");
-    builder.append(getTamañoCabeza() +", ");
-    builder.append(" control asociado: ");
-    builder.append(calcularControl(getTamañoCabeza()));
-    builder.append("\n");
-    builder.append(" peso: ");
-    builder.append(getPeso() +", ");
-    builder.append(" velocidad asoaciada: ");
-    builder.append(calcularVelocidad(getPeso()));
-    return builder.toString();
-}
+    public String getTipo(){
+        StringBuilder builder = new StringBuilder();
+        builder.append("    ** RaquetaEquilibrada");
+        builder.append(" (MultiplicadorDePotencia: ");
+        builder.append(this.multiplicadorPotencia+")\n");
+        builder.append(" (MultiplicadorDeControl: ");
+        builder.append(this.multiplicadorControl+")");
+        builder.append("\n");
+        return builder.toString();
+    }
   
 }

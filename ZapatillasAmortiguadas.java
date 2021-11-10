@@ -32,18 +32,9 @@ public class ZapatillasAmortiguadas extends ZapatillaGenerica
         return valorSaque;
     }
     
-    @Override
-public String toString(){
-    StringBuilder builder = new StringBuilder();
-    builder.append("*** ZapatillasAmortiguadas ");
-    builder.append(" [modelo= ");
-    builder.append(getModelo()+", ");
-    builder.append("numero= ");
-    builder.append(getNumero()+", ");
-    builder.append("valor= ");
-    builder.append(getValor()+"]");
-    builder.append("\n");
-    return builder.toString();
-}
+        @Override
+    public String getTipo(){
+        return "*** ZapatillasAmortiguadas ";
+    }
 
 }

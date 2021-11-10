@@ -100,6 +100,19 @@ public abstract class ZapatillaGenerica implements Zapatilla
     /**
      * Este método muestra todos los campos de una zapatilla
      */
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append(getTipo());
+        builder.append(" [modelo= ");
+        builder.append(getModelo()+", ");
+        builder.append("numero= ");
+        builder.append(getNumero()+", ");
+        builder.append("valor= ");
+        builder.append(getValor()+"]");
+        builder.append("\n");
+        return builder.toString();
+    }
     
-    public abstract String toString();
+    public abstract String getTipo();
 }
