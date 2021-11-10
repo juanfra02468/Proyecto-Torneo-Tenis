@@ -36,4 +36,5 @@ public interface Raqueta
     
     public String toString();
 
+    public String getTipo();
 }

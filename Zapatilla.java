@@ -26,4 +26,6 @@ public interface Zapatilla
     public void setNumero(double numero);
     
     public String toString();
+    
+    public String getTipo();
 }
