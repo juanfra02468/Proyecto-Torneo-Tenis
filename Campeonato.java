@@ -38,17 +38,25 @@ public class Campeonato
     {
         competidores.add(t1);
     }
-    
+    /**
+     * Método que añade una zapatilla a la lista zapatillas
+     * @param z1 Hace referencia a la zapatilla que queremos añadir
+     */
     public void añadirZapatilla (Zapatilla z1)
     {
         zapatillasCampeonato.add(z1);
     }
-    
+    /**
+     * Método que añade una raqueta a la lista de raquetas
+     * @param r1 Hace referencia a la raqueta que queremos añadir
+     */
     public void añadirRaquetas (Raqueta r1)
     {
         raquetasCampeonato.add(r1);
     }
-    
+     /**
+     * Metodo encargado de asignar las raquetas a los competidores 
+     */
     public void asignarRaquetas (){
         
         if (raquetasCampeonato.size()>=competidores.size()){
@@ -63,6 +71,9 @@ public class Campeonato
         System.out.println("## CAMPEONATO ANULADO POR FALTA DE RAQUETAS ");
         }
     }
+    /**
+     * Metodo encargado de asignar las zapatillas a los competidores a través del metodo elegirZapatillaTenista de la clase tenista.
+     */
     public void buscarZapatillaTenista(){
 
         for (Tenista jugadores: competidores) {
@@ -223,7 +234,9 @@ public class Campeonato
             tenistas.mostrarTenista();
         }
     }
-    
+    /**
+     * Metodo encargado de mostrar las raquetas asignadas a tenistas
+     */
     public void mostrarRaquetas(){
         for(Tenista tenistas: competidores)
         {

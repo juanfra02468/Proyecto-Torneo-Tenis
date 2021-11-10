@@ -137,7 +137,7 @@ public class Tenista
     }
     /**
      * Este método permite cambiar la zapatilla del Tenista
-     * @param zapatilla hace referencia a la zapatilla que queremos que use el tenista ahora. 
+     * @param  zapatilla hace referencia a la zapatilla que queremos que use el tenista ahora. 
      */  
     public void setZapatilla (Zapatilla zapatilla)
     {
@@ -153,7 +153,7 @@ public class Tenista
     }
     /**
      * Este método permite cambiar el numero de pie de un tenista.
-     * @param numPie hace referencia al nuevo numero de pie del tenista.
+     * @param  numPie hace referencia al nuevo numero de pie del tenista.
      */  
     public void setNumPie (double numPie)
     {

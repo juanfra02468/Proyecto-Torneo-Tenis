@@ -36,8 +36,10 @@ public abstract class RaquetaGenerica implements Raqueta
         320, 4, 
         340, 2
     );
-    
-    
+    /**
+     * Constructor parametrizado de la clase RaquetaGenerica
+     * Este constructor crea un nuevo objeto de la clase RaquetaGenerica con los valores pasados por parametro
+     */    
     public RaquetaGenerica(String modelo, int peso, int longitud, int tamañoCabeza, Encordado encordado)
     {
         this.modelo = modelo;
@@ -46,42 +48,66 @@ public abstract class RaquetaGenerica implements Raqueta
         this.tamañoCabeza = tamañoCabeza;
         this.encordado = encordado;
     }
-    
+    /**
+     * Este método devuelve el modelo de la Raqueta
+     * @return String, que hace referencia al modelo de la raqueta
+     */ 
     public String getModelo()
     {
         return modelo;
     }
-    
+      /**
+     * Este método permite cambiar el modelo de la raqueta
+     * @param modelo Hace referencia al nuevo modelo de la raqueta
+     */     
     public void setModelo(String modelo)
     {
         this.modelo = modelo;
     }
-    
+    /**
+     * Este método devuelve el peso de la Raqueta
+     * @return int, que hace referencia al peso de la raqueta
+     */ 
     public int getPeso()
     {
         return peso;
     }
-    
+    /**
+     * Este método permite cambiar el peso de la raqueta
+     * @param peso Hace referencia al nuevo peso de la raqueta
+     */     
     public void setPeso(int peso)
     {
         this.peso = peso;
     }
-    
+    /**
+     * Este método devuelve la longitud de la raqueta
+     * @return int, que hace referencia a la longitud de la raqueta
+     */ 
     public int getLongitud()
     {
         return longitud;
     }
-    
+     /**
+     * Este método permite cambiar la longitud de la raqueta
+     * @param longitud Hace referencia a la nueva longitud de la raqueta 
+     */     
     public void setLongitud(int longitud)
     {
         this.longitud = longitud;
     }
-    
+     /**
+     * Este método devuelve el tamaño de la cabeza de la raqueta
+     * @return int, que hace referencia a el tamaño de la cabeza de la raqueta
+     */ 
     public int getTamañoCabeza()
     {
         return tamañoCabeza;
     }
-    
+    /**
+     * Este método permite cambiar eltamaño de la cabeza de la raqueta
+     * @param tamañoCabeza Hace referencia al nuevo tamaño de la cabeza de la raqueta
+     */     
     public void setTamañoCabeza(int tamañoCabeza)
     {
         this.tamañoCabeza = tamañoCabeza;

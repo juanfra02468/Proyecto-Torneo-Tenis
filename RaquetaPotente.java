@@ -7,11 +7,12 @@
  */
 public class RaquetaPotente extends RaquetaGenerica
 {
-    // instance variables - replace the example below with your own
+    // atributo privado de la sublcase
     private double multiplicadorVelocidad;
 
-    /**
-     * Constructor for objects of class RaquetaPotente
+      /**
+     * Constructor Parametrizado de la clase RaquetaPotente
+     * Este constructor crea un nuevo objeto de la clase RaquetaPotente con los valores pasados por parametro.
      */
     public RaquetaPotente(String modelo, int peso, int longitud, int tamañoCabeza, Encordado encordado)
     {
