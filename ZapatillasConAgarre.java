@@ -7,23 +7,22 @@
  */
 public class ZapatillasConAgarre extends ZapatillaGenerica
 {
-    // instance variables - replace the example below with your own
+    // atributo privado propio de la subclase
     private double multiplicadorResto;
 
-    /**
-     * Constructor for objects of class Amortiguadas
+   /**
+     * Constructor Parametrizado de la clase ZapatillasConAgarre
+     * Este constructor crea un nuevo objeto de la clase ZapatillasConAgarre con los valores pasados por parametro.
      */
     public ZapatillasConAgarre(String modelo, int numero, double valor)
     {
         super(modelo,numero,valor);
         this.multiplicadorResto=1.7;
     }
-
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Funcion:Metodo heredado de la super clase ZapatillaGenerica, al que multiplicamos, por el multiplicador característico
+     * de la subclase actual , para obtener el saque de un tenista con Zapatillas de tipo Agarre.
+     * @return devuelve el valor del saque del tenista con zapatillas de tipo Agarre.
      */
     @Override
     public double calcularValorResto()
@@ -32,7 +31,11 @@ public class ZapatillasConAgarre extends ZapatillaGenerica
         valorResto = multiplicadorResto*super.calcularValorSaque();
         return valorResto;
     }
-
+    /**
+     * Funcion:Metodo heredado de la super clase ZapatillaGenerica, en el que devolvemos el tipo de zapatillas 
+     * caracteristico de esta subclase , en este caso devolvemos que son Zapatillad de Agarre.
+     * @return devuelve el tipo de zapatillas de la subclase actual.
+     */
     @Override
     public String getTipo()
     {
