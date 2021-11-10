@@ -127,37 +127,58 @@ public class Tenista
     {
         return this.posEliminado;
     }
-    
+    /**
+     * Este método devuelve el numero de pie de un Tenista
+     * @return Double, que hace referencia al numero de pie de un Tenista
+     */  
     public double getNumPie ()
     {
         return numPie;
     }
-    
+    /**
+     * Este método permite cambiar la zapatilla del Tenista
+     * @param zapatilla hace referencia a la zapatilla que queremos que use el tenista ahora. 
+     */  
     public void setZapatilla (Zapatilla zapatilla)
     {
         this.zapatilla = zapatilla;
     }
-
+    /**
+     * Este método devuelve la zapatilla usada por un tenista
+     * @return Zapatilla, que hace referencia a la zapatilla usada por un tenista.
+     */  
     public Zapatilla getZapatilla ()
     {
         return this.zapatilla;
     }
-    
+    /**
+     * Este método permite cambiar el numero de pie de un tenista.
+     * @param numPie hace referencia al nuevo numero de pie del tenista.
+     */  
     public void setNumPie (double numPie)
     {
         this.numPie = numPie;
     }
-    
+    /**
+     * Este método devuelve la raqueta usada por un tenista
+     * @return Raqueta, que hace referencia a la raqueta usada por un tenista.
+     */  
     public Raqueta getRaqueta ()
     {
         return this.raqueta;
     }
-    
+    /**
+     * Este método permite cambiar la raqueta de un tenista
+     * @param raqueta hace referencia a la nueva raqueta que queremos que use el tenista. 
+     */  
     public void setRaqueta (Raqueta raqueta)
     {
         this.raqueta = raqueta;
     }
-
+    /**
+     * Este método realiza la asignacion de una zapatilla a un tenista dependiendo de su numero de pie en el Campeonato.
+     * @param zapatillasCampeonato hace referencia a la lista de Zapatillas que pueden elegir los tenistas en el campeonato.
+     */  
     public void elegirZapatillaTenista (ArrayList <Zapatilla> zapatillasCampeonato){
         boolean bandera = false;
             Iterator <Zapatilla> it = zapatillasCampeonato.iterator();
