@@ -13,7 +13,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     /**
      * Constructor for objects of class RaquetaPotente
      */
-    public RaquetaEquilibrada(String modelo, int peso, int longitud, int tamañoCabeza, Encordado encordado, double multiplicadorPotencia, double multiplicadorControl)
+    public RaquetaEquilibrada(String modelo, double peso, double longitud, double tamañoCabeza, Encordado encordado, double multiplicadorPotencia, double multiplicadorControl)
     {
         super(modelo, peso, longitud, tamañoCabeza, encordado);
         this.multiplicadorPotencia = multiplicadorPotencia;
@@ -21,13 +21,13 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     }
     
     @Override
-    public double calcularPotencia (int longitud)
+    public double calcularPotencia (double longitud)
     {
         double resultado = super.calcularPotencia(longitud);
         return multiplicadorPotencia*resultado;
     }
     @Override
-    public double calcularControl (int tamañoCabeza)
+    public double calcularControl (double tamañoCabeza)
     {
         double resultado = super.calcularControl(tamañoCabeza);
         return multiplicadorControl*resultado;

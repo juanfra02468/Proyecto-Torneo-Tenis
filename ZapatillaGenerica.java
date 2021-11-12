@@ -114,7 +114,6 @@ public abstract class ZapatillaGenerica implements Zapatilla
         builder.append(getNumero()+", ");
         builder.append("valor= ");
         builder.append(getValor()+"]");
-        builder.append("\n");
         return builder.toString();
     }
     /**

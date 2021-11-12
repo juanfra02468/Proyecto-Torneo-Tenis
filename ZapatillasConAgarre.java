@@ -28,7 +28,7 @@ public class ZapatillasConAgarre extends ZapatillaGenerica
     public double calcularValorResto()
     {
         double valorResto;
-        valorResto = multiplicadorResto*super.calcularValorSaque();
+        valorResto = multiplicadorResto*super.calcularValorResto();
         return valorResto;
     }
     /**

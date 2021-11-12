@@ -45,7 +45,7 @@ public class Tenista
      */   
     private void sacar()
     {   
-        this.puntosAcumulados += raqueta.calcularVelocidad(raqueta.getPeso())*raqueta.calcularPotencia(raqueta.getLongitud())*zapatilla.calcularValorSaque()*this.saque;
+        this.puntosAcumulados += this.calcularSaque();
     }
     /**
      * Este método compara el resto de un tenista con el saque del otro, dependiendo del resultado, el tenista que resta puede aumentar sus puntos o no
@@ -53,10 +53,20 @@ public class Tenista
      */        
     private void restar(Tenista t1)
     {
-        if(this.zapatilla.calcularValorResto()*this.resto > t1.zapatilla.calcularValorSaque()*t1.saque){
-            this.puntosAcumulados+= raqueta.calcularControl(raqueta.getTamañoCabeza())*raqueta.calcularVelocidad(raqueta.getPeso())*this.zapatilla.calcularValorResto()*this.resto;
+        if(this.calcularResto() > t1.calcularSaque ()){
+            this.puntosAcumulados+= this.calcularResto ();
         }
     }
+    
+    
+    private double calcularResto (){
+        return zapatilla.calcularValorResto()*raqueta.calcularVelocidad(raqueta.getPeso())*raqueta.calcularControl(raqueta.getTamañoCabeza())*resto;
+    }
+
+    private double calcularSaque (){
+        return raqueta.calcularVelocidad(raqueta.getPeso())*raqueta.calcularPotencia(raqueta.getLongitud())*zapatilla.calcularValorSaque()*saque;
+    }
+    
    public void jugar(Tenista t2)
     {
         this.sacar();
@@ -66,12 +76,25 @@ public class Tenista
     }
     /**
      * Este método muestra todos los campos de un Tenista
-     */     
-    public void mostrarTenista()
+     */         
+       public String toString()
     {
-        System.out.println("Tenista [nombre="+this.nombre+", saque="+this.saque+
-        ", resto="+this.resto+", ranking="+this.ranking+", pais="+this.pais+"]");
-        System.out.println(this.zapatilla.toString());
+        StringBuilder builder = new StringBuilder();
+        builder.append("**  Tenista [nombre=");
+        builder.append(this.nombre);
+        builder.append(", saque=");
+        builder.append(this.saque);
+        builder.append(", resto=");
+        builder.append(this.resto);
+        builder.append(", ranking=");
+        builder.append(this.ranking);
+        builder.append(", pais=");
+        builder.append(this.pais);
+        builder.append(", número pie=");
+        builder.append(this.numPie+"]");
+        builder.append("\n");
+        builder.append(this.zapatilla.toString());
+        return builder.toString();
     }
     /**
      * Este método devuelve el valor del resto de un Tenista
@@ -179,7 +202,7 @@ public class Tenista
      * Este método realiza la asignacion de una zapatilla a un tenista dependiendo de su numero de pie en el Campeonato.
      * @param zapatillasCampeonato hace referencia a la lista de Zapatillas que pueden elegir los tenistas en el campeonato.
      */  
-    public void elegirZapatillaTenista (ArrayList <Zapatilla> zapatillasCampeonato){
+    public boolean elegirZapatillaTenista (ArrayList <Zapatilla> zapatillasCampeonato){
         boolean bandera = false;
             Iterator <Zapatilla> it = zapatillasCampeonato.iterator();
             while(it.hasNext() && !bandera){
@@ -190,5 +213,6 @@ public class Tenista
                         bandera=true;
                     }
                 }
+                return bandera;
             }
 }

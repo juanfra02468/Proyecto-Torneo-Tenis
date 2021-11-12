@@ -8,27 +8,27 @@
 
 public interface Raqueta
 {
-    public double calcularPotencia(int longitud);
+    public double calcularPotencia(double longitud);
     
-    public double calcularControl(int tamañoCabeza);
+    public double calcularControl(double tamañoCabeza);
     
-    public double calcularVelocidad(int peso);
+    public double calcularVelocidad(double peso);
     
     public String getModelo();
        
     public void setModelo(String modelo);
     
-    public int getPeso();
+    public double getPeso();
     
-    public void setPeso(int peso);
+    public void setPeso(double peso);
     
-    public int getLongitud();
+    public double getLongitud();
     
-    public void setLongitud(int longitud);
+    public void setLongitud(double longitud);
     
-    public int getTamañoCabeza();  
+    public double getTamañoCabeza();  
     
-    public void setTamañoCabeza(int tamañoCabeza);
+    public void setTamañoCabeza(double tamañoCabeza);
     
     public Encordado getEncordado();
    

@@ -57,19 +57,19 @@ public class Campeonato
      /**
      * Metodo encargado de asignar las raquetas a los competidores 
      */
-    public void asignarRaquetas (){
-        
+    public boolean asignarRaquetas (){
+        boolean bandera=false;
+        System.out.println("***** Asignando raquetas a tenistas *****");
         if (raquetasCampeonato.size()>=competidores.size()){
+            bandera=true;
                 for (int i = 0; i<competidores.size(); i++){
                         Tenista t = competidores.get(i);
                         t.setRaqueta(raquetasCampeonato.first());
                         raquetasCampeonato.remove(raquetasCampeonato.first());
                 }
             }
-            
-        else{
-        System.out.println("## CAMPEONATO ANULADO POR FALTA DE RAQUETAS ");
-        }
+        
+        return bandera;
     }
 
     /**
@@ -80,36 +80,44 @@ public class Campeonato
     private void juego(Tenista t1, Tenista t2)
     {
         System.out.println("## Tenista1 ---->>>: "+t1.getNombre());
-        System.out.println(t1.getZapatilla().toString());
+        comprobacionZapatilla(t1);
         System.out.println("## Tenista2 ---->>>: "+t2.getNombre());
-        System.out.println(t2.getZapatilla().toString());
-        t1.elegirZapatillaTenista(zapatillasCampeonato);
-        t2.elegirZapatillaTenista(zapatillasCampeonato);
+        comprobacionZapatilla(t2);
         t1.jugar(t2);      
+    }
+    
+    private void comprobacionZapatilla (Tenista t1){
+       if (t1.elegirZapatillaTenista(zapatillasCampeonato)){
+            System.out.println(t1.getZapatilla().toString());
+        }        
     }
     /**
      * Método que muestra por pantalla el avance de los partidos, las rondas, quien ha ganado y el listado de eliminados
      */
     public void controlDeCampeonato()
     {
-        asignarRaquetas();
-        mostrarRaquetas();
-        int i = 1;
-        System.out.println("***** Inicio del campeonato: "+nombre+" *****\n");
-        System.out.println("***** Listado de competidores: ");
-        listaTenistas_competidores();
-        while(competidores.size() != 1){
-           System.out.println("\n"); 
-           System.out.println("***** Ronda---->>>: "+i);
-           i++;
-           partidos();
+    System.out.println("***** Inicio del campeonato: "+nombre+" *****\n");
+        if (asignarRaquetas()){
+            mostrarRaquetas();
+            int i = 1;
+            System.out.println("***** Listado de competidores: ");
+            listaTenistas_competidores();
+            while(competidores.size() != 1){
+               System.out.println("\n"); 
+               System.out.println("***** Ronda---->>>: "+i);
+               i++;
+               partidos();
+            }
+            
+            Tenista ganador = competidores.get(0);
+            mostrarganadorTorneo(ganador);
+            System.out.println("***** Listado de eliminados: ");
+            Collections.sort(eliminados, Collections.reverseOrder(new PosicionComparator()));
+            listaTenistas_eliminados();
         }
-        
-        Tenista ganador = competidores.get(0);
-        mostrarganadorTorneo(ganador);
-        System.out.println("***** Listado de eliminados: ");
-        Collections.sort(eliminados, Collections.reverseOrder(new PosicionComparator()));
-        listaTenistas_eliminados();
+        else{
+        System.out.println("## CAMPEONATO ANULADO POR FALTA DE RAQUETAS ");            
+        }
     
     }
     /**
@@ -120,7 +128,7 @@ public class Campeonato
     {
         System.out.println("\n");
         System.out.println("---->>>> Gana la competición:"); 
-        ganador.mostrarTenista();
+        System.out.println(ganador.toString());
         System.out.println("\n"); 
     }
     /**
@@ -212,7 +220,7 @@ public class Campeonato
     {
         for(Tenista tenistas: competidores)
         {
-            tenistas.mostrarTenista();
+             System.out.println(tenistas.toString());
         }
     }
     /**
@@ -223,7 +231,7 @@ public class Campeonato
     {
         for(Tenista tenistas: eliminados)
         {
-            tenistas.mostrarTenista();
+             System.out.println(tenistas.toString());
         }
     }
     /**
@@ -232,7 +240,7 @@ public class Campeonato
     public void mostrarRaquetas(){
         for(Tenista tenistas: competidores)
         {
-            System.out.println(tenistas.getRaqueta().toString()+ " asignada a -->>\n "+tenistas.getNombre());
+            System.out.println(tenistas.getRaqueta().toString()+ " asignada a -->> "+tenistas.getNombre());
         }        
     }
     

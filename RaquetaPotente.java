@@ -14,21 +14,21 @@ public class RaquetaPotente extends RaquetaGenerica
      * Constructor Parametrizado de la clase RaquetaPotente
      * Este constructor crea un nuevo objeto de la clase RaquetaPotente con los valores pasados por parametro.
      */
-    public RaquetaPotente(String modelo, int peso, int longitud, int tamañoCabeza, Encordado encordado)
+    public RaquetaPotente(String modelo, double peso, double longitud, double tamañoCabeza, Encordado encordado)
     {
         super(modelo, peso, longitud, tamañoCabeza, encordado);
         this.multiplicadorVelocidad = 1.5;
     }
     
     @Override
-    public double calcularPotencia (int longitud)
+    public double calcularPotencia (double longitud)
     {
         double potencia = super.getEncordado().getMultiplicadorPotencia();
         double resultado = super.calcularPotencia(longitud);
         return potencia*resultado;
     }
     @Override
-    public double calcularVelocidad (int peso)
+    public double calcularVelocidad (double peso)
     {
         double resultado = super.calcularVelocidad(peso);
         return multiplicadorVelocidad*resultado;

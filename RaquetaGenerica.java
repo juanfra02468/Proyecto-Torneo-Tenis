@@ -12,35 +12,35 @@ public abstract class RaquetaGenerica implements Raqueta
     // instance variables - replace the example below with your own
     private String modelo;
     private Encordado encordado;
-    private int peso;
-    private int longitud;
-    private int tamañoCabeza;
-    private static final Map<Integer, Integer> mapaLongitudPotencia = Map.of(
-        680, 2, 
-        690, 4, 
-        700, 6, 
-        720, 8, 
-        740, 10
+    private double peso;
+    private double longitud;
+    private double tamañoCabeza;
+    private static final Map<Double, Double> mapaLongitudPotencia = Map.of(
+        680.0, 2.0, 
+        690.0, 4.0, 
+        700.0, 6.0, 
+        720.0, 8.0, 
+        740.0, 10.0
     );
-    private static final Map<Integer, Integer> mapaCabezaControl = Map.of(
-        600, 10, 
-        630, 8, 
-        650, 6, 
-        680, 4, 
-        720, 2
+    private static final Map<Double, Double> mapaCabezaControl = Map.of(
+        600.0, 10.0, 
+        630.0, 8.0, 
+        650.0, 6.0, 
+        680.0, 4.0, 
+        720.0, 2.0
     );
-    private static final Map<Integer, Integer> mapaPesoVelocidad = Map.of(
-        220, 10, 
-        260, 8, 
-        300, 6, 
-        320, 4, 
-        340, 2
+    private static final Map<Double, Double> mapaPesoVelocidad = Map.of(
+        220.0, 10.0, 
+        260.0, 8.0, 
+        300.0, 6.0, 
+        320.0, 4.0, 
+        340.0, 2.0
     );
     /**
      * Constructor parametrizado de la clase RaquetaGenerica
      * Este constructor crea un nuevo objeto de la clase RaquetaGenerica con los valores pasados por parametro
      */    
-    public RaquetaGenerica(String modelo, int peso, int longitud, int tamañoCabeza, Encordado encordado)
+    public RaquetaGenerica(String modelo, double peso, double longitud, double tamañoCabeza, Encordado encordado)
     {
         this.modelo = modelo;
         this.peso = peso;
@@ -68,7 +68,7 @@ public abstract class RaquetaGenerica implements Raqueta
      * Este método devuelve el peso de la Raqueta
      * @return int, que hace referencia al peso de la raqueta
      */ 
-    public int getPeso()
+    public double getPeso()
     {
         return peso;
     }
@@ -76,7 +76,7 @@ public abstract class RaquetaGenerica implements Raqueta
      * Este método permite cambiar el peso de la raqueta
      * @param peso Hace referencia al nuevo peso de la raqueta
      */     
-    public void setPeso(int peso)
+    public void setPeso(double peso)
     {
         this.peso = peso;
     }
@@ -84,7 +84,7 @@ public abstract class RaquetaGenerica implements Raqueta
      * Este método devuelve la longitud de la raqueta
      * @return int, que hace referencia a la longitud de la raqueta
      */ 
-    public int getLongitud()
+    public double getLongitud()
     {
         return longitud;
     }
@@ -92,7 +92,7 @@ public abstract class RaquetaGenerica implements Raqueta
      * Este método permite cambiar la longitud de la raqueta
      * @param longitud Hace referencia a la nueva longitud de la raqueta 
      */     
-    public void setLongitud(int longitud)
+    public void setLongitud(double longitud)
     {
         this.longitud = longitud;
     }
@@ -100,7 +100,7 @@ public abstract class RaquetaGenerica implements Raqueta
      * Este método devuelve el tamaño de la cabeza de la raqueta
      * @return int, que hace referencia a el tamaño de la cabeza de la raqueta
      */ 
-    public int getTamañoCabeza()
+    public double getTamañoCabeza()
     {
         return tamañoCabeza;
     }
@@ -108,7 +108,7 @@ public abstract class RaquetaGenerica implements Raqueta
      * Este método permite cambiar eltamaño de la cabeza de la raqueta
      * @param tamañoCabeza Hace referencia al nuevo tamaño de la cabeza de la raqueta
      */     
-    public void setTamañoCabeza(int tamañoCabeza)
+    public void setTamañoCabeza(double tamañoCabeza)
     {
         this.tamañoCabeza = tamañoCabeza;
     }
@@ -123,21 +123,21 @@ public abstract class RaquetaGenerica implements Raqueta
         this.encordado = encordado;
     }
     
-    public double calcularPotencia(int longitud)
+    public double calcularPotencia(double longitud)
     {
-        double potencia=(double)mapaLongitudPotencia.get((Integer)longitud);
+        double potencia=(double)mapaLongitudPotencia.get((Double)longitud);
         return potencia;
     }
 
-    public double calcularControl(int TamCabeza)
+    public double calcularControl(double TamCabeza)
     {
-        double control=(double)mapaCabezaControl.get((Integer)TamCabeza);
+        double control=(double)mapaCabezaControl.get((Double)TamCabeza);
         return control;
     }
     
-    public double calcularVelocidad(int peso)
+    public double calcularVelocidad(double peso)
     {
-        double velocidad=(double)mapaPesoVelocidad.get((Integer)peso);
+        double velocidad=(double)mapaPesoVelocidad.get((Double)peso);
         return velocidad;
     }
      

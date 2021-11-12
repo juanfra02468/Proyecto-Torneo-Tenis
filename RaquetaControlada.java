@@ -13,21 +13,21 @@ public class RaquetaControlada extends RaquetaGenerica
     /**
      * Constructor for objects of class RaquetaPotente
      */
-    public RaquetaControlada(String modelo, int peso, int longitud, int tamañoCabeza, Encordado encordado)
+    public RaquetaControlada(String modelo, double peso, double longitud, double tamañoCabeza, Encordado encordado)
     {
         super(modelo, peso, longitud, tamañoCabeza, encordado);
         this.multiplicadorVelocidad = 1.2;
     }
     
     @Override
-    public double calcularControl (int tamañoCabeza)
+    public double calcularControl (double tamañoCabeza)
     {
         double control = super.getEncordado().getMultiplicadorControl();
         double resultado = super.calcularControl(tamañoCabeza);
         return control*resultado;
     }
     @Override
-    public double calcularVelocidad (int peso)
+    public double calcularVelocidad (double peso)
     {
         double resultado = super.calcularVelocidad(peso);
         return multiplicadorVelocidad*resultado;
