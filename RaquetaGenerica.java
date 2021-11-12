@@ -1,11 +1,14 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
+
 /**
- * Abstract class RaquetaGenerica - write a description of the class here
+ * Descripción
  * 
- * @author: 
- * Date: 
+ * @author David Bonilla
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @version
  */
 public abstract class RaquetaGenerica implements Raqueta
 {
@@ -36,32 +39,33 @@ public abstract class RaquetaGenerica implements Raqueta
         320.0, 4.0, 
         340.0, 2.0
     );
+    
     /**
      * Constructor parametrizado de la clase RaquetaGenerica
-     * Este constructor crea un nuevo objeto de la clase RaquetaGenerica con los valores pasados por parametro
+     * Este constructor crea un nuevo objeto de la clase RaquetaGenerica con los valores 
+     * pasados por parametro
      */    
-    public RaquetaGenerica(String modelo, double peso, double longitud, double tamañoCabeza, Encordado encordado)
-    {
+    public RaquetaGenerica(String modelo, double peso, double longitud, 
+                           double tamañoCabeza, Encordado encordado){
         this.modelo = modelo;
         this.peso = peso;
         this.longitud = longitud;
         this.tamañoCabeza = tamañoCabeza;
         this.encordado = encordado;
     }
+    
     /**
-     * Este método devuelve el modelo de la Raqueta
-     * @return String, que hace referencia al modelo de la raqueta
-     */ 
-    public String getModelo()
-    {
+    * Este método devuelve el modelo de la Raqueta
+    * @return el modelo de la raqueta
+    */ 
+    public String getModelo(){
         return modelo;
     }
       /**
      * Este método permite cambiar el modelo de la raqueta
      * @param modelo Hace referencia al nuevo modelo de la raqueta
      */     
-    public void setModelo(String modelo)
-    {
+    public void setModelo(String modelo){
         this.modelo = modelo;
     }
     /**
