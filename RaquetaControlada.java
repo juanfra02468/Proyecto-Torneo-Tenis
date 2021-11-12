@@ -37,7 +37,7 @@ public class RaquetaControlada extends RaquetaGenerica
     public String getTipo(){
         StringBuilder builder = new StringBuilder();
         builder.append("    ** RaquetaControlada(Encordado:");
-        builder.append(getEncordado()+")\n");
+        builder.append(getEncordado());
         builder.append(" (MultiplicadorDePotencia: ");
         builder.append(getEncordado().getMultiplicadorPotencia()+")");
         builder.append(" (MultiplicadorDeControl: ");

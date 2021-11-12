@@ -71,15 +71,6 @@ public class Campeonato
         System.out.println("## CAMPEONATO ANULADO POR FALTA DE RAQUETAS ");
         }
     }
-    /**
-     * Metodo encargado de asignar las zapatillas a los competidores a través del metodo elegirZapatillaTenista de la clase tenista.
-     */
-    public void buscarZapatillaTenista(){
-
-        for (Tenista jugadores: competidores) {
-           jugadores.elegirZapatillaTenista(zapatillasCampeonato);
-        }
-    }
 
     /**
      * Método que simula un partido entre dos tenistas
@@ -92,6 +83,8 @@ public class Campeonato
         System.out.println(t1.getZapatilla().toString());
         System.out.println("## Tenista2 ---->>>: "+t2.getNombre());
         System.out.println(t2.getZapatilla().toString());
+        t1.elegirZapatillaTenista(zapatillasCampeonato);
+        t2.elegirZapatillaTenista(zapatillasCampeonato);
         t1.jugar(t2);      
     }
     /**
@@ -105,7 +98,6 @@ public class Campeonato
         System.out.println("***** Inicio del campeonato: "+nombre+" *****\n");
         System.out.println("***** Listado de competidores: ");
         listaTenistas_competidores();
-        buscarZapatillaTenista();
         while(competidores.size() != 1){
            System.out.println("\n"); 
            System.out.println("***** Ronda---->>>: "+i);
