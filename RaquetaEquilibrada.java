@@ -21,15 +21,15 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     }
     
     @Override
-    public double calcularPotencia (double longitud)
+    public double calcularPotencia ()
     {
-        double resultado = super.calcularPotencia(longitud);
+        double resultado = super.calcularPotencia();
         return multiplicadorPotencia*resultado;
     }
     @Override
-    public double calcularControl (double tamañoCabeza)
+    public double calcularControl ()
     {
-        double resultado = super.calcularControl(tamañoCabeza);
+        double resultado = super.calcularControl();
         return multiplicadorControl*resultado;
     }
     

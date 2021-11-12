@@ -25,7 +25,7 @@ public class Tenista
 
     /**
      * Constructor parametrizado de la clase Tenista
-     * Este constructor crea un nuevo objeto de la clase Tenista e invoca al constructor de la clase Zapatilla, con los valores pasados por parametro
+     * Crea un nuevo objeto de la clase Tenista e invoca al constructor de la clase Zapatilla, con los valores pasados por parametro
      */     
     public Tenista(String nombre, ZapatillaGenerica zapatilla, double saque,
     double resto,int ranking, String pais, double numPie)
@@ -41,15 +41,15 @@ public class Tenista
         this.raqueta = null;
     }
     /**
-     * Este método invoca al método calcularValorSaque de la clase Zapatilla y almacena el resultado en el campo puntosAcumulados
+     * Invoca al método calcularValorSaque de la clase Zapatilla y suma el resultado al campo puntosAcumulados
      */   
     private void sacar()
     {   
         this.puntosAcumulados += this.calcularSaque();
     }
     /**
-     * Este método compara el resto de un tenista con el saque del otro, dependiendo del resultado, el tenista que resta puede aumentar sus puntos o no
-     * @param t1 Hace referencia al Tenista que saca
+     * Compara el resto de un tenista con el saque del otro, dependiendo del resultado, el tenista que resta puede aumentar sus puntos o no
+     * @param t1 El Tenista que saca
      */        
     private void restar(Tenista t1)
     {
@@ -58,24 +58,37 @@ public class Tenista
         }
     }
     
-    
+    /**
+     * Calcula el valor de resto del tenista según su zapatilla y raqueta
+     * @return valor de resto del tenista según su zapatilla y raqueta
+     */
     private double calcularResto (){
-        return zapatilla.calcularValorResto()*raqueta.calcularVelocidad(raqueta.getPeso())*raqueta.calcularControl(raqueta.getTamañoCabeza())*resto;
+        return zapatilla.calcularValorResto()*raqueta.calcularVelocidad()*raqueta.calcularControl()*resto;
     }
 
+    /**
+     * Calcula el valor de saque del tenista según su zapatilla y raqueta
+     * @return valor de saque del tenista según su zapatilla y raqueta
+     */
     private double calcularSaque (){
-        return raqueta.calcularVelocidad(raqueta.getPeso())*raqueta.calcularPotencia(raqueta.getLongitud())*zapatilla.calcularValorSaque()*saque;
+        return raqueta.calcularVelocidad()*raqueta.calcularPotencia()*zapatilla.calcularValorSaque()*saque;
     }
     
-   public void jugar(Tenista t2)
+    /**
+     * Simula un partido entre dos tenistas
+     * @param t2 Tenista contrincante
+     */
+    public void jugar(Tenista t2)
     {
         this.sacar();
         t2.restar(this);
         t2.sacar();
         this.restar(t2);  
     }
+    
     /**
-     * Este método muestra todos los campos de un Tenista
+     * Devuelve una cadena con todos los campos de un Tenista
+     * @return cadena con todos los campos de un Tenista
      */         
        public String toString()
     {
@@ -96,111 +109,125 @@ public class Tenista
         builder.append(this.zapatilla.toString());
         return builder.toString();
     }
+    
     /**
-     * Este método devuelve el valor del resto de un Tenista
-     * @return Double, que hacer referencia al valor del resto del Tenista
+     * Devuelve el valor del resto de un Tenista
+     * @return el valor del resto del Tenista
      */     
     public double getResto()
     {
         return this.resto;
     }
+    
     /**
-     * Este método devuelve el valor del saque de un Tenista
-     * @return Double, que hace referencia al valor del saque del Tenista
+     * Devuelve el valor del saque de un Tenista
+     * @return el valor del saque del Tenista
      */     
     public double getSaque()
     {
         return this.saque;
     }
+    
     /**
-     * Este método devuelve los puntos acumulados de un Tenista
-     * @return Double, que hace referencia a los puntos acumulados de un Tenista
+     * Devuelve los puntos acumulados de un Tenista
+     * @return los puntos acumulados de un Tenista
      */     
     public double getPuntosAcumulados()
     {
         return this.puntosAcumulados;
     }
+    
     /**
-     * Este método permite poner a 0 el campo puntos acumulados de un Tenista
+     * Permite poner a 0 el campo puntos acumulados de un Tenista
      */        
     public void resetPuntosAcumulados()
     {
         this.puntosAcumulados = 0;
     }
+    
     /**
-     * Este método devuelve el nombre de un Tenista
-     * @return String, que hace referencia al nombre de un Tenista
+     * Devuelve el nombre de un Tenista
+     * @return el nombre de un Tenista
      */    
     public String getNombre()
     {
         return this.nombre;
     }
+    
     /**
-     * Este método permite cambiar la posicion de eliminado del Tenista
-     * @param posEliminado hace referencia a la posicion de eliminado en el torneo 
+     * Permite cambiar la posicion de eliminado del Tenista
+     * @param posEliminado posicion de eliminado en el torneo 
      */     
     public void setposEliminado(int posEliminado){
         this.posEliminado = posEliminado;
     }
+    
     /**
-     * Este método devuelve la posicion de eliminacion del tenista
-     * @return int, que hace referencia a la posicion en la que fue eliminado en el torneo
+     * Devuelve la posicion de eliminacion del tenista
+     * @return posicion en la que fue eliminado en el torneo
      */     
     public int getposEliminado()
     {
         return this.posEliminado;
     }
+    
     /**
-     * Este método devuelve el numero de pie de un Tenista
-     * @return Double, que hace referencia al numero de pie de un Tenista
+     * Devuelve el numero de pie de un Tenista
+     * @return el numero de pie de un Tenista
      */  
     public double getNumPie ()
     {
         return numPie;
     }
+    
     /**
-     * Este método permite cambiar la zapatilla del Tenista
-     * @param  zapatilla hace referencia a la zapatilla que queremos que use el tenista ahora. 
+     * Permite cambiar la zapatilla del Tenista
+     * @param  zapatilla zapatilla que queremos que use el tenista ahora
      */  
     public void setZapatilla (Zapatilla zapatilla)
     {
         this.zapatilla = zapatilla;
     }
+    
     /**
-     * Este método devuelve la zapatilla usada por un tenista
-     * @return Zapatilla, que hace referencia a la zapatilla usada por un tenista.
+     * Devuelve la zapatilla usada por un tenista
+     * @return zapatilla usada por un tenista
      */  
     public Zapatilla getZapatilla ()
     {
         return this.zapatilla;
     }
+    
     /**
-     * Este método permite cambiar el numero de pie de un tenista.
-     * @param  numPie hace referencia al nuevo numero de pie del tenista.
+     * Permite cambiar el numero de pie de un tenista.
+     * @param  numPie El nuevo numero de pie del tenista.
      */  
     public void setNumPie (double numPie)
     {
         this.numPie = numPie;
     }
+    
     /**
-     * Este método devuelve la raqueta usada por un tenista
-     * @return Raqueta, que hace referencia a la raqueta usada por un tenista.
+     * Devuelve la raqueta usada por un tenista
+     * @return la raqueta usada por un tenista.
      */  
     public Raqueta getRaqueta ()
     {
         return this.raqueta;
     }
+    
     /**
-     * Este método permite cambiar la raqueta de un tenista
-     * @param raqueta hace referencia a la nueva raqueta que queremos que use el tenista. 
+     * Permite cambiar la raqueta de un tenista
+     * @param raqueta la nueva raqueta que queremos que use el tenista. 
      */  
     public void setRaqueta (Raqueta raqueta)
     {
         this.raqueta = raqueta;
     }
+    
     /**
-     * Este método realiza la asignacion de una zapatilla a un tenista dependiendo de su numero de pie en el Campeonato.
-     * @param zapatillasCampeonato hace referencia a la lista de Zapatillas que pueden elegir los tenistas en el campeonato.
+     * Realiza la asignacion de una zapatilla a un tenista dependiendo de su numero de pie en el Campeonato.
+     * @param zapatillasCampeonato Lista de Zapatillas que pueden elegir los tenistas en el campeonato.
      */  
     public boolean elegirZapatillaTenista (ArrayList <Zapatilla> zapatillasCampeonato){
         boolean bandera = false;

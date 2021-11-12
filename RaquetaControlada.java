@@ -20,16 +20,16 @@ public class RaquetaControlada extends RaquetaGenerica
     }
     
     @Override
-    public double calcularControl (double tamañoCabeza)
+    public double calcularControl ()
     {
         double control = super.getEncordado().getMultiplicadorControl();
-        double resultado = super.calcularControl(tamañoCabeza);
+        double resultado = super.calcularControl();
         return control*resultado;
     }
     @Override
-    public double calcularVelocidad (double peso)
+    public double calcularVelocidad ()
     {
-        double resultado = super.calcularVelocidad(peso);
+        double resultado = super.calcularVelocidad();
         return multiplicadorVelocidad*resultado;
     }
     

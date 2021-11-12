@@ -21,16 +21,16 @@ public class RaquetaPotente extends RaquetaGenerica
     }
     
     @Override
-    public double calcularPotencia (double longitud)
+    public double calcularPotencia ()
     {
         double potencia = super.getEncordado().getMultiplicadorPotencia();
-        double resultado = super.calcularPotencia(longitud);
+        double resultado = super.calcularPotencia();
         return potencia*resultado;
     }
     @Override
-    public double calcularVelocidad (double peso)
+    public double calcularVelocidad ()
     {
-        double resultado = super.calcularVelocidad(peso);
+        double resultado = super.calcularVelocidad();
         return multiplicadorVelocidad*resultado;
     }
 

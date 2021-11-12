@@ -42,8 +42,8 @@ public abstract class RaquetaGenerica implements Raqueta
     
     /**
      * Constructor parametrizado de la clase RaquetaGenerica
-     * Este constructor crea un nuevo objeto de la clase RaquetaGenerica con los valores 
-     * pasados por parametro
+     * Crea un nuevo objeto de la clase RaquetaGenerica con los valores 
+     * pasados por parámetro
      */    
     public RaquetaGenerica(String modelo, double peso, double longitud, 
                            double tamañoCabeza, Encordado encordado){
@@ -54,64 +54,39 @@ public abstract class RaquetaGenerica implements Raqueta
         this.encordado = encordado;
     }
     
-    /**
-    * Este método devuelve el modelo de la Raqueta
-    * @return el modelo de la raqueta
-    */ 
     public String getModelo(){
         return modelo;
     }
-      /**
-     * Este método permite cambiar el modelo de la raqueta
-     * @param modelo Hace referencia al nuevo modelo de la raqueta
-     */     
+         
     public void setModelo(String modelo){
         this.modelo = modelo;
     }
-    /**
-     * Este método devuelve el peso de la Raqueta
-     * @return int, que hace referencia al peso de la raqueta
-     */ 
+     
     public double getPeso()
     {
         return peso;
     }
-    /**
-     * Este método permite cambiar el peso de la raqueta
-     * @param peso Hace referencia al nuevo peso de la raqueta
-     */     
+        
     public void setPeso(double peso)
     {
         this.peso = peso;
     }
-    /**
-     * Este método devuelve la longitud de la raqueta
-     * @return int, que hace referencia a la longitud de la raqueta
-     */ 
+     
     public double getLongitud()
     {
         return longitud;
     }
-     /**
-     * Este método permite cambiar la longitud de la raqueta
-     * @param longitud Hace referencia a la nueva longitud de la raqueta 
-     */     
+         
     public void setLongitud(double longitud)
     {
         this.longitud = longitud;
     }
-     /**
-     * Este método devuelve el tamaño de la cabeza de la raqueta
-     * @return int, que hace referencia a el tamaño de la cabeza de la raqueta
-     */ 
+    
     public double getTamañoCabeza()
     {
         return tamañoCabeza;
     }
-    /**
-     * Este método permite cambiar eltamaño de la cabeza de la raqueta
-     * @param tamañoCabeza Hace referencia al nuevo tamaño de la cabeza de la raqueta
-     */     
+       
     public void setTamañoCabeza(double tamañoCabeza)
     {
         this.tamañoCabeza = tamañoCabeza;
@@ -127,19 +102,19 @@ public abstract class RaquetaGenerica implements Raqueta
         this.encordado = encordado;
     }
     
-    public double calcularPotencia(double longitud)
+    public double calcularPotencia()
     {
         double potencia=(double)mapaLongitudPotencia.get((Double)longitud);
         return potencia;
     }
 
-    public double calcularControl(double TamCabeza)
+    public double calcularControl()
     {
-        double control=(double)mapaCabezaControl.get((Double)TamCabeza);
+        double control=(double)mapaCabezaControl.get((Double)tamañoCabeza);
         return control;
     }
     
-    public double calcularVelocidad(double peso)
+    public double calcularVelocidad()
     {
         double velocidad=(double)mapaPesoVelocidad.get((Double)peso);
         return velocidad;
@@ -157,17 +132,17 @@ public abstract class RaquetaGenerica implements Raqueta
         builder.append("        longitud: ");
         builder.append(getLongitud() +", ");
         builder.append(" potencia asociada: ");
-        builder.append(calcularPotencia(getLongitud()));
+        builder.append(calcularPotencia());
         builder.append("\n");
         builder.append("        tamaño: ");
         builder.append(getTamañoCabeza() +", ");
         builder.append(" control asociado: ");
-        builder.append(calcularControl(getTamañoCabeza()));
+        builder.append(calcularControl());
         builder.append("\n");
         builder.append("        peso: ");
         builder.append(getPeso() +", ");
         builder.append(" velocidad asociada: ");
-        builder.append(calcularVelocidad(getPeso())+"]");
+        builder.append(calcularVelocidad()+"]");
         return builder.toString();
     }
           
