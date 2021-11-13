@@ -147,5 +147,21 @@ public abstract class RaquetaGenerica implements Raqueta
         builder.append(calcularVelocidad()+"]");
         return builder.toString();
     }
-          
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if(this == obj){
+            return true; 
+        }
+        if(!(obj instanceof RaquetaGenerica)){
+            return false; 
+        }
+        
+        RaquetaGenerica other = (RaquetaGenerica) obj;
+        
+        return getModelo().equals(other.getModelo()) && getEncordado().equals(other.getEncordado()) &&
+                getPeso()==other.getPeso() && getLongitud()==other.getLongitud() && 
+                getTamañoCabeza()==other.getTamañoCabeza();
+    }
 }

@@ -13,7 +13,7 @@ public class ZapatillasConAgarre extends ZapatillaGenerica
     // atributo privado propio de la subclase
     private double multiplicadorResto;
 
-   /**
+    /**
      * Constructor Parametrizado de la clase ZapatillasConAgarre
      * Este constructor crea un nuevo objeto de la clase ZapatillasConAgarre con los valores 
      * pasados por parametro.
@@ -38,14 +38,46 @@ public class ZapatillasConAgarre extends ZapatillaGenerica
     }
     /**
      * Funcion:Metodo heredado de la super clase ZapatillaGenerica, en el que devolvemos 
-     * el tipo de zapatillas caracteristico de esta subclase ,
-     * en este caso devolvemos que son Zapatillad de Agarre.
-     * @return el tipo de zapatillas de la subclase actual.
+     * el tipo de zapatillas caracteristico de esta subclase 
+     * @return el tipo de zapatillas de la subclase actual
      */
     @Override
     public String getTipo()
     {
         return "*** ZapatillasConAgarre ";
     }
-
+    /**
+     * Devuelve el multiplicador de resto de la zapatilla
+     * @return el multiplicador de resto
+     */
+    public double getMultiplicadorResto()
+    {
+        return this.multiplicadorResto;
+    }
+    /**
+     * Permite cambiar el multiplicador de resto de la zapatilla
+     * @param multiplicadorResto El nuevo multiplicador de resto
+     */
+    public void setMultiplicadorResto(double multiplicadorResto)
+    {
+        this.multiplicadorResto = multiplicadorResto;
+    }
+    /**
+     * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
+     * false si algún campo es diferente o no son del mismo tipo
+     */
+    @Override
+    public boolean equals(Object obj)
+    {
+        if(this == obj){
+            return true;
+        }
+        if(!(obj instanceof ZapatillasConAgarre)){
+            return false;
+        }
+        
+        ZapatillasConAgarre other = (ZapatillasConAgarre) obj;
+        
+        return super.equals(other) && getMultiplicadorResto()==other.getMultiplicadorResto();
+    }
 }

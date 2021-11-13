@@ -97,4 +97,20 @@ public abstract class ZapatillaGenerica implements Zapatilla
     }
     
     public abstract String getTipo();
+    
+    @Override
+    public boolean equals(Object obj)
+    {
+        if(this == obj){
+            return true; 
+        }
+        if(!(obj instanceof ZapatillaGenerica)){
+            return false; 
+        }
+        
+        ZapatillaGenerica other = (ZapatillaGenerica) obj;
+        
+        return getModelo().equals(other.getModelo()) && getNumero()==other.getNumero() 
+                    && getValor()==other.getValor();
+    }
 }

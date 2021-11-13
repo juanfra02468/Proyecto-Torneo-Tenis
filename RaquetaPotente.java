@@ -25,6 +25,10 @@ public class RaquetaPotente extends RaquetaGenerica
         this.multiplicadorVelocidad = 1.5;
     }
     
+    /**
+     * Multiplica la potencia asociada a la raqueta según su longitud
+     * @return potencia asociada a la raqueta según su longitud
+     */
     @Override
     public double calcularPotencia ()
     {
@@ -32,6 +36,10 @@ public class RaquetaPotente extends RaquetaGenerica
         double resultado = super.calcularPotencia();
         return potencia*resultado;
     }
+    /**
+     * Multiplica la velocidad asociada a la raqueta según su peso
+     * @return velocidad asociada a la raqueta según su peso
+     */
     @Override
     public double calcularVelocidad ()
     {
@@ -39,6 +47,26 @@ public class RaquetaPotente extends RaquetaGenerica
         return multiplicadorVelocidad*resultado;
     }
 
+    /**
+     * Devuelve el multiplicador de velocidad de la raqueta
+     * @return el multiplicador de velocidad
+     */
+    public double getMultiplicadorVelocidad()
+    {
+        return multiplicadorVelocidad;
+    }
+    /**
+     * Permite cambiar el multiplicador de velocidad de la raqueta
+     * @param multiplicadorVelocidad El nuevo multiplicador de velocidad
+     */
+    public void setMultiplicadorVelocidad(double multiplicadorVelocidad)
+    {
+        this.multiplicadorVelocidad = multiplicadorVelocidad;
+    }
+    /**
+     * Devuelve una cadena con el tipo de raqueta que es y los campos especificos de la subclase
+     * @return el tipo de raqueta y sus campos especificos
+     */
     @Override
     public String getTipo(){
         StringBuilder builder = new StringBuilder();
@@ -52,4 +80,22 @@ public class RaquetaPotente extends RaquetaGenerica
         return builder.toString();
     }
   
+    /**
+     * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
+     * false si algún campo es diferente o no son del mismo tipo
+     */
+    @Override
+    public boolean equals(Object obj)
+    {
+        if(this == obj){
+            return true; 
+        }
+        if(!(obj instanceof RaquetaPotente)){
+            return false; 
+        }
+        
+        RaquetaPotente other = (RaquetaPotente) obj;
+        
+        return super.equals(other) && getMultiplicadorVelocidad()==other.getMultiplicadorVelocidad();
+    }
 }

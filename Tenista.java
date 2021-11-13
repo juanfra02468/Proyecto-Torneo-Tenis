@@ -116,42 +116,6 @@ public class Tenista
         builder.append(this.zapatilla.toString());
         return builder.toString();
     }
-    
-    /**
-     * Devuelve el valor del resto de un Tenista
-     * @return el valor del resto del Tenista
-     */     
-    public double getResto()
-    {
-        return this.resto;
-    }
-    
-    /**
-     * Devuelve el valor del saque de un Tenista
-     * @return el valor del saque del Tenista
-     */     
-    public double getSaque()
-    {
-        return this.saque;
-    }
-    
-    /**
-     * Devuelve los puntos acumulados de un Tenista
-     * @return los puntos acumulados de un Tenista
-     */     
-    public double getPuntosAcumulados()
-    {
-        return this.puntosAcumulados;
-    }
-    
-    /**
-     * Permite poner a 0 el campo puntos acumulados de un Tenista
-     */        
-    public void resetPuntosAcumulados()
-    {
-        this.puntosAcumulados = 0;
-    }
-    
     /**
      * Devuelve el nombre de un Tenista
      * @return el nombre de un Tenista
@@ -160,7 +124,77 @@ public class Tenista
     {
         return this.nombre;
     }
-    
+    /**
+     * Permite cambiar el nombre de un Tenista
+     * @param nombre El nuevo nombre del Tenista
+     */
+    public void setNombre(String nombre)
+    {
+        this.nombre = nombre;
+    }
+    /**
+     * Devuelve el valor del resto de un Tenista
+     * @return el valor del resto del Tenista
+     */     
+    public double getResto()
+    {
+        return this.resto;
+    }
+    /**
+     * Permite cambiar el resto de un Tenista
+     * @param nombre El nuevo resto del Tenista
+     */
+    public void setResto(double resto)
+    {
+        this.resto = resto;
+    }
+    /**
+     * Devuelve el valor del saque de un Tenista
+     * @return el valor del saque del Tenista
+     */     
+    public double getSaque()
+    {
+        return this.saque;
+    }
+    /**
+     * Permite cambiar el saque de un Tenista
+     * @param nombre El nuevo saque del Tenista
+     */
+    public void setSaque(double saque)
+    {
+        this.saque = saque;
+    }
+    /**
+     * Devuelve los puntos acumulados de un Tenista
+     * @return los puntos acumulados de un Tenista
+     */     
+    public double getPuntosAcumulados()
+    {
+        return this.puntosAcumulados;
+    }
+    /**
+     * Permite cambiar los puntosAcumulados de un Tenista
+     * @param nombre Nuevos puntosAcumulados del Tenista
+     */
+    public void setPuntosAcumulados(double puntosAcumulados)
+    {
+        this.puntosAcumulados = puntosAcumulados;
+    }
+    /**
+     * Permite poner a 0 el campo puntos acumulados de un Tenista
+     */        
+    public void resetPuntosAcumulados()
+    {
+        this.puntosAcumulados = 0;
+    }
+    /**
+     * Devuelve la posicion de eliminado de un Tenista
+     * @return la posicion de eliminado de un Tenista
+     */     
+    public int getPosEliminado()
+    {
+        return this.posEliminado;
+    }
     /**
      * Permite cambiar la posicion de eliminado del Tenista
      * @param posEliminado posicion de eliminado en el torneo 
@@ -168,16 +202,21 @@ public class Tenista
     public void setposEliminado(int posEliminado){
         this.posEliminado = posEliminado;
     }
-    
     /**
-     * Devuelve la posicion de eliminacion del tenista
-     * @return posicion en la que fue eliminado en el torneo
+     * Devuelve el ranking de un Tenista
+     * @return el ranking de un Tenista
      */     
-    public int getposEliminado()
+    public int getRanking()
     {
-        return this.posEliminado;
+        return this.ranking;
     }
-    
+    /**
+     * Permite cambiar el ranking de eliminado del Tenista
+     * @param ranking el ranking un tenista
+     */     
+    public void setRanking(int ranking){
+        this.ranking = ranking;
+    }
     /**
      * Devuelve el numero de pie de un Tenista
      * @return el numero de pie de un Tenista
@@ -186,16 +225,13 @@ public class Tenista
     {
         return numPie;
     }
-    
     /**
-     * Permite cambiar la zapatilla del Tenista
-     * @param  zapatilla zapatilla que queremos que use el tenista ahora
-     */  
-    public void setZapatilla (Zapatilla zapatilla)
-    {
-        this.zapatilla = zapatilla;
+     * Permite cambiar la posicion de eliminado del Tenista
+     * @param posEliminado posicion de eliminado en el torneo 
+     */     
+    public void setNumPie(double numPie){
+        this.numPie = numPie;
     }
-    
     /**
      * Devuelve la zapatilla usada por un tenista
      * @return zapatilla usada por un tenista
@@ -204,16 +240,14 @@ public class Tenista
     {
         return this.zapatilla;
     }
-    
     /**
-     * Permite cambiar el numero de pie de un tenista.
-     * @param  numPie el nuevo numero de pie del tenista.
+     * Permite cambiar la zapatilla del Tenista
+     * @param  zapatilla zapatilla que queremos que use el tenista ahora
      */  
-    public void setNumPie (double numPie)
+    public void setZapatilla (Zapatilla zapatilla)
     {
-        this.numPie = numPie;
-    }
-    
+        this.zapatilla = zapatilla;
+    }    
     /**
      * Devuelve la raqueta usada por un tenista
      * @return la raqueta usada por un tenista.
@@ -222,7 +256,6 @@ public class Tenista
     {
         return this.raqueta;
     }
-    
     /**
      * Permite cambiar la raqueta de un tenista
      * @param raqueta la nueva raqueta que queremos que use el tenista. 
@@ -231,6 +264,23 @@ public class Tenista
     {
         this.raqueta = raqueta;
     }
+    /**
+     * Devuelve el pais de un tenista
+     * @return el pais de un tenista.
+     */  
+    public String getPais()
+    {
+        return pais;
+    }
+    /**
+     * Permite cambiar el pais de un Tenista
+     * @param nombre El nuevo pais del Tenista
+     */
+    public void setPais(String pais)
+    {
+        this.pais = pais;
+    }
+    
     
     /**
      * Realiza la asignacion de una zapatilla a un tenista dependiendo de su numero de pie 
@@ -250,5 +300,23 @@ public class Tenista
                     }
                 }
                 return bandera;
-            }
+    }
+    
+    public boolean equals(Object obj)
+    {
+        if(this == obj){
+            return true; 
+        }
+        if(!(obj instanceof Tenista)){
+            return false; 
+        }
+        
+        Tenista other = (Tenista) obj;
+        
+        return getNombre().equals(other.getNombre()) && getZapatilla().equals(other.getZapatilla()) && 
+                getSaque()==other.getSaque() && getResto()==other.getResto() && getRanking()==other.getRanking()
+                && getPais().equals(other.getPais()) && getPuntosAcumulados()==other.getPuntosAcumulados() &&
+                getPosEliminado()==other.getPosEliminado() && getNumPie()==other.getNumPie() &&
+                getRaqueta().equals(other.getRaqueta());
+    }
 }

@@ -39,13 +39,45 @@ public class ZapatillasAmortiguadas extends ZapatillaGenerica
     }
     /**
      * Funcion:Metodo heredado de la super clase ZapatillaGenerica, en el que devolvemos 
-     * el tipo de zapatillas caracteristico de esta subclase , 
-     * en este caso devolvemos que son Zapatillad de Amortiguacion.
-     * @return el tipo de zapatillas de la subclase actual.
+     * el tipo de zapatillas caracteristico de esta subclase 
+     * @return el tipo de zapatillas de la subclase actual
      */
         @Override
     public String getTipo(){
         return "*** ZapatillasAmortiguadas ";
     }
-
+    /**
+     * Devuelve el multiplicador de saque de la zapatilla
+     * @return el multiplicador de saque 
+     */
+    public double getMultiplicadorSaque()
+    {
+        return this.multiplicadorSaque;
+    }
+    /**
+     * Permite cambiar el multiplicador de saque de la zapatilla
+     * multiplicadorSaque El nuevo multiplicador de saque
+     */
+    public void setMultiplicadorSaque(double multiplicadorSaque)
+    {
+        this.multiplicadorSaque = multiplicadorSaque;
+    }
+    /**
+     * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
+     * false si algún campo es diferente o no son del mismo tipo
+     */
+    @Override
+    public boolean equals(Object obj)
+    {
+        if(this == obj){
+            return true;
+        }
+        if(!(obj instanceof ZapatillasAmortiguadas)){
+            return false;
+        }
+        
+        ZapatillasAmortiguadas other = (ZapatillasAmortiguadas) obj;
+        
+        return super.equals(other) && getMultiplicadorSaque()==other.getMultiplicadorSaque();
+    }
 }

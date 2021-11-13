@@ -98,4 +98,10 @@ public interface Raqueta
      * Devuelve una cadena con el tipo específico de raqueta
      */
     public String getTipo();
+    
+    /**
+     * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
+     * false si algún campo es diferente o no son del mismo tipo
+     */
+    public boolean equals(Object obj);
 }
