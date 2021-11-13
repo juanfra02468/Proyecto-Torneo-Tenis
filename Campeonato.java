@@ -93,13 +93,14 @@ public class Campeonato
             System.out.println(t1.getZapatilla().toString());
         }        
     }
+    
     /**
      * Método que muestra por pantalla el avance de los partidos, las rondas, 
      * quien ha ganado y el listado de eliminados
      */
     public void controlDeCampeonato()
     {
-    System.out.println("***** Inicio del campeonato: "+nombre+" *****\n");
+        System.out.println("***** Inicio del campeonato: "+nombre+" *****\n");
         if (asignarRaquetas()){
             mostrarRaquetas();
             int i = 1;
@@ -120,8 +121,7 @@ public class Campeonato
         }
         else{
         System.out.println("## CAMPEONATO ANULADO POR FALTA DE RAQUETAS ");            
-        }
-    
+        } 
     }
     /**
      * Método que muestra el ganador del torneo

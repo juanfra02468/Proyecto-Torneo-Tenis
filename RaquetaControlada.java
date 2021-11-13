@@ -10,7 +10,6 @@
 
 public class RaquetaControlada extends RaquetaGenerica
 {
-    // instance variables - replace the example below with your own
     private double multiplicadorVelocidad;
 
       /**
