@@ -1,19 +1,26 @@
 
 /**
- * Write a description of class RaquetaEquilibrada here.
+ * Esta clase representa las raquetas equilibrada, es una subclase de raqueta generica
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 13-11-2021
  */
+
 public class RaquetaEquilibrada extends RaquetaGenerica
 {
     // instance variables - replace the example below with your own
     private double multiplicadorControl;
     private double multiplicadorPotencia;
-    /**
-     * Constructor for objects of class RaquetaPotente
+      /**
+     * Constructor Parametrizado de la clase RaquetaEquilibrada
+     * Este constructor crea un nuevo objeto de la clase RaquetaEquilibrada 
+     * con los valores pasados por parametro.
      */
-    public RaquetaEquilibrada(String modelo, double peso, double longitud, double tamañoCabeza, Encordado encordado, double multiplicadorPotencia, double multiplicadorControl)
+    public RaquetaEquilibrada(String modelo, double peso, double longitud, double tamañoCabeza,
+                              Encordado encordado, double multiplicadorPotencia, 
+                              double multiplicadorControl)
     {
         super(modelo, peso, longitud, tamañoCabeza, encordado);
         this.multiplicadorPotencia = multiplicadorPotencia;

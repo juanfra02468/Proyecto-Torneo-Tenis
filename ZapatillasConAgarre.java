@@ -1,10 +1,13 @@
 
 /**
- * Write a description of class DeAgarre here.
+ * Esta clase representa las zapatillas del tipo agarre, es una subclase de zapatilla generica
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 13-11-2021
  */
+
 public class ZapatillasConAgarre extends ZapatillaGenerica
 {
     // atributo privado propio de la subclase
@@ -12,7 +15,8 @@ public class ZapatillasConAgarre extends ZapatillaGenerica
 
    /**
      * Constructor Parametrizado de la clase ZapatillasConAgarre
-     * Este constructor crea un nuevo objeto de la clase ZapatillasConAgarre con los valores pasados por parametro.
+     * Este constructor crea un nuevo objeto de la clase ZapatillasConAgarre con los valores 
+     * pasados por parametro.
      */
     public ZapatillasConAgarre(String modelo, int numero, double valor)
     {
@@ -20,9 +24,10 @@ public class ZapatillasConAgarre extends ZapatillaGenerica
         this.multiplicadorResto=1.7;
     }
     /**
-     * Funcion:Metodo heredado de la super clase ZapatillaGenerica, al que multiplicamos, por el multiplicador característico
-     * de la subclase actual , para obtener el saque de un tenista con Zapatillas de tipo Agarre.
-     * @return devuelve el valor del saque del tenista con zapatillas de tipo Agarre.
+     * Funcion:Metodo heredado de la super clase ZapatillaGenerica, al que multiplicamos, 
+     * por el multiplicador característico de la subclase actual , para obtener el saque de 
+     * un tenista con Zapatillas de tipo Agarre.
+     * @return valor del saque del tenista con zapatillas de tipo Agarre.
      */
     @Override
     public double calcularValorResto()
@@ -32,9 +37,10 @@ public class ZapatillasConAgarre extends ZapatillaGenerica
         return valorResto;
     }
     /**
-     * Funcion:Metodo heredado de la super clase ZapatillaGenerica, en el que devolvemos el tipo de zapatillas 
-     * caracteristico de esta subclase , en este caso devolvemos que son Zapatillad de Agarre.
-     * @return devuelve el tipo de zapatillas de la subclase actual.
+     * Funcion:Metodo heredado de la super clase ZapatillaGenerica, en el que devolvemos 
+     * el tipo de zapatillas caracteristico de esta subclase ,
+     * en este caso devolvemos que son Zapatillad de Agarre.
+     * @return el tipo de zapatillas de la subclase actual.
      */
     @Override
     public String getTipo()

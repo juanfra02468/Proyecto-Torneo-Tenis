@@ -1,19 +1,25 @@
 
 /**
- * Write a description of class RaquetaControlada here.
+ * Esta clase representa las raquetas controladas, es una subclase de raqueta generica
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 13-11-2021
  */
+
 public class RaquetaControlada extends RaquetaGenerica
 {
     // instance variables - replace the example below with your own
     private double multiplicadorVelocidad;
 
-    /**
-     * Constructor for objects of class RaquetaPotente
+      /**
+     * Constructor Parametrizado de la clase RaquetaPotente
+     * Este constructor crea un nuevo objeto de la clase RaquetaPotente 
+     * con los valores pasados por parametro.
      */
-    public RaquetaControlada(String modelo, double peso, double longitud, double tamañoCabeza, Encordado encordado)
+    public RaquetaControlada(String modelo, double peso, double longitud, double tamañoCabeza,
+                             Encordado encordado)
     {
         super(modelo, peso, longitud, tamañoCabeza, encordado);
         this.multiplicadorVelocidad = 1.2;

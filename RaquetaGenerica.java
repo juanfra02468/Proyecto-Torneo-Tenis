@@ -3,13 +3,15 @@ import java.util.Map;
 import java.util.Iterator;
 
 /**
- * Descripción
+ * Esta clase representa la superclase de las subclases: RaquetaPotente, RaquetaEquilibrada y 
+ * RaquetaControlada
  * 
  * @author David Bonilla
  * @author Antonio Javier Hidalgo
  * @author Juan Francisco García
- * @version
+ * @version 13-11-2021
  */
+
 public abstract class RaquetaGenerica implements Raqueta
 {
     // instance variables - replace the example below with your own

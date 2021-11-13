@@ -1,10 +1,13 @@
 
 /**
- * Enumeration class Encordado - write a description of the enum class here
+ * Esta clase representa el tipo de encordado de cada raqueta siendo este ABIERTO O CERRADO
  * 
- * @author (your name here)
- * @version (version number or date here)
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 13-11-2021
  */
+
 public enum Encordado
 {
     ABIERTO (2.0, 2.2), CERRADO (1.8, 2.5);

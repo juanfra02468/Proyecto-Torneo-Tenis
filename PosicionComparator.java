@@ -1,11 +1,14 @@
+import java.util.Comparator;
 
 /**
- * Write a description of class PosicionComparator here.
+ * Comparador de posicion de eliminado.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 13-11-2021
  */
-import java.util.*;  
+ 
 class PosicionComparator implements Comparator<Tenista>{  
     public int compare(Tenista t1, Tenista t2)
     {

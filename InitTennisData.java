@@ -1,10 +1,13 @@
 
 /**
- * Clase que carga los datos con los que simular un campeonato de tenis
+ * Clase que carga los datos con los que simular un campeonato de tenis.
  * 
- * @author Equipo Docente DP 
- * @version 2.0
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 13-11-2021
  */
+
 public class InitTennisData {
 
     public InitTennisData(Campeonato campeonato) {

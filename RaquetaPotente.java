@@ -1,10 +1,13 @@
 
 /**
- * Write a description of class RaquetaPotente here.
+ * Esta clase representa las raquetas potentes, es una subclase de raqueta generica
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 13-11-2021
  */
+
 public class RaquetaPotente extends RaquetaGenerica
 {
     // atributo privado de la sublcase
@@ -12,9 +15,11 @@ public class RaquetaPotente extends RaquetaGenerica
 
       /**
      * Constructor Parametrizado de la clase RaquetaPotente
-     * Este constructor crea un nuevo objeto de la clase RaquetaPotente con los valores pasados por parametro.
+     * Este constructor crea un nuevo objeto de la clase RaquetaPotente 
+     * con los valores pasados por parametro.
      */
-    public RaquetaPotente(String modelo, double peso, double longitud, double tamañoCabeza, Encordado encordado)
+    public RaquetaPotente(String modelo, double peso, double longitud, double tamañoCabeza, 
+                          Encordado encordado)
     {
         super(modelo, peso, longitud, tamañoCabeza, encordado);
         this.multiplicadorVelocidad = 1.5;

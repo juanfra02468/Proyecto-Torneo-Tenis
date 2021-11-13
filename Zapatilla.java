@@ -1,10 +1,12 @@
 
 
 /**
- * Write a description of interface Zapatilla here.
+ * Esta clase representa la interfaz de zapatilla
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 13-11-2021
  */
 
 public interface Zapatilla
@@ -40,7 +42,8 @@ public interface Zapatilla
     public double calcularValorSaque();
     
     /**
-     * Devuelve el valor del resto de dicha zapatilla, cuando se invoca al metodo restar de la clase Tenista
+     * Devuelve el valor del resto de dicha zapatilla, cuando se invoca al metodo restar 
+     * de la clase Tenista
      * @return el valor del resto 
      */ 
     public double calcularValorResto();

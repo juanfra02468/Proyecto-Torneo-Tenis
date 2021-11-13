@@ -1,11 +1,14 @@
+import java.util.Comparator;  
 
 /**
- * Write a description of class PuntoAcumuladosComparator here.
+ * Comparador de puntos acumulados.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 13-11-2021
  */
-import java.util.*;  
+
 class PuntosAcumuladosComparator implements Comparator<Tenista>{  
     public int compare(Tenista t1, Tenista t2)
     {

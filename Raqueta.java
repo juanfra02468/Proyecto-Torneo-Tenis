@@ -1,6 +1,6 @@
 
 /**
- * Write a description of interface Raqueta here.
+ * Esta clase representa la interfaz de raqueta
  * 
  * @author David Bonilla
  * @author Antonio Javier Hidalgo
@@ -37,19 +37,19 @@ public interface Raqueta
        
     /**
      * Permite cambiar el modelo de la raqueta
-     * @param El nuevo modelo de la raqueta
+     * @param modelo el nuevo modelo de la raqueta
      */
     public void setModelo(String modelo);
     
     /**
      * Devuelve el peso de la Raqueta
-     * @return El peso de la raqueta
+     * @return el peso de la raqueta
      */
     public double getPeso();
     
     /**
      * Permite cambiar el peso de la raqueta
-     * @param peso El peso de la raqueta
+     * @param peso el peso de la raqueta
      */ 
     public void setPeso(double peso);
     

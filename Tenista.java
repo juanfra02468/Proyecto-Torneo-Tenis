@@ -1,12 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.*;
+
 /**
  * La clase Tenista representa los distintos tenistas que competirán en el campeonato
  * 
- * 
- * @author David Bonilla, Antonio Javier Hidalgo y Juan Francisco García 
- * @version 09-10-2021
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 13-11-2021
  */
 
 public class Tenista
@@ -25,7 +27,8 @@ public class Tenista
 
     /**
      * Constructor parametrizado de la clase Tenista
-     * Crea un nuevo objeto de la clase Tenista e invoca al constructor de la clase Zapatilla, con los valores pasados por parametro
+     * Crea un nuevo objeto de la clase Tenista e invoca al constructor de la clase Zapatilla,
+     * con los valores pasados por parametro
      */     
     public Tenista(String nombre, ZapatillaGenerica zapatilla, double saque,
     double resto,int ranking, String pais, double numPie)
@@ -41,15 +44,17 @@ public class Tenista
         this.raqueta = null;
     }
     /**
-     * Invoca al método calcularValorSaque de la clase Zapatilla y suma el resultado al campo puntosAcumulados
+     * Invoca al método calcularValorSaque de la clase Zapatilla y suma el resultado 
+     * al campo puntosAcumulados
      */   
     private void sacar()
     {   
         this.puntosAcumulados += this.calcularSaque();
     }
     /**
-     * Compara el resto de un tenista con el saque del otro, dependiendo del resultado, el tenista que resta puede aumentar sus puntos o no
-     * @param t1 El Tenista que saca
+     * Compara el resto de un tenista con el saque del otro, dependiendo del resultado, 
+     * el tenista que resta puede aumentar sus puntos o no
+     * @param t1 tenista contrario al que resta
      */        
     private void restar(Tenista t1)
     {
@@ -60,10 +65,11 @@ public class Tenista
     
     /**
      * Calcula el valor de resto del tenista según su zapatilla y raqueta
-     * @return valor de resto del tenista según su zapatilla y raqueta
+     * @return valor del resto de un tenista según su zapatilla y raqueta
      */
     private double calcularResto (){
-        return zapatilla.calcularValorResto()*raqueta.calcularVelocidad()*raqueta.calcularControl()*resto;
+        return zapatilla.calcularValorResto()*raqueta.calcularVelocidad()*
+        raqueta.calcularControl()*resto;
     }
 
     /**
@@ -71,12 +77,13 @@ public class Tenista
      * @return valor de saque del tenista según su zapatilla y raqueta
      */
     private double calcularSaque (){
-        return raqueta.calcularVelocidad()*raqueta.calcularPotencia()*zapatilla.calcularValorSaque()*saque;
+        return raqueta.calcularVelocidad()*raqueta.calcularPotencia()*
+        zapatilla.calcularValorSaque()*saque;
     }
     
     /**
      * Simula un partido entre dos tenistas
-     * @param t2 Tenista contrincante
+     * @param t2 el tenista contrincante
      */
     public void jugar(Tenista t2)
     {
@@ -200,7 +207,7 @@ public class Tenista
     
     /**
      * Permite cambiar el numero de pie de un tenista.
-     * @param  numPie El nuevo numero de pie del tenista.
+     * @param  numPie el nuevo numero de pie del tenista.
      */  
     public void setNumPie (double numPie)
     {
@@ -226,8 +233,10 @@ public class Tenista
     }
     
     /**
-     * Realiza la asignacion de una zapatilla a un tenista dependiendo de su numero de pie en el Campeonato.
-     * @param zapatillasCampeonato Lista de Zapatillas que pueden elegir los tenistas en el campeonato.
+     * Realiza la asignacion de una zapatilla a un tenista dependiendo de su numero de pie 
+     * en el Campeonato.
+     * @param zapatillasCampeonato Lista de Zapatillas que pueden elegir los tenistas 
+     * en el campeonato.
      */  
     public boolean elegirZapatillaTenista (ArrayList <Zapatilla> zapatillasCampeonato){
         boolean bandera = false;

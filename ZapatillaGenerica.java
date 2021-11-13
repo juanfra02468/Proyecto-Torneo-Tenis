@@ -1,10 +1,13 @@
+
 /**
- * La clase Zapatilla representa las zapatillas que llevan puesta los tenistas participantes del campeonato
+ * Esta clase representa la superclase de las subclases: ZapatillaConAgarre y ZapatillaAmortiguada
  * 
- * 
- * @author David Bonilla, Antonio Javier Hidalgo y Juan Francisco García 
- * @version 09-10-2021
+ * @author David Bonilla
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @version 13-11-2021
  */
+
 public abstract class ZapatillaGenerica implements Zapatilla
 {
     // instance variables - replace the example below with your own
@@ -27,6 +30,9 @@ public abstract class ZapatillaGenerica implements Zapatilla
     /**
      * Constructor parametrizado de la clase Zapatilla
      * Crea un nuevo objeto de la clase Zapatilla con los valores pasados por parámetro
+     * @param modelo el modelo de la zapatilla
+     * @param valor el valor de la zapatilla
+     * @param numero el numero de pie de la zapatilla
      */    
     public ZapatillaGenerica(String modelo,double numero,double valor)
     {

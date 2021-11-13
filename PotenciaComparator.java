@@ -1,3 +1,4 @@
+import java.util.Comparator;  
 
 /**
  * Comparador de potencia de raquetas.
@@ -5,8 +6,9 @@
  * @author Antonio Javier Hidalgo
  * @author Juan Francisco García
  * @author David Bonilla
+ * @version 13-11-2021
  */
-import java.util.*;  
+
 class PotenciaComparator implements Comparator<Raqueta>{  
        public int compare(Raqueta r1, Raqueta r2){
         
