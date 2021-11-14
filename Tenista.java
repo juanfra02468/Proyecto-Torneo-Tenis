@@ -301,7 +301,10 @@ public class Tenista
                 }
                 return bandera;
     }
-    
+
+     /**
+     * Calcula una funcion hash que permite saber si dos objetos son identicos
+     */
     @Override
     public int hashCode()
     {
@@ -318,7 +321,11 @@ public class Tenista
     result = 31 * result + getRaqueta().hashCode();
     return result;
     }
-    
+
+    /**
+     * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
+     * false si algún campo es diferente o no son del mismo tipo
+     */
     public boolean equals(Object obj)
     {
         if(this == obj){

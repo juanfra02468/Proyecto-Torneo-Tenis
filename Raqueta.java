@@ -105,8 +105,9 @@ public interface Raqueta
     public int hashCode();
     
     /**
-     * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
-     * false si algún campo es diferente o no son del mismo tipo
+     * Devuelve true si todos los campos son iguales o 
+     * si apuntan al mismo objeto,false si algún campo es diferente 
+     * o no son del mismo tipo
      */
     public boolean equals(Object obj);
 }
