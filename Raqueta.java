@@ -98,6 +98,11 @@ public interface Raqueta
      * Devuelve una cadena con el tipo específico de raqueta
      */
     public String getTipo();
+
+    /**
+     * Calcula una funcion hash que permite saber si dos objetos son identicos
+     */ 
+    public int hashCode();
     
     /**
      * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 

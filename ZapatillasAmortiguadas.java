@@ -44,7 +44,7 @@ public class ZapatillasAmortiguadas extends ZapatillaGenerica
      */
         @Override
     public String getTipo(){
-        return "*** ZapatillasAmortiguadas ";
+        return "        ZapatillasAmortiguadas ";
     }
     /**
      * Devuelve el multiplicador de saque de la zapatilla
@@ -62,6 +62,17 @@ public class ZapatillasAmortiguadas extends ZapatillaGenerica
     {
         this.multiplicadorSaque = multiplicadorSaque;
     }
+    
+    
+    
+    @Override
+    public int hashCode()
+    {
+    int result = 7;
+    result = 3 * result + super.hashCode();
+    result = 5 * result + ((Double)getMultiplicadorSaque()).hashCode();
+    return result;
+    }
     /**
      * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
      * false si algún campo es diferente o no son del mismo tipo
@@ -78,6 +89,7 @@ public class ZapatillasAmortiguadas extends ZapatillaGenerica
         
         ZapatillasAmortiguadas other = (ZapatillasAmortiguadas) obj;
         
-        return super.equals(other) && getMultiplicadorSaque()==other.getMultiplicadorSaque();
+        return super.equals(other) 
+               && getMultiplicadorSaque()==other.getMultiplicadorSaque();
     }
 }

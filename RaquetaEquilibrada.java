@@ -86,7 +86,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     @Override
     public String getTipo(){
         StringBuilder builder = new StringBuilder();
-        builder.append("    ** RaquetaEquilibrada");
+        builder.append("   ** RaquetaEquilibrada");
         builder.append(" (MultiplicadorDePotencia: ");
         builder.append(this.multiplicadorPotencia);
         builder.append(" (MultiplicadorDeControl: ");
@@ -94,7 +94,16 @@ public class RaquetaEquilibrada extends RaquetaGenerica
         builder.append("\n");
         return builder.toString();
     }
-    
+
+    @Override
+    public int hashCode()
+    {
+    int result = 7;
+    result = 3 * result + super.hashCode();
+    result = 5 * result + ((Double)getMultiplicadorControl()).hashCode();
+    result = 7 * result + ((Double)getMultiplicadorPotencia()).hashCode();
+    return result;
+    }    
     /**
      * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
      * false si algún campo es diferente o no son del mismo tipo

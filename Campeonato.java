@@ -81,9 +81,9 @@ public class Campeonato
      */  
     private void juego(Tenista t1, Tenista t2)
     {
-        System.out.println("## Tenista1 ---->>>: "+t1.getNombre());
+        System.out.println("    ##  Tenista1 ---->>>: "+t1.getNombre());
         comprobacionZapatilla(t1);
-        System.out.println("## Tenista2 ---->>>: "+t2.getNombre());
+        System.out.println("    ##  Tenista2 ---->>>: "+t2.getNombre());
         comprobacionZapatilla(t2);
         t1.jugar(t2);      
     }
@@ -130,8 +130,7 @@ public class Campeonato
     private void mostrarganadorTorneo (Tenista ganador)
     {
         System.out.println("\n");
-        System.out.println("---->>>> Gana la competición:"); 
-        System.out.println(ganador.toString());
+        System.out.println("---->>>> Gana la competición:"+ganador.toString()+"  <<<<----"); 
         System.out.println("\n"); 
     }
     /**
@@ -148,7 +147,7 @@ public class Campeonato
            t1 = competidores.get(i);
            t2 = competidores.get(competidores.size()-1);
            
-           System.out.println("### Juego ------------>>>: "+i);
+           System.out.println("  #### Juego ------------>>>: "+i);
            juego(t1, t2);
            
            
@@ -212,10 +211,10 @@ public class Campeonato
      */
     private void mostrarGanadoryPerdedor(Tenista ganador, Tenista perdedor)
     {
-       System.out.println("## Gana este juego: "+ganador.getNombre()+" con: "
+       System.out.println("    ## Gana este juego: "+ganador.getNombre()+" con: "
        +ganador.getPuntosAcumulados()+" puntos acumulados.");
     
-       System.out.println("## Se elimina: "+perdedor.getNombre()+" con: "
+       System.out.println("    ## Se elimina: "+perdedor.getNombre()+" con: "
        +perdedor.getPuntosAcumulados()+" puntos acumulados. Tenista eliminado num: "
        +eliminados.size());
        ganador.resetPuntosAcumulados();        

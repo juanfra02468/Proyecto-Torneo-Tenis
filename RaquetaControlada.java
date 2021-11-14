@@ -67,7 +67,7 @@ public class RaquetaControlada extends RaquetaGenerica
     @Override
     public String getTipo(){
         StringBuilder builder = new StringBuilder();
-        builder.append("    ** RaquetaControlada(Encordado:");
+        builder.append("   ** RaquetaControlada(Encordado:");
         builder.append(getEncordado());
         builder.append(" (MultiplicadorDePotencia: ");
         builder.append(getEncordado().getMultiplicadorPotencia()+")");
@@ -76,7 +76,16 @@ public class RaquetaControlada extends RaquetaGenerica
         builder.append("\n");
         return builder.toString();
     }
-  
+
+    
+    @Override
+    public int hashCode()
+    {
+    int result = 7;
+    result = 3 * result + super.hashCode();
+    result = 5 * result + ((Double)getMultiplicadorVelocidad()).hashCode();
+    return result;
+    }
     /**
      * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
      * false si algún campo es diferente o no son del mismo tipo

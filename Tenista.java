@@ -100,7 +100,7 @@ public class Tenista
        public String toString()
     {
         StringBuilder builder = new StringBuilder();
-        builder.append("**  Tenista [nombre=");
+        builder.append("    **  Tenista [nombre=");
         builder.append(this.nombre);
         builder.append(", saque=");
         builder.append(this.saque);
@@ -300,6 +300,23 @@ public class Tenista
                     }
                 }
                 return bandera;
+    }
+    
+    @Override
+    public int hashCode()
+    {
+    int result = 7;
+    result = 3 * result + getNombre().hashCode();
+    result = 5 * result + getZapatilla().hashCode();
+    result = 7 * result + ((Double)getSaque()).hashCode();
+    result = 11 * result + ((Double)getResto()).hashCode();
+    result = 13 * result + ((Integer)getRanking()).hashCode();
+    result = 17 * result + getPais().hashCode();
+    result = 19 * result + ((Double)getPuntosAcumulados()).hashCode();
+    result = 23 * result + ((Integer)getPosEliminado()).hashCode();
+    result = 29 * result + ((Double)getNumPie()).hashCode();
+    result = 31 * result + getRaqueta().hashCode();
+    return result;
     }
     
     public boolean equals(Object obj)

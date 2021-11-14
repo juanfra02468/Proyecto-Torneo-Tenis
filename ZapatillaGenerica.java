@@ -99,6 +99,16 @@ public abstract class ZapatillaGenerica implements Zapatilla
     public abstract String getTipo();
     
     @Override
+    public int hashCode()
+    {
+    int result = 7;
+    result = 3 * result + getModelo().hashCode();
+    result = 5 * result + ((Double)getNumero()).hashCode();
+    result = 7 * result + ((Double)getValor()).hashCode();
+    return result;
+    }
+    
+    @Override
     public boolean equals(Object obj)
     {
         if(this == obj){
@@ -110,7 +120,8 @@ public abstract class ZapatillaGenerica implements Zapatilla
         
         ZapatillaGenerica other = (ZapatillaGenerica) obj;
         
-        return getModelo().equals(other.getModelo()) && getNumero()==other.getNumero() 
-                    && getValor()==other.getValor();
+        return getModelo().equals(other.getModelo()) 
+               && getNumero()==other.getNumero() 
+               && getValor()==other.getValor();
     }
 }

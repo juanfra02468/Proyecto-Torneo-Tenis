@@ -149,6 +149,18 @@ public abstract class RaquetaGenerica implements Raqueta
     }
 
     @Override
+    public int hashCode()
+    {
+    int result = 7;
+    result = 3 * result + getModelo().hashCode();
+    result = 5 * result + getEncordado().hashCode();
+    result = 7 * result + ((Double)getPeso()).hashCode();
+    result = 13 * result + ((Double)getLongitud()).hashCode();
+    result = 17 * result + ((Double)getTamañoCabeza()).hashCode();
+    return result;
+    }
+
+    @Override
     public boolean equals(Object obj)
     {
         if(this == obj){

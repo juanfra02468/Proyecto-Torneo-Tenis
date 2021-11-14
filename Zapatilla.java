@@ -71,10 +71,16 @@ public interface Zapatilla
      * @return el tipo de zapatilla que tenemos
      */  
     public String getTipo();
+
+     /**
+     * Calcula una funcion hash que permite saber si dos objetos son identicos
+     */ 
+    public int hashCode();
     
     /**
-     * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
-     * false si algún campo es diferente o no son del mismo tipo
+     * Devuelve true si todos los campos son iguales o si apuntan 
+     * al mismo objeto, false si algún campo es diferente o 
+     * no son del mismo tipo
      */
     public boolean equals(Object obj);
 }
