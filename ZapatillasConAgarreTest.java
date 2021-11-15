@@ -6,10 +6,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * The test class ZapatillasConAgarreTest.
- *
- * @author  (your name)
- * @version (a version number or a date)
+ * Esta clase representa las pruebas sobre ZapatillasConAgarre
+ * 
+ * @author David Bonilla
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García 
+ * @version 
  */
 public class ZapatillasConAgarreTest
 {
