@@ -63,6 +63,16 @@ public class ZapatillasAmortiguadasTest
         assertEquals(true, zapatill5.equals(zapatill3));
         assertEquals(false, zapatill5.equals(zapatill1));
     }
+
+    @Test
+    public void hashCodeTest()
+    {
+        assertEquals(-1325174031, zapatill3.hashCode());
+        assertEquals(-1125780752, zapatill1.hashCode());
+        assertEquals(-797188217, zapatill2.hashCode());
+        assertEquals(-1325174031, zapatill5.hashCode());
+    }
 }
+
 
 
