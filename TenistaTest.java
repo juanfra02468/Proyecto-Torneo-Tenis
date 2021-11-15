@@ -118,6 +118,15 @@ public class TenistaTest
         assertEquals(-982801996, tenista1.hashCode());
         assertEquals(400392848, tenista3.hashCode());
     }
+
+    @Test
+    public void jugarTest()
+    {
+        tenista1.jugar(tenista3);
+        assertEquals(93312.01, tenista1.getPuntosAcumulados(), 0.1);
+        assertEquals(54704.16, tenista3.getPuntosAcumulados(), 0.1);
+    }
 }
+
 
 
