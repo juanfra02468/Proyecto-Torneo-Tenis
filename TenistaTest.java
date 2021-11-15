@@ -112,14 +112,6 @@ public class TenistaTest
     }
 
     @Test
-    public void hashCodeTest()
-    {
-        assertEquals(-982801996, tenista4.hashCode() );
-        assertEquals(-982801996, tenista1.hashCode());
-        assertEquals(400392848, tenista3.hashCode());
-    }
-
-    @Test
     public void jugarTest()
     {
         tenista1.jugar(tenista3);
