@@ -88,7 +88,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
         StringBuilder builder = new StringBuilder();
         builder.append("   ** RaquetaEquilibrada");
         builder.append(" (MultiplicadorDePotencia: ");
-        builder.append(this.multiplicadorPotencia);
+        builder.append(this.multiplicadorPotencia+")");
         builder.append(" (MultiplicadorDeControl: ");
         builder.append(this.multiplicadorControl+")");
         builder.append("\n");
