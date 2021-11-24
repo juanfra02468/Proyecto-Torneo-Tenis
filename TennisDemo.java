@@ -16,7 +16,7 @@ public class TennisDemo {
     public static void main(String[] args) {
         //Creación del campeonato
         //Se instancia una variable de tipo Campeonato;
-        Campeonato Campeonato1 = new Campeonato("Campeonato de Extremadura");
+        Campeonato Campeonato1 = Campeonato.getInstance("Campeonato de Extremadura");
         
         //Carga de datos iniciales del campeonato
         //Se instancia una variable de tipo InitTennisData pasando la variable instanciada 

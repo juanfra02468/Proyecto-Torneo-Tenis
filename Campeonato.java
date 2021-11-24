@@ -20,11 +20,12 @@ public class Campeonato
     private ArrayList <Tenista> eliminados;
     private ArrayList <Zapatilla> zapatillasCampeonato;
     private TreeSet <Raqueta> raquetasCampeonato;
+    private static Campeonato singletonCampeonato;
     
     /**
      * Constructor for objects of class Campeonato
      */
-    public Campeonato(String nombre)
+    private Campeonato(String nombre)
     {
         this.nombre = nombre;
         competidores = new ArrayList <Tenista>();
@@ -32,6 +33,14 @@ public class Campeonato
         zapatillasCampeonato = new ArrayList <Zapatilla>();
         raquetasCampeonato = new TreeSet <Raqueta> (new PotenciaComparator());
     }
+    public static synchronized Campeonato getInstance(String nombre)
+    {
+        if(singletonCampeonato == null){
+            singletonCampeonato = new Campeonato(nombre);
+        }
+        return singletonCampeonato;
+    }
+    
     /**
      * Método que inscribe a un Tenista al campeonato, añadiendolo a la lista de competidores
      * @param t1 un tenista
