@@ -37,14 +37,17 @@ public class ZapatillasConAgarre extends ZapatillaGenerica
         return valorResto;
     }
     /**
-     * Funcion:Metodo heredado de la super clase ZapatillaGenerica, en el que devolvemos 
-     * el tipo de zapatillas caracteristico de esta subclase 
-     * @return el tipo de zapatillas de la subclase actual
+     * Funcion:Metodo sobrescrito de Zapatilla, añade el tipo de zapatilla
+     *      a los demás datos
+     * @return datos de la zapatilla
      */
     @Override
-    public String getTipo()
+    public String toString()
     {
-        return "        ZapatillasConAgarre ";
+        StringBuilder builder = new StringBuilder();
+        builder.append("        ZapatillasConAgarre ");
+        builder.append(super.toString());
+        return builder.toString();
     }
     /**
      * Devuelve el multiplicador de resto de la zapatilla
@@ -66,10 +69,10 @@ public class ZapatillasConAgarre extends ZapatillaGenerica
     @Override
     public int hashCode()
     {
-    int result = 7;
-    result = 3 * result + super.hashCode();
-    result = 5 * result + ((Double)getMultiplicadorResto()).hashCode();
-    return result;
+        int result = 7;
+        result = 3 * result + super.hashCode();
+        result = 5 * result + ((Double)getMultiplicadorResto()).hashCode();
+        return result;
     }
     /**
      * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 

@@ -26,6 +26,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
         this.multiplicadorPotencia = multiplicadorPotencia;
         this.multiplicadorControl = multiplicadorControl;
     }
+    
     /**
      * Multiplica la potencia asociada a la raqueta según su longitud
      * @return potencia asociada a la raqueta según su longitud
@@ -36,6 +37,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
         double resultado = super.calcularPotencia();
         return multiplicadorPotencia*resultado;
     }
+    
     /**
      * Multiplica el control asociado a la raqueta según su tamaño de cabeza
      * @return control asociado a la raqueta según su tamaño de cabeza
@@ -55,6 +57,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     {
         return multiplicadorControl;
     }
+    
     /**
      * Permite cambiar el multiplicador de control de la raqueta
      * @param multiplicadorControl El nuevo multiplicador de control
@@ -63,6 +66,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     {
         this.multiplicadorControl = multiplicadorControl;
     }
+    
     /**
      * Devuelve el multiplicador de potencia de la raqueta
      * @return el multiplicador de potencia
@@ -71,6 +75,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     {
         return multiplicadorPotencia;
     }
+    
     /**
      * Permite cambiar el multiplicador de potencia de la raqueta
      * @param multiplicadorPotencia El nuevo multiplicador de potencia
@@ -79,12 +84,13 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     {
         this.multiplicadorPotencia = multiplicadorPotencia;
     }
+    
     /**
      * Devuelve una cadena con el tipo de raqueta que es y los campos especificos de la subclase
      * @return el tipo de raqueta y sus campos especificos
      */
     @Override
-    public String getTipo(){
+    public String toString(){
         StringBuilder builder = new StringBuilder();
         builder.append("   ** RaquetaEquilibrada");
         builder.append(" (MultiplicadorDePotencia: ");
@@ -92,18 +98,20 @@ public class RaquetaEquilibrada extends RaquetaGenerica
         builder.append(" (MultiplicadorDeControl: ");
         builder.append(this.multiplicadorControl+")");
         builder.append("\n");
+        builder.append(super.toString());
         return builder.toString();
     }
 
     @Override
     public int hashCode()
     {
-    int result = 7;
-    result = 3 * result + super.hashCode();
-    result = 5 * result + ((Double)getMultiplicadorControl()).hashCode();
-    result = 7 * result + ((Double)getMultiplicadorPotencia()).hashCode();
-    return result;
-    }    
+        int result = 7;
+        result = 3 * result + super.hashCode();
+        result = 5 * result + ((Double)getMultiplicadorControl()).hashCode();
+        result = 7 * result + ((Double)getMultiplicadorPotencia()).hashCode();
+        return result;
+    }  
+    
     /**
      * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
      * false si algún campo es diferente o no son del mismo tipo

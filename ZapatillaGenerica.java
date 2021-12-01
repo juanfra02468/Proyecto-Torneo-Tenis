@@ -8,7 +8,7 @@
  * @version 13-11-2021
  */
 
-public abstract class ZapatillaGenerica implements Zapatilla
+public class ZapatillaGenerica implements Zapatilla
 {
     // instance variables - replace the example below with your own
     private String modelo;
@@ -86,7 +86,6 @@ public abstract class ZapatillaGenerica implements Zapatilla
     public String toString()
     {
         StringBuilder builder = new StringBuilder();
-        builder.append(getTipo());
         builder.append(" [modelo= ");
         builder.append(getModelo()+", ");
         builder.append("numero= ");
@@ -96,16 +95,14 @@ public abstract class ZapatillaGenerica implements Zapatilla
         return builder.toString();
     }
     
-    public abstract String getTipo();
-    
     @Override
     public int hashCode()
     {
-    int result = 7;
-    result = 3 * result + getModelo().hashCode();
-    result = 5 * result + ((Double)getNumero()).hashCode();
-    result = 7 * result + ((Double)getValor()).hashCode();
-    return result;
+        int result = 7;
+        result = 3 * result + getModelo().hashCode();
+        result = 5 * result + ((Double)getNumero()).hashCode();
+        result = 7 * result + ((Double)getValor()).hashCode();
+        return result;
     }
     
     @Override

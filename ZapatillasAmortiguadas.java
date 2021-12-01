@@ -38,13 +38,17 @@ public class ZapatillasAmortiguadas extends ZapatillaGenerica
         return valorSaque;
     }
     /**
-     * Funcion:Metodo heredado de la super clase ZapatillaGenerica, en el que devolvemos 
-     * el tipo de zapatillas caracteristico de esta subclase 
-     * @return el tipo de zapatillas de la subclase actual
+     * Funcion:Metodo sobrescrito de Zapatilla, añade el tipo de zapatilla
+     *      a los demás datos
+     * @return datos de la zapatilla
      */
-        @Override
-    public String getTipo(){
-        return "        ZapatillasAmortiguadas ";
+    @Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("        ZapatillasAmortiguadas ");
+        builder.append(super.toString());
+        return builder.toString();
     }
     /**
      * Devuelve el multiplicador de saque de la zapatilla

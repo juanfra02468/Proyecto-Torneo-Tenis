@@ -55,6 +55,7 @@ public class RaquetaPotente extends RaquetaGenerica
     {
         return multiplicadorVelocidad;
     }
+    
     /**
      * Permite cambiar el multiplicador de velocidad de la raqueta
      * @param multiplicadorVelocidad El nuevo multiplicador de velocidad
@@ -63,12 +64,13 @@ public class RaquetaPotente extends RaquetaGenerica
     {
         this.multiplicadorVelocidad = multiplicadorVelocidad;
     }
+    
     /**
      * Devuelve una cadena con el tipo de raqueta que es y los campos especificos de la subclase
      * @return el tipo de raqueta y sus campos especificos
      */
     @Override
-    public String getTipo(){
+    public String toString(){
         StringBuilder builder = new StringBuilder();
         builder.append("   ** RaquetaPotente(Encordado:");
         builder.append(getEncordado());
@@ -77,17 +79,19 @@ public class RaquetaPotente extends RaquetaGenerica
         builder.append(" (MultiplicadorDeControl: ");
         builder.append(getEncordado().getMultiplicadorControl()+")");
         builder.append("\n");
+        builder.append(super.toString());
         return builder.toString();
     }
 
     @Override
     public int hashCode()
     {
-    int result = 7;
-    result = 3 * result + super.hashCode();
-    result = 5 * result + ((Double)getMultiplicadorVelocidad()).hashCode();
-    return result;
+        int result = 7;
+        result = 3 * result + super.hashCode();
+        result = 5 * result + ((Double)getMultiplicadorVelocidad()).hashCode();
+        return result;
     }
+    
     /**
      * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
      * false si algún campo es diferente o no son del mismo tipo

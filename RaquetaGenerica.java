@@ -12,7 +12,7 @@ import java.util.Iterator;
  * @version 13-11-2021
  */
 
-public abstract class RaquetaGenerica implements Raqueta
+public class RaquetaGenerica implements Raqueta
 {
     // instance variables - replace the example below with your own
     private String modelo;
@@ -121,13 +121,11 @@ public abstract class RaquetaGenerica implements Raqueta
         double velocidad=(double)mapaPesoVelocidad.get((Double)peso);
         return velocidad;
     }
-     
-    public abstract String getTipo();  
     
+    @Override
     public String toString()
     {
         StringBuilder builder = new StringBuilder();
-        builder.append(getTipo());
         builder.append("        [modelo= ");
         builder.append(getModelo());
         builder.append("\n");
@@ -151,13 +149,13 @@ public abstract class RaquetaGenerica implements Raqueta
     @Override
     public int hashCode()
     {
-    int result = 7;
-    result = 3 * result + getModelo().hashCode();
-    result = 5 * result + getEncordado().hashCode();
-    result = 7 * result + ((Double)getPeso()).hashCode();
-    result = 13 * result + ((Double)getLongitud()).hashCode();
-    result = 17 * result + ((Double)getTamañoCabeza()).hashCode();
-    return result;
+        int result = 7;
+        result = 3 * result + getModelo().hashCode();
+        result = 5 * result + getEncordado().hashCode();
+        result = 7 * result + ((Double)getPeso()).hashCode();
+        result = 13 * result + ((Double)getLongitud()).hashCode();
+        result = 17 * result + ((Double)getTamañoCabeza()).hashCode();
+        return result;
     }
 
     @Override

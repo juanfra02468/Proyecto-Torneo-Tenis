@@ -33,6 +33,7 @@ public class Campeonato
         zapatillasCampeonato = new ArrayList <Zapatilla>();
         raquetasCampeonato = new TreeSet <Raqueta> (new PotenciaComparator());
     }
+    
     public static synchronized Campeonato getInstance(String nombre)
     {
         if(singletonCampeonato == null){
@@ -49,6 +50,7 @@ public class Campeonato
     {
         competidores.add(t1);
     }
+    
     /**
      * Método que añade una zapatilla a la lista zapatillas
      * @param z1 una zapatilla
@@ -57,6 +59,7 @@ public class Campeonato
     {
         zapatillasCampeonato.add(z1);
     }
+
     /**
      * Método que añade una raqueta al arbol de raquetas
      * @param r1 una raqueta
@@ -65,6 +68,7 @@ public class Campeonato
     {
         raquetasCampeonato.add(r1);
     }
+    
      /**
      * Metodo encargado de asignar las raquetas a los competidores 
      */
@@ -132,6 +136,7 @@ public class Campeonato
         System.out.println("## CAMPEONATO ANULADO POR FALTA DE RAQUETAS ");            
         } 
     }
+    
     /**
      * Método que muestra el ganador del torneo
      * @param ganador Hace referencia el tenista ganador
@@ -142,6 +147,7 @@ public class Campeonato
         System.out.println("---->>>> Gana la competición:"+ganador.toString()+"  <<<<----"); 
         System.out.println("\n"); 
     }
+    
     /**
      * Método que gestiona la puntuacion de los tenistas tras los partidos y muestra por 
      * pantalla quien ha ganado y quien ha perdido
@@ -178,6 +184,7 @@ public class Campeonato
            }  
         }
     }
+    
     /**
      * Método que muestra el ganador y perdedor en el caso de que gane el primer tenista 
      * situado en la lista
@@ -187,6 +194,7 @@ public class Campeonato
        añadirEliminado(perdedor);        
        borrarUltimoymostrar(ganador, perdedor);
     }
+    
     /**
      * Metodo que añade a la lista de eliminados al tenista perdedor 
      * eliminandolo del campeonato, añade a la lista de competidores al ganador y 
@@ -212,6 +220,7 @@ public class Campeonato
        competidores.remove(competidores.size()-1);
        mostrarGanadoryPerdedor(ganador, perdedor);        
     }
+    
     /**
      * Metodo que imprime por pantalla la informacion referida a el tenista ganador y 
      * al perdedor siendo esta , el nombre y los puntos acumulados
@@ -228,6 +237,7 @@ public class Campeonato
        +eliminados.size());
        ganador.resetPuntosAcumulados();        
     }
+    
     /**
      * Metodo encargado de mostrar la lista de tenistas que compiten en el campeonato
      */
@@ -238,6 +248,7 @@ public class Campeonato
              System.out.println(tenistas.toString());
         }
     }
+    
     /**
      * Metodo encargado de mostrar la lista de tenistas eliminados en el campeonato
      */
@@ -249,6 +260,7 @@ public class Campeonato
              System.out.println(tenistas.toString());
         }
     }
+    
     /**
      * Metodo encargado de mostrar las raquetas asignadas a tenistas
      */
@@ -259,5 +271,4 @@ public class Campeonato
             +tenistas.getNombre());
         }        
     }
-    
 }

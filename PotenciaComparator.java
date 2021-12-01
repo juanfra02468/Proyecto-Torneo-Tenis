@@ -13,7 +13,7 @@ import java.util.Comparator;
   * Metodo encargado de comparar la potencia de una raqueta
   * @param r1 hace referencia a una raqueta 
   * @param t2 hace referencia a una raqueta
-  * @return si la potencia de la raqueta 1 coincide con la raqueta 2 devuelve el compareto
+  * @return si la potencia de la raqueta 1 coincide con la raqueta 2 devuelve el compareTo
   * entre los modelos de ambas raquetas, si la potencia de la raqueta 1 es mayor que la potencia 
   * de la raqueta 2 devuelve 1 , y en caso contrario -1
   */
@@ -26,8 +26,7 @@ class PotenciaComparator implements Comparator<Raqueta>{
                 return -1;
             else 
                 return 1;
-        
-
+                
     } 
 
 }  
