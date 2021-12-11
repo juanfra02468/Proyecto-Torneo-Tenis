@@ -89,4 +89,8 @@ public interface Raqueta
      */
     public void setEncordado(Encordado encordado);
     
+    public abstract String mostrarTipo();
+    
+    public String mostrarRaquetaCambiada();
+    
 }

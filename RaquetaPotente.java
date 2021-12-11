@@ -65,6 +65,10 @@ public class RaquetaPotente extends RaquetaGenerica
         this.multiplicadorVelocidad = multiplicadorVelocidad;
     }
     
+    public String mostrarTipo(){
+        return "RaquetaPotente";
+    }
+    
     /**
      * Devuelve una cadena con el tipo de raqueta que es y los campos especificos de la subclase
      * @return el tipo de raqueta y sus campos especificos
@@ -72,7 +76,7 @@ public class RaquetaPotente extends RaquetaGenerica
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
-        builder.append("   ** RaquetaPotente(Encordado:");
+        builder.append("   RaquetaPotente(Encordado:");
         builder.append(getEncordado());
         builder.append(" (MultiplicadorDePotencia: ");
         builder.append(getEncordado().getMultiplicadorPotencia()+")");

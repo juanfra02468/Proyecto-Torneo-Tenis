@@ -16,10 +16,10 @@ import java.util.Iterator;
 public class Campeonato
 {
     private String nombre;
-    private ArrayList <Tenista> competidores;
+    private static ArrayList <Tenista> competidores;
     private ArrayList <Tenista> eliminados;
-    private ArrayList <Zapatilla> zapatillasCampeonato;
-    private TreeSet <Raqueta> raquetasCampeonato;
+    private static ArrayList <Zapatilla> zapatillasCampeonato;
+    private static TreeSet <Raqueta> raquetasCampeonato;
     private static Campeonato singletonCampeonato;
     
     /**
@@ -46,7 +46,7 @@ public class Campeonato
      * Método que inscribe a un Tenista al campeonato, añadiendolo a la lista de competidores
      * @param t1 un tenista
      */
-    public void inscripcionCompetidores (Tenista t1)
+    public static void inscripcionCompetidores (Tenista t1)
     {
         competidores.add(t1);
     }
@@ -86,6 +86,24 @@ public class Campeonato
         
         return bandera;
     }
+    
+    public static void cambiarRaqueta(Tenista t){
+        t.setRaqueta(raquetasCampeonato.first());
+        raquetasCampeonato.remove(raquetasCampeonato.first());
+    }
+    
+    public static void cambiarRaquetaVelocidad(Tenista t){
+       boolean bandera = false;
+            Iterator <Raqueta> it = raquetasCampeonato.iterator();
+            while(it.hasNext() && !bandera){
+                Raqueta z = it.next();
+                    if (t.getRaqueta().calcularVelocidad()<z.calcularVelocidad()){
+                        t.setRaqueta(z);
+                        raquetasCampeonato.remove(z);
+                        bandera=true;
+                    }
+                }
+    }
 
     /**
      * Método que simula un partido entre dos tenistas
@@ -94,17 +112,37 @@ public class Campeonato
      */  
     private void juego(Tenista t1, Tenista t2)
     {
-        System.out.println("    ##  Tenista1 ---->>>: "+t1.getNombre());
+        System.out.println("    ##  Tenista1 "+t1.tipoTenista()+" ---->>>: "+t1.getNombre());
         comprobacionZapatilla(t1);
-        System.out.println("    ##  Tenista2 ---->>>: "+t2.getNombre());
+        System.out.println("    ##  Tenista2 "+t2.tipoTenista()+"---->>>: "+t2.getNombre());
         comprobacionZapatilla(t2);
-        t1.jugar(t2);      
+        t1.jugar(t2);
+        mostrarCambioRaqueta(t1);
+        mostrarCambioRaqueta(t2);
+    }
+    
+    public static boolean elegirZapatilla (Tenista t){
+        boolean bandera = false;
+            Iterator <Zapatilla> it = zapatillasCampeonato.iterator();
+            while(it.hasNext() && !bandera){
+                Zapatilla z = it.next();
+                    if (t.getNumPie()==z.getNumero()){
+                        t.setZapatilla(z);
+                        zapatillasCampeonato.remove(z);
+                        bandera=true;
+                    }
+                }
+                return bandera;
     }
     
     private void comprobacionZapatilla (Tenista t1){
-       if (t1.elegirZapatillaTenista(zapatillasCampeonato)){
-            System.out.println(t1.getZapatilla().toString());
+       if (t1.elegirZapatillaTenista()){
+            System.out.println("Zapatillas asignadas: "+t1.getZapatilla().toString());
         }        
+    }
+    
+    private void mostrarCambioRaqueta(Tenista t){
+        System.out.println(t.getNombre()+" cambia su raqueta por: "+t.getRaqueta().mostrarRaquetaCambiada());
     }
     
     /**
@@ -119,6 +157,8 @@ public class Campeonato
             int i = 1;
             System.out.println("***** Listado de competidores: ");
             listaTenistas_competidores();
+            System.out.println("***** Listado de raquetas disponibles: ");
+            raquetasDisponibles();
             while(competidores.size() != 1){
                System.out.println("\n"); 
                System.out.println("***** Ronda---->>>: "+i);
@@ -247,6 +287,13 @@ public class Campeonato
         {
              System.out.println(tenistas.toString());
         }
+    }
+    
+    private void raquetasDisponibles(){
+        for(Raqueta raqueta: raquetasCampeonato)
+        {
+             System.out.println(raqueta.toString());
+        }  
     }
     
     /**

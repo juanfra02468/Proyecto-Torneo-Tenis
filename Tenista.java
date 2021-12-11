@@ -11,7 +11,7 @@ import java.util.*;
  * @version 13-11-2021
  */
 
-public class Tenista
+public abstract class Tenista
 {
     // instance variables - replace the example below with your own
     private String nombre;
@@ -44,11 +44,12 @@ public class Tenista
         this.raqueta = null;
     }
     
-    // public void inscripcion()
-    // {
-        // Campeonato.competidores.add(this);
-    // }
+    public void realizarInscripcion()
+    {
+        Campeonato.inscripcionCompetidores(this);
+    }
     
+    public abstract String tipoTenista();
     /**
      * Invoca al método calcularValorSaque de la clase Zapatilla y suma el resultado 
      * al campo puntosAcumulados
@@ -92,12 +93,22 @@ public class Tenista
      * Simula un partido entre dos tenistas
      * @param t2 el tenista contrincante
      */
-    public void jugar(Tenista t2)
+    public final void jugar(Tenista t2)
     {
         this.sacar();
         t2.restar(this);
         t2.sacar();
-        this.restar(t2);  
+        this.restar(t2);
+        this.golpear();
+        t2.golpear();
+        this.cambiarRaquetaTenista();
+        t2.cambiarRaquetaTenista(); 
+    }
+    
+    protected abstract void golpear();
+    
+    protected void cambiarRaquetaTenista(){
+        Campeonato.cambiarRaqueta(this);
     }
     
     /**
@@ -107,7 +118,7 @@ public class Tenista
        public String toString()
     {
         StringBuilder builder = new StringBuilder();
-        builder.append("    **  Tenista [nombre=");
+        builder.append(" [nombre=");
         builder.append(this.nombre);
         builder.append(", saque=");
         builder.append(this.saque);
@@ -121,6 +132,8 @@ public class Tenista
         builder.append(this.numPie+"]");
         builder.append("\n");
         builder.append(this.zapatilla.toString());
+        builder.append("\n");
+        builder.append(this.raqueta.toString());
         return builder.toString();
     }
     
@@ -315,18 +328,8 @@ public class Tenista
      * @param zapatillasCampeonato Lista de Zapatillas que pueden elegir los tenistas 
      * en el campeonato.
      */  
-    public boolean elegirZapatillaTenista (ArrayList <Zapatilla> zapatillasCampeonato){
-        boolean bandera = false;
-            Iterator <Zapatilla> it = zapatillasCampeonato.iterator();
-            while(it.hasNext() && !bandera){
-                Zapatilla z = it.next();
-                    if (this.getNumPie()==z.getNumero()){
-                        this.setZapatilla(z);
-                        zapatillasCampeonato.remove(z);
-                        bandera=true;
-                    }
-                }
-                return bandera;
+    public boolean elegirZapatillaTenista (){
+        return Campeonato.elegirZapatilla(this);
     }
 
      /**
