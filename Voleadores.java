@@ -1,4 +1,6 @@
 
+import java.util.Iterator;
+
 /**
  * Write a description of class TenistaVoleador here.
  * 
@@ -22,12 +24,25 @@ public class Voleadores extends Tenista
     }
     
     @Override
-    public void cambiarRaquetaTenista(){
-        Campeonato.cambiarRaquetaVelocidad(this);
+    public void cambiarRaqueta(){
+        cambiarRaquetaVelocidad();
     }
     
     @Override
     public String tipoTenista(){
         return "(Voleadores)";
+    }
+    
+    public void cambiarRaquetaVelocidad(){
+        boolean bandera = false;
+        Iterator <Raqueta> it = Campeonato.getInstance("Campeonato de Extremadura").getRaquetasCampeonato().iterator();
+        while(it.hasNext() && !bandera){
+            Raqueta r = it.next();
+                  if (this.getRaqueta().calcularVelocidad()<r.calcularVelocidad()){
+                    this.setRaqueta(r);
+                    Campeonato.getInstance("Campeonato de Extremadura").borrarRaqueta(r);
+                    bandera=true;
+                 }
+            }
     }
 }

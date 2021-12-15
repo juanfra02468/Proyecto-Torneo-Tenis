@@ -16,10 +16,10 @@ import java.util.Iterator;
 public class Campeonato
 {
     private String nombre;
-    private static ArrayList <Tenista> competidores;
+    private ArrayList <Tenista> competidores;
     private ArrayList <Tenista> eliminados;
-    private static ArrayList <Zapatilla> zapatillasCampeonato;
-    private static TreeSet <Raqueta> raquetasCampeonato;
+    private ArrayList <Zapatilla> zapatillasCampeonato;
+    private TreeSet <Raqueta> raquetasCampeonato;
     private static Campeonato singletonCampeonato;
     
     /**
@@ -46,7 +46,7 @@ public class Campeonato
      * Método que inscribe a un Tenista al campeonato, añadiendolo a la lista de competidores
      * @param t1 un tenista
      */
-    public static void inscripcionCompetidores (Tenista t1)
+    public void inscripcionCompetidores (Tenista t1)
     {
         competidores.add(t1);
     }
@@ -86,24 +86,6 @@ public class Campeonato
         
         return bandera;
     }
-    
-    public static void cambiarRaqueta(Tenista t){
-        t.setRaqueta(raquetasCampeonato.first());
-        raquetasCampeonato.remove(raquetasCampeonato.first());
-    }
-    
-    public static void cambiarRaquetaVelocidad(Tenista t){
-       boolean bandera = false;
-            Iterator <Raqueta> it = raquetasCampeonato.iterator();
-            while(it.hasNext() && !bandera){
-                Raqueta z = it.next();
-                    if (t.getRaqueta().calcularVelocidad()<z.calcularVelocidad()){
-                        t.setRaqueta(z);
-                        raquetasCampeonato.remove(z);
-                        bandera=true;
-                    }
-                }
-    }
 
     /**
      * Método que simula un partido entre dos tenistas
@@ -117,22 +99,9 @@ public class Campeonato
         System.out.println("    ##  Tenista2 "+t2.tipoTenista()+"---->>>: "+t2.getNombre());
         comprobacionZapatilla(t2);
         t1.jugar(t2);
+        t2.jugar(t1);
         mostrarCambioRaqueta(t1);
         mostrarCambioRaqueta(t2);
-    }
-    
-    public static boolean elegirZapatilla (Tenista t){
-        boolean bandera = false;
-            Iterator <Zapatilla> it = zapatillasCampeonato.iterator();
-            while(it.hasNext() && !bandera){
-                Zapatilla z = it.next();
-                    if (t.getNumPie()==z.getNumero()){
-                        t.setZapatilla(z);
-                        zapatillasCampeonato.remove(z);
-                        bandera=true;
-                    }
-                }
-                return bandera;
     }
     
     private void comprobacionZapatilla (Tenista t1){
@@ -274,7 +243,7 @@ public class Campeonato
     
        System.out.println("    ## Se elimina: "+perdedor.getNombre()+" con: "
        +perdedor.getPuntosAcumulados()+" puntos acumulados. Tenista eliminado num: "
-       +eliminados.size());
+       +eliminados.size() + "\n");
        ganador.resetPuntosAcumulados();        
     }
     
@@ -317,5 +286,27 @@ public class Campeonato
             System.out.println(tenistas.getRaqueta().toString()+ " asignada a -->> "
             +tenistas.getNombre());
         }        
+    }
+    
+    public ArrayList getZapatillasCampeonato()
+    {
+        ArrayList <Zapatilla> copiaZapatillas = new ArrayList<Zapatilla>(zapatillasCampeonato);
+        return copiaZapatillas;
+    }
+    
+    public void borrarZapatilla(Zapatilla z)
+    {
+        zapatillasCampeonato.remove(z);
+    }
+    
+    public TreeSet getRaquetasCampeonato()
+    {
+        TreeSet <Raqueta> copiaRaquetas = new TreeSet<Raqueta>(raquetasCampeonato);
+        return copiaRaquetas;
+    }
+    
+    public void borrarRaqueta(Raqueta r)
+    {
+        raquetasCampeonato.remove(r);
     }
 }

@@ -46,15 +46,16 @@ public abstract class Tenista
     
     public void realizarInscripcion()
     {
-        Campeonato.inscripcionCompetidores(this);
+        Campeonato.getInstance("Campeonato de Extremadura").inscripcionCompetidores(this);
     }
     
     public abstract String tipoTenista();
+    
     /**
      * Invoca al método calcularValorSaque de la clase Zapatilla y suma el resultado 
      * al campo puntosAcumulados
      */   
-    private void sacar()
+    private final void sacar()
     {   
         this.puntosAcumulados += this.calcularSaque();
     }
@@ -64,7 +65,7 @@ public abstract class Tenista
      * el tenista que resta puede aumentar sus puntos o no
      * @param t1 tenista contrario al que resta
      */        
-    private void restar(Tenista t1)
+    private final void restar(Tenista t1)
     {
         if(this.calcularResto() > t1.calcularSaque ()){
             this.puntosAcumulados+= this.calcularResto ();
@@ -77,7 +78,7 @@ public abstract class Tenista
      */
     private double calcularResto (){
         return zapatilla.calcularValorResto()*raqueta.calcularVelocidad()*
-        raqueta.calcularControl()*resto;
+            raqueta.calcularControl()*resto;
     }
 
     /**
@@ -86,7 +87,7 @@ public abstract class Tenista
      */
     private double calcularSaque (){
         return raqueta.calcularVelocidad()*raqueta.calcularPotencia()*
-        zapatilla.calcularValorSaque()*saque;
+            zapatilla.calcularValorSaque()*saque;
     }
     
     /**
@@ -95,20 +96,18 @@ public abstract class Tenista
      */
     public final void jugar(Tenista t2)
     {
-        this.sacar();
+        sacar();
         t2.restar(this);
-        t2.sacar();
-        this.restar(t2);
-        this.golpear();
-        t2.golpear();
-        this.cambiarRaquetaTenista();
-        t2.cambiarRaquetaTenista(); 
+        golpear();
+        cambiarRaqueta();
     }
     
     protected abstract void golpear();
     
-    protected void cambiarRaquetaTenista(){
-        Campeonato.cambiarRaqueta(this);
+    public void cambiarRaqueta(){
+        Raqueta r = (Raqueta)Campeonato.getInstance("Campeonato de Extremadura").getRaquetasCampeonato().first();
+        this.setRaqueta(r);
+        Campeonato.getInstance("Campeonato de Extremadura").borrarRaqueta(r);
     }
     
     /**
@@ -329,7 +328,17 @@ public abstract class Tenista
      * en el campeonato.
      */  
     public boolean elegirZapatillaTenista (){
-        return Campeonato.elegirZapatilla(this);
+        boolean bandera = false;
+        Iterator <Zapatilla> it = Campeonato.getInstance("Campeonato de Extremadura").getZapatillasCampeonato().iterator();
+        while(it.hasNext() && !bandera){
+                Zapatilla z = it.next();
+                if (this.getNumPie()==z.getNumero()){
+                        this.setZapatilla(z);
+                        Campeonato.getInstance("Campeonato de Extremadura").borrarZapatilla(z);
+                        bandera=true;
+                }
+            }
+        return bandera;
     }
 
      /**

@@ -22,10 +22,10 @@ public class Golpeadores extends Tenista
     }
     
     public String toString(){
-    StringBuilder builder = new StringBuilder();
-    builder.append("   ** Tenista (Golpeadores)");
-    builder.append(super.toString());
-    return builder.toString();
+        StringBuilder builder = new StringBuilder();
+        builder.append("   ** Tenista (Golpeadores)");
+        builder.append(super.toString());
+        return builder.toString();
     }
     
     @Override
