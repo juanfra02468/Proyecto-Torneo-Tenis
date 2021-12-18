@@ -45,7 +45,7 @@ public class ZapatillasConAgarre extends ZapatillaGenerica
     public String toString()
     {
         StringBuilder builder = new StringBuilder();
-        builder.append("        ZapatillasConAgarre ");
+        builder.append("       ZapatillasConAgarre ");
         builder.append(super.toString());
         return builder.toString();
     }

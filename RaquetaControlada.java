@@ -76,7 +76,7 @@ public class RaquetaControlada extends RaquetaGenerica
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
-        builder.append("   RaquetaControlada(Encordado:");
+        builder.append("RaquetaControlada(Encordado:");
         builder.append(getEncordado());
         builder.append(" (MultiplicadorDePotencia: ");
         builder.append(getEncordado().getMultiplicadorPotencia()+")");

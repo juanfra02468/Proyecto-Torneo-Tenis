@@ -33,6 +33,14 @@ public class Voleadores extends Tenista
         return "(Voleadores)";
     }
     
+    @Override
+    public String toString(){
+        StringBuilder builder = new StringBuilder();
+        builder.append("    ** Tenista (Voleadores)");
+        builder.append(super.toString());
+        return builder.toString();
+    }
+    
     public void cambiarRaquetaVelocidad(){
         boolean bandera = false;
         Iterator <Raqueta> it = Campeonato.getInstance("Campeonato de Extremadura").getRaquetasCampeonato().iterator();

@@ -53,6 +53,8 @@ public class ZapatillasConAgarreTest
     public void calcularValorRestoTest()
     {
         assertEquals(6.63, zapatill1.calcularValorResto(), 0.1);
+        assertEquals(8.84, zapatill2.calcularValorResto(), 0.1);
+        assertEquals(8.84, zapatill3.calcularValorResto(), 0.1);
     }
 
     @Test
@@ -61,13 +63,6 @@ public class ZapatillasConAgarreTest
         assertEquals(false, zapatill1.equals(zapatill2));
         assertEquals(true, zapatill1.equals(zapatill1));
         assertEquals(true, zapatill2.equals(zapatill3));
-    }
-
-    @Test
-    public void hashCodeTest()
-    {
-        assertEquals(-82663189, zapatill2.hashCode());
-        assertEquals(-82663189, zapatill3.hashCode());
     }
 }
 

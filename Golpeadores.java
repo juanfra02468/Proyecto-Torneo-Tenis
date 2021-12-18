@@ -21,9 +21,10 @@ public class Golpeadores extends Tenista
         this.setPuntosAcumulados(puntos);
     }
     
+    @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
-        builder.append("   ** Tenista (Golpeadores)");
+        builder.append("    ** Tenista (Golpeadores)");
         builder.append(super.toString());
         return builder.toString();
     }

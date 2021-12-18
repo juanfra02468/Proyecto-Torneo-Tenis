@@ -20,6 +20,7 @@ public class Campeonato
     private ArrayList <Tenista> eliminados;
     private ArrayList <Zapatilla> zapatillasCampeonato;
     private TreeSet <Raqueta> raquetasCampeonato;
+    private Comunicacion comunicacion;
     private static Campeonato singletonCampeonato;
     
     /**
@@ -31,6 +32,7 @@ public class Campeonato
         competidores = new ArrayList <Tenista>();
         eliminados = new ArrayList <Tenista>();
         zapatillasCampeonato = new ArrayList <Zapatilla>();
+        comunicacion = new Comunicacion();
         raquetasCampeonato = new TreeSet <Raqueta> (new PotenciaComparator());
     }
     
@@ -49,6 +51,10 @@ public class Campeonato
     public void inscripcionCompetidores (Tenista t1)
     {
         competidores.add(t1);
+    }
+    
+    public String getNombre(){
+        return this.nombre;
     }
     
     /**
@@ -94,9 +100,9 @@ public class Campeonato
      */  
     private void juego(Tenista t1, Tenista t2)
     {
-        System.out.println("    ##  Tenista1 "+t1.tipoTenista()+" ---->>>: "+t1.getNombre());
+        System.out.println("    ## Tenista1 "+t1.tipoTenista()+" ---->>>: "+t1.getNombre());
         comprobacionZapatilla(t1);
-        System.out.println("    ##  Tenista2 "+t2.tipoTenista()+"---->>>: "+t2.getNombre());
+        System.out.println("    ## Tenista2 "+t2.tipoTenista()+"---->>>: "+t2.getNombre());
         comprobacionZapatilla(t2);
         t1.jugar(t2);
         t2.jugar(t1);
@@ -106,19 +112,19 @@ public class Campeonato
     
     private void comprobacionZapatilla (Tenista t1){
        if (t1.elegirZapatillaTenista()){
-            System.out.println("Zapatillas asignadas: "+t1.getZapatilla().toString());
+            System.out.println("       Zapatillas asignadas: "+t1.getZapatilla().toString());
         }        
     }
     
     private void mostrarCambioRaqueta(Tenista t){
-        System.out.println(t.getNombre()+" cambia su raqueta por: "+t.getRaqueta().mostrarRaquetaCambiada());
+        System.out.println("       "+t.getNombre()+" cambia su raqueta por: "+t.getRaqueta().mostrarRaquetaCambiada());
     }
     
     /**
      * Método que muestra por pantalla el avance de los partidos, las rondas, 
      * quien ha ganado y el listado de eliminados
      */
-    public void controlDeCampeonato()
+    public void controlDeCampeonato() throws ExcepcionRaquetas
     {
         System.out.println("***** Inicio del campeonato: "+nombre+" *****\n");
         if (asignarRaquetas()){
@@ -131,8 +137,8 @@ public class Campeonato
             while(competidores.size() != 1){
                System.out.println("\n"); 
                System.out.println("***** Ronda---->>>: "+i);
+               partidos(i);
                i++;
-               partidos();
             }
             
             Tenista ganador = competidores.get(0);
@@ -142,7 +148,7 @@ public class Campeonato
             listaTenistas_eliminados();
         }
         else{
-        System.out.println("## CAMPEONATO ANULADO POR FALTA DE RAQUETAS ");            
+            throw new ExcepcionRaquetas();           
         } 
     }
     
@@ -153,7 +159,7 @@ public class Campeonato
     private void mostrarganadorTorneo (Tenista ganador)
     {
         System.out.println("\n");
-        System.out.println("---->>>> Gana la competición:"+ganador.toString()+"  <<<<----"); 
+        System.out.println("---->>>>  Gana la competición:"+ganador.toString()+"  <<<<----"); 
         System.out.println("\n"); 
     }
     
@@ -161,7 +167,7 @@ public class Campeonato
      * Método que gestiona la puntuacion de los tenistas tras los partidos y muestra por 
      * pantalla quien ha ganado y quien ha perdido
      */
-    public void partidos()
+    public void partidos(int ronda)
     {   
         Tenista t1;
         Tenista t2;
@@ -173,7 +179,8 @@ public class Campeonato
            
            System.out.println("  #### Juego ------------>>>: "+i);
            juego(t1, t2);
-           
+           //LLAMADA A LOS MEDIOS
+           comunicacion.notificar(t1,t2,ronda);
            
            if(t1.getPuntosAcumulados()==t2.getPuntosAcumulados())
            {
@@ -261,7 +268,7 @@ public class Campeonato
     private void raquetasDisponibles(){
         for(Raqueta raqueta: raquetasCampeonato)
         {
-             System.out.println(raqueta.toString());
+             System.out.println("      "+raqueta.toString());
         }  
     }
     
@@ -283,7 +290,7 @@ public class Campeonato
     public void mostrarRaquetas(){
         for(Tenista tenistas: competidores)
         {
-            System.out.println(tenistas.getRaqueta().toString()+ " asignada a -->> "
+            System.out.println("   **     "+tenistas.getRaqueta().toString()+ " asignada a -->> "
             +tenistas.getNombre());
         }        
     }

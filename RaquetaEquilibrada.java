@@ -96,7 +96,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
-        builder.append("   RaquetaEquilibrada");
+        builder.append("RaquetaEquilibrada");
         builder.append(" (MultiplicadorDePotencia: ");
         builder.append(this.multiplicadorPotencia+")");
         builder.append(" (MultiplicadorDeControl: ");

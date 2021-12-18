@@ -132,7 +132,8 @@ public abstract class Tenista
         builder.append("\n");
         builder.append(this.zapatilla.toString());
         builder.append("\n");
-        builder.append(this.raqueta.toString());
+        builder.append("       "+this.raqueta.toString());
+        builder.append("\n");
         return builder.toString();
     }
     

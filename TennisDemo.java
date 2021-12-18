@@ -13,7 +13,7 @@ public class TennisDemo {
      * Main que se encarga de instanciar una variable campeonato, llama a la carga de datos y 
      * simula el campeonato
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExcepcionRaquetas {
         //Creación del campeonato
         //Se instancia una variable de tipo Campeonato;
         Campeonato Campeonato1 = Campeonato.getInstance("Campeonato de Extremadura");
