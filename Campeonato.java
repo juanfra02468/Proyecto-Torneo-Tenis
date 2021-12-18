@@ -254,6 +254,19 @@ public class Campeonato
        ganador.resetPuntosAcumulados();        
     }
     
+    public ArrayList getCompetidores()
+    {
+        ArrayList <Tenista> copiaCompetidores = new ArrayList<Tenista>(competidores);
+        return copiaCompetidores;
+    }
+    
+    public void reset (){
+        competidores.clear();
+        zapatillasCampeonato.clear();
+        raquetasCampeonato.clear();
+        eliminados.clear();
+    }
+    
     /**
      * Metodo encargado de mostrar la lista de tenistas que compiten en el campeonato
      */
