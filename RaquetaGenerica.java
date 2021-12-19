@@ -1,5 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Iterator;
 
 /**
@@ -20,27 +18,6 @@ public abstract class RaquetaGenerica implements Raqueta
     private double peso;
     private double longitud;
     private double tamañoCabeza;
-    private static final Map<Double, Double> mapaLongitudPotencia = Map.of(
-        680.0, 2.0, 
-        690.0, 4.0, 
-        700.0, 6.0, 
-        720.0, 8.0, 
-        740.0, 10.0
-    );
-    private static final Map<Double, Double> mapaCabezaControl = Map.of(
-        600.0, 10.0, 
-        630.0, 8.0, 
-        650.0, 6.0, 
-        680.0, 4.0, 
-        720.0, 2.0
-    );
-    private static final Map<Double, Double> mapaPesoVelocidad = Map.of(
-        220.0, 10.0, 
-        260.0, 8.0, 
-        300.0, 6.0, 
-        320.0, 4.0, 
-        340.0, 2.0
-    );
     
     /**
      * Constructor parametrizado de la clase RaquetaGenerica
@@ -106,19 +83,19 @@ public abstract class RaquetaGenerica implements Raqueta
     
     public double calcularPotencia()
     {
-        double potencia=(double)mapaLongitudPotencia.get((Double)longitud);
+        double potencia=(double)TablasRaquetas.getMapaLongitudPotencia(longitud);
         return potencia;
     }
 
     public double calcularControl()
     {
-        double control=(double)mapaCabezaControl.get((Double)tamañoCabeza);
+        double control=(double)TablasRaquetas.getMapaCabezaControl(tamañoCabeza);
         return control;
     }
     
     public double calcularVelocidad()
     {
-        double velocidad=(double)mapaPesoVelocidad.get((Double)peso);
+        double velocidad=(double)TablasRaquetas.getMapaPesoVelocidad(peso);
         return velocidad;
     }
     
