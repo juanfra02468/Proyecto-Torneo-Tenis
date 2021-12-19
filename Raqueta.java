@@ -89,8 +89,14 @@ public interface Raqueta
      */
     public void setEncordado(Encordado encordado);
     
+    /**
+     * Devuelve una cadena con el tipo de raqueta
+     */
     public abstract String mostrarTipo();
     
+    /**
+     * Muestra la nueva raqueta en caso de que se haya cambiado
+     */
     public String mostrarRaquetaCambiada();
     
 }

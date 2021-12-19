@@ -13,7 +13,7 @@ public class Comunicacion
     private MedioSensacionalista sensacionalista;
 
     /**
-     * Constructor for objects of class Comunicacion
+     * Constructor de la clase Comunicacion
      */
     public Comunicacion()
     {
@@ -22,6 +22,9 @@ public class Comunicacion
         sensacionalista = new MedioSensacionalista("Adios"); 
     }
     
+    /**
+     * Notifica a los medios y les pasa el resultado del partido
+     */
     public void notificar(Tenista t1, Tenista t2, int ronda){
         Tenista ganador;
         Tenista perdedor;

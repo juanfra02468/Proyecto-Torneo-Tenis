@@ -78,13 +78,17 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     
     /**
      * Permite cambiar el multiplicador de potencia de la raqueta
-     * @param multiplicadorPotencia El nuevo multiplicador de potencia
+     * @param el nuevo multiplicador de potencia
      */
     public void setMultiplicadorPotencia(double multiplicadorPotencia)
     {
         this.multiplicadorPotencia = multiplicadorPotencia;
     }
     
+    /**
+     * Devuelve una cadena con el tipo de raqueta
+     * @return cadena con el tipo de raqueta
+     */
     public String mostrarTipo(){
         return "RaquetaEquilibrada";
     }
@@ -106,6 +110,10 @@ public class RaquetaEquilibrada extends RaquetaGenerica
         return builder.toString();
     }
 
+    /**
+     * Devuelve un código hash para el objeto
+     * @return el código hash para el objeto
+     */
     @Override
     public int hashCode()
     {
@@ -119,6 +127,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     /**
      * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
      * false si algún campo es diferente o no son del mismo tipo
+     * @return true o false si son iguales o no los objetos
      */
     @Override
     public boolean equals(Object obj)

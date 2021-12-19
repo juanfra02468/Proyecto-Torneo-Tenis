@@ -105,7 +105,6 @@ public abstract class RaquetaGenerica implements Raqueta
         return mostrarTipo()+" modelo="+getModelo()+" velocidad="+calcularVelocidad();
     }
     
-    
     @Override
     public String toString()
     {

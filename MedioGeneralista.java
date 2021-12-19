@@ -1,23 +1,29 @@
 
 /**
- * Write a description of class MedioGeneralista here.
+ * Clase que representa al medio generalista.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 19-12-2021
  */
 public class MedioGeneralista
 {
-    // instance variables - replace the example below with your own
     private String nombre;
 
     /**
-     * Constructor for objects of class MedioSensacionalista
+     * Constructor de la clase MedioSensacionalista
      */
     public MedioGeneralista(String nombre)
     {
         this.nombre=nombre;
     }
 
+    /**
+     * Imprime por pantalla el nombre del medio, el nombre del campeonato, la ronda, el nombre del ganador, el nombre del perdedor 
+     * y la diferencia de puntos del ganador con el perdedor después de cada partido cuando cualquiera de los dos tenistas se encuentre
+     * entre las 3 primeras posiciones del ranking.
+     */
     public void actualizar (Tenista ganador, Tenista perdedor, int ronda){
         if (ganador.getRanking()<=2 || perdedor.getRanking()<=2){
             System.out.println("@@@@@@ El medio generalista "+nombre+" destaca en Deportes que en el "+Campeonato.getInstance("Campeonato de Extremadura").getNombre()+

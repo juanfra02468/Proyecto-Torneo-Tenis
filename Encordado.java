@@ -20,10 +20,18 @@ public enum Encordado
         this.multiplicadorControl = multiplicadorControl;
     }
     
+    /**
+     * Devuelve el multiplicador de potencia de la raqueta
+     * @return el multiplicador de potencia
+     */
     public double getMultiplicadorPotencia(){
         return multiplicadorPotencia;
     }
     
+    /**
+     * Devuelve el multiplicador de potencia de la raqueta
+     * @return el multiplicador de potencia
+     */
     public double getMultiplicadorControl(){
         return multiplicadorControl;
     }

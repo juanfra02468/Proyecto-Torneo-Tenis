@@ -1,10 +1,13 @@
 import java.util.HashMap;
 import java.util.Map;
 /**
- * Write a description of class TablasRaquetas here.
+ * Tablas inmutables que contienen los valores de potencia, control y longitud
+ * de las raquetas según su longitud, tamaño de cabeza y peso respectivamente.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author David Bonilla
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @version 19-12-2021
  */
 public class TablasRaquetas
 {
@@ -30,16 +33,32 @@ public class TablasRaquetas
         340.0, 2.0
     );
     
+    
+    /**
+     * Devuelve la potencia asociada a la raqueta según su longitud
+     * @return potencia asociada a la raqueta según su longitud
+     */
     public static Double getMapaLongitudPotencia(double longitud){
-        return mapaLongitudPotencia.get((Double)longitud);
+        Double potencia = mapaLongitudPotencia.get((Double)longitud);
+        return potencia;
     }
     
+    /**
+     * Devuelve el control asociado a la raqueta según su tamaño de cabeza
+     * @return control asociado a la raqueta según su tamaño de cabeza
+     */
     public static Double getMapaCabezaControl(double tamcabeza){
-        return mapaCabezaControl.get((Double)tamcabeza);
+        Double control = mapaCabezaControl.get((Double)tamcabeza);
+        return control;
     }
 
+    /**
+     * Devuelve la velocidad asociada a la raqueta según su peso
+     * @return velocidad asociada a la raqueta según su peso
+     */
     public static Double getMapaPesoVelocidad(double peso){
-        return mapaPesoVelocidad.get((Double)peso);
+        Double velocidad = mapaPesoVelocidad.get((Double)peso);
+        return velocidad;
     }
     
 }

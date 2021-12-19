@@ -65,6 +65,9 @@ public class RaquetaPotente extends RaquetaGenerica
         this.multiplicadorVelocidad = multiplicadorVelocidad;
     }
     
+    /**
+     * Devuelve una cadena con el tipo de raqueta
+     */
     public String mostrarTipo(){
         return "RaquetaPotente";
     }
@@ -87,6 +90,10 @@ public class RaquetaPotente extends RaquetaGenerica
         return builder.toString();
     }
 
+    /**
+     * Devuelve un código hash para el objeto
+     * @return el código hash para el objeto
+     */
     @Override
     public int hashCode()
     {
@@ -99,6 +106,7 @@ public class RaquetaPotente extends RaquetaGenerica
     /**
      * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
      * false si algún campo es diferente o no son del mismo tipo
+     * @return true o false si son iguales o no los objetos
      */
     @Override
     public boolean equals(Object obj)

@@ -1,9 +1,11 @@
 
 /**
- * Write a description of class ExcepcionRaquetas here.
+ * Excepción usada en caso de falta de raquetas al inicio del campeonato.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author David Bonilla
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @version 19-12-2021
  */
 public class ExcepcionRaquetas extends Exception
 {

@@ -12,7 +12,7 @@ public class RaquetaControlada extends RaquetaGenerica
 {
     private double multiplicadorVelocidad;
 
-      /**
+    /**
      * Constructor Parametrizado de la clase RaquetaPotente
      * Este constructor crea un nuevo objeto de la clase RaquetaPotente 
      * con los valores pasados por parametro.
@@ -65,6 +65,9 @@ public class RaquetaControlada extends RaquetaGenerica
         this.multiplicadorVelocidad = multiplicadorVelocidad;
     }
     
+    /**
+     * Devuelve una cadena con el tipo de raqueta
+     */
     public String mostrarTipo(){
         return "RaquetaControlada";
     }
@@ -87,6 +90,10 @@ public class RaquetaControlada extends RaquetaGenerica
         return builder.toString();
     }
     
+    /**
+     * Devuelve un código hash para el objeto
+     * @return el código hash para el objeto
+     */
     @Override
     public int hashCode()
     {
@@ -99,6 +106,7 @@ public class RaquetaControlada extends RaquetaGenerica
     /**
      * Devuelve true si todos los campos son iguales o si apuntan al mismo objeto, 
      * false si algún campo es diferente o no son del mismo tipo
+     * @return true o false si son iguales o no los objetos
      */
     @Override
     public boolean equals(Object obj)
