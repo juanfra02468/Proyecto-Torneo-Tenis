@@ -18,8 +18,6 @@ public class RaquetaEquilibradaTest
     private RaquetaEquilibrada raquetaE1;
     private RaquetaEquilibrada raquetaE2;
     private RaquetaEquilibrada raquetaE3;
-    private Encordado aBIERTO1;
-    private Encordado cERRADO1;
     private RaquetaEquilibrada raquetaE4;
     private RaquetaEquilibrada raquetaE5;
     private RaquetaEquilibrada raquetaE6;
@@ -46,12 +44,9 @@ public class RaquetaEquilibradaTest
         raquetaE1 = new RaquetaEquilibrada("Head Graphene", 320.0, 690.0, 630.0, null, 6.0, 2.0);
         raquetaE2 = new RaquetaEquilibrada("Class 100L", 320.0, 680.0, 720.0, null, 8.0, 1.0);
         raquetaE3 = new RaquetaEquilibrada("Head Graphene", 320.0, 690.0, 630.0, null, 6.0, 2.0);
-        Encordado.values();
-        aBIERTO1 = Encordado.values()[0];
-        cERRADO1 = Encordado.values()[1];
-        raquetaE4 = new RaquetaEquilibrada("Head Graphene", 320.0, 690.0, 630.0, aBIERTO1, 6.0, 2.0);
-        raquetaE5 = new RaquetaEquilibrada("Head Graphene", 320.0, 690.0, 630.0, aBIERTO1, 6.0, 2.0);
-        raquetaE6 = new RaquetaEquilibrada("Class 100L", 320.0, 680.0, 720.0, cERRADO1, 8.0, 1.0);
+        raquetaE4 = new RaquetaEquilibrada("Head Graphene", 320.0, 690.0, 630.0, Encordado.ABIERTO, 6.0, 2.0);
+        raquetaE5 = new RaquetaEquilibrada("Head Graphene", 320.0, 690.0, 630.0, Encordado.ABIERTO, 6.0, 2.0);
+        raquetaE6 = new RaquetaEquilibrada("Class 100L", 320.0, 680.0, 720.0, Encordado.CERRADO, 8.0, 1.0);
     }
 
     /**
@@ -62,6 +57,12 @@ public class RaquetaEquilibradaTest
     @AfterEach
     public void tearDown()
     {
+        raquetaE1=null;
+        raquetaE2=null;
+        raquetaE3=null;
+        raquetaE4=null;
+        raquetaE5=null;
+        raquetaE6=null;
     }
     
     @Test

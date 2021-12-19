@@ -3,7 +3,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Test ;
 
 /**
  * The test class CampeonatoTest.
@@ -81,8 +81,7 @@ public class CampeonatoTest
          t2 = new Golpeadores ("Ashleigh Barty", z2, 70, 80, 1, "Australia", 40);
          t3 = new Voleadores ("Stefanos Tsitsipas", z7, 55, 48, 3, "Grecia", 43);
          t4 = new Voleadores ("Karolina Pliskova", z5, 67, 68.5, 3, "Rep Checa", 39);
-        Campeonato.getInstance("Campeonato de NigeriaTest");
-        campeonato = Campeonato.getInstance("Campeonato de NigeriaTest");
+         campeonato = Campeonato.getInstance("Campeonato de NigeriaTest");
         
         t1.realizarInscripcion();
         t2.realizarInscripcion();
@@ -106,7 +105,8 @@ public class CampeonatoTest
         campeonato.añadirZapatilla(z10);
         campeonato.añadirZapatilla(z11);
         campeonato.añadirZapatilla(z12);
-        campeonato.añadirZapatilla(z13);
+        campeonato.añadirZapatilla(z13) ;
+        
     }
 
     /**
@@ -115,9 +115,9 @@ public class CampeonatoTest
      * Called after every test case method.
      */
     @AfterEach
-    public void tearDown()
+    public void tearDown() throws Throwable 
     {
-        campeonato.reset() ; 
+        campeonato.reset();
     }
     
     @Test
@@ -134,6 +134,10 @@ public class CampeonatoTest
     public void controldeCampeonatoTest() throws ExcepcionRaquetas
     {
         campeonato.controlDeCampeonato();
-        assertEquals(true, t1.equals(campeonato.getCompetidores().get(0)));   
+        Tenista t = (Tenista)campeonato.getCompetidores().get(0);
+        assertEquals(true, t1.equals(t));
+        assertEquals(3, campeonato.getRaquetasCampeonato().size());
+        assertEquals(true, r1.equals(t.getRaqueta()));
+        
     }
 }

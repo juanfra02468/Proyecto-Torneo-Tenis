@@ -15,8 +15,6 @@ import org.junit.jupiter.api.Test;
  */
 public class RaquetaPotenteTest
 {
-    private Encordado aBIERTO1;
-    private Encordado cERRADO1;
     private RaquetaPotente raquetaP1;
     private RaquetaPotente raquetaP2;
     private RaquetaPotente raquetaP3;
@@ -36,12 +34,9 @@ public class RaquetaPotenteTest
     @BeforeEach
     public void setUp()
     {
-        Encordado.values();
-        aBIERTO1 = Encordado.values()[0];
-        cERRADO1 = Encordado.values()[1];
-        raquetaP1 = new RaquetaPotente("Dunlop CX200", 300.0, 700.0, 630.0, aBIERTO1);
-        raquetaP2 = new RaquetaPotente("Dunlop CX200", 300.0, 700.0, 630.0, aBIERTO1);
-        raquetaP3 = new RaquetaPotente("Wilson Blade", 300.0, 700.0, 631.0, cERRADO1);
+        raquetaP1 = new RaquetaPotente("Dunlop CX200", 300.0, 700.0, 630.0, Encordado.ABIERTO);
+        raquetaP2 = new RaquetaPotente("Dunlop CX200", 300.0, 700.0, 630.0, Encordado.ABIERTO);
+        raquetaP3 = new RaquetaPotente("Wilson Blade", 300.0, 700.0, 631.0, Encordado.CERRADO);
     }
 
     /**
@@ -52,6 +47,9 @@ public class RaquetaPotenteTest
     @AfterEach
     public void tearDown()
     {
+        raquetaP1=null;
+        raquetaP2=null;
+        raquetaP3=null;
     }
 
     @Test

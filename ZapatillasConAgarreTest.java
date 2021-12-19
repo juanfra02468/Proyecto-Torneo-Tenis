@@ -47,6 +47,9 @@ public class ZapatillasConAgarreTest
     @AfterEach
     public void tearDown()
     {
+        zapatill1=null;
+        zapatill2=null;
+        zapatill3=null;
     }
 
     @Test

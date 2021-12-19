@@ -15,8 +15,6 @@ import org.junit.jupiter.api.Test;
  */
 public class RaquetaControladaTest
 {
-    private Encordado aBIERTO1;
-    private Encordado cERRADO1;
     private RaquetaControlada raquetaC1;
     private RaquetaControlada raquetaC2;
     private RaquetaControlada raquetaC3;
@@ -36,12 +34,9 @@ public class RaquetaControladaTest
     @BeforeEach
     public void setUp()
     {
-        Encordado.values();
-        aBIERTO1 = Encordado.values()[0];
-        cERRADO1 = Encordado.values()[1];
-        raquetaC1 = new RaquetaControlada("Babolat Drive", 340.0, 740.0, 600.0, cERRADO1);
-        raquetaC2 = new RaquetaControlada("Babolat Drive", 340.0, 740.0, 600.0, cERRADO1);
-        raquetaC3 = new RaquetaControlada("Wilson Silver", 220.0, 690.0, 650.0, aBIERTO1);
+        raquetaC1 = new RaquetaControlada("Babolat Drive", 340.0, 740.0, 600.0, Encordado.CERRADO);
+        raquetaC2 = new RaquetaControlada("Babolat Drive", 340.0, 740.0, 600.0, Encordado.CERRADO);
+        raquetaC3 = new RaquetaControlada("Wilson Silver", 220.0, 690.0, 650.0, Encordado.ABIERTO);
     }
 
     /**
@@ -52,6 +47,9 @@ public class RaquetaControladaTest
     @AfterEach
     public void tearDown()
     {
+        raquetaC1=null;
+        raquetaC2=null;
+        raquetaC3=null;
     }
 
 

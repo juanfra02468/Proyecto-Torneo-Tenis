@@ -260,11 +260,13 @@ public class Campeonato
         return copiaCompetidores;
     }
     
-    public void reset (){
+    public void reset () throws Throwable 
+    {
         competidores.clear();
         zapatillasCampeonato.clear();
         raquetasCampeonato.clear();
         eliminados.clear();
+        singletonCampeonato.finalize();
     }
     
     /**
