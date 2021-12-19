@@ -4,7 +4,8 @@ import java.util.*;
 import java.util.Iterator;
 
 /**
- * La clase Campeonato representa el torneo que se va a disputar entre los distintos tenistas que participan.
+ * La clase Campeonato representa el torneo que se va a disputar entre los distintos 
+ * tenistas que participan.
  * 
  * @author Antonio Javier Hidalgo
  * @author Juan Francisco García
@@ -24,8 +25,9 @@ public class Campeonato
     private static Campeonato singletonCampeonato;
     
     /**
-     * Constructor for objects of class Campeonato
-     */
+     * Constructor parametrizado de la clase Campeonato
+     * Crea un nuevo objeto de la clase Campeonato 
+     */ 
     private Campeonato(String nombre)
     {
         this.nombre = nombre;
@@ -35,6 +37,11 @@ public class Campeonato
         comunicacion = new Comunicacion();
         raquetasCampeonato = new TreeSet <Raqueta> (new PotenciaComparator());
     }
+    
+    /**
+     * Método que impide crear mas de un campeonato con el mismo nombre 
+     * @param nombre nombre del campeonato
+     */
     
     public static synchronized Campeonato getInstance(String nombre)
     {
@@ -53,10 +60,6 @@ public class Campeonato
         competidores.add(t1);
     }
     
-    public String getNombre(){
-        return this.nombre;
-    }
-    
     /**
      * Método que añade una zapatilla a la lista zapatillas
      * @param z1 una zapatilla
@@ -65,7 +68,7 @@ public class Campeonato
     {
         zapatillasCampeonato.add(z1);
     }
-
+    
     /**
      * Método que añade una raqueta al arbol de raquetas
      * @param r1 una raqueta
@@ -76,7 +79,8 @@ public class Campeonato
     }
     
      /**
-     * Metodo encargado de asignar las raquetas a los competidores 
+     * Metodo encargado de asignar las raquetas a los competidores
+     * @return un bool
      */
     public boolean asignarRaquetas (){
         boolean bandera=false;
@@ -91,33 +95,6 @@ public class Campeonato
             }
         
         return bandera;
-    }
-
-    /**
-     * Método que simula un partido entre dos tenistas
-     * @param t1 Hace referencia a un tenista
-     * @param t2 Hace referencia a un tenista
-     */  
-    private void juego(Tenista t1, Tenista t2)
-    {
-        System.out.println("    ## Tenista1 "+t1.tipoTenista()+" ---->>>: "+t1.getNombre());
-        comprobacionZapatilla(t1);
-        System.out.println("    ## Tenista2 "+t2.tipoTenista()+"---->>>: "+t2.getNombre());
-        comprobacionZapatilla(t2);
-        t1.jugar(t2);
-        t2.jugar(t1);
-        mostrarCambioRaqueta(t1);
-        mostrarCambioRaqueta(t2);
-    }
-    
-    private void comprobacionZapatilla (Tenista t1){
-       if (t1.elegirZapatillaTenista()){
-            System.out.println("       Zapatillas asignadas: "+t1.getZapatilla().toString());
-        }        
-    }
-    
-    private void mostrarCambioRaqueta(Tenista t){
-        System.out.println("       "+t.getNombre()+" cambia su raqueta por: "+t.getRaqueta().mostrarRaquetaCambiada());
     }
     
     /**
@@ -148,19 +125,9 @@ public class Campeonato
             listaTenistas_eliminados();
         }
         else{
-            throw new ExcepcionRaquetas();           
+            throw new ExcepcionRaquetas(); //Excepcion que salta cuando hay más jugadores 
+                                           //que raquetas          
         } 
-    }
-    
-    /**
-     * Método que muestra el ganador del torneo
-     * @param ganador Hace referencia el tenista ganador
-     */
-    private void mostrarganadorTorneo (Tenista ganador)
-    {
-        System.out.println("\n");
-        System.out.println("---->>>>  Gana la competición:"+ganador.toString()+"  <<<<----"); 
-        System.out.println("\n"); 
     }
     
     /**
@@ -202,6 +169,23 @@ public class Campeonato
     }
     
     /**
+     * Método que simula un partido entre dos tenistas
+     * @param t1 un tenista
+     * @param t2 un tenista
+     */  
+    private void juego(Tenista t1, Tenista t2)
+    {
+        System.out.println("    ## Tenista1 "+t1.tipoTenista()+" ---->>>: "+t1.getNombre());
+        comprobacionMostrarZapatilla(t1);
+        System.out.println("    ## Tenista2 "+t2.tipoTenista()+"---->>>: "+t2.getNombre());
+        comprobacionMostrarZapatilla(t2);
+        t1.jugar(t2);
+        t2.jugar(t1);
+        mostrarCambioRaqueta(t1);
+        mostrarCambioRaqueta(t2);
+    }
+    
+    /**
      * Método que muestra el ganador y perdedor en el caso de que gane el primer tenista 
      * situado en la lista
      */
@@ -215,9 +199,9 @@ public class Campeonato
      * Metodo que añade a la lista de eliminados al tenista perdedor 
      * eliminandolo del campeonato, añade a la lista de competidores al ganador y 
      * muestra llamando a GanadorYperdedor
-     * @param ganador hace referencia al Tenista que gana el partido
-     * @param perdedor hace referencia al Tenista que pierde el partido
-     * @param indice hace referencia a la posicion del tenista que se va a borrar.
+     * @param ganador El Tenista que gana el partido
+     * @param perdedor El Tenista que pierde el partido
+     * @param indice La posicion del tenista que se va a borrar.
      */
     private void ganaUltimo(Tenista ganador, Tenista perdedor, int indice)
     {
@@ -227,11 +211,52 @@ public class Campeonato
        borrarUltimoymostrar(ganador, perdedor);       
     }
     
+    /**
+     * Método que muestra las Raquetas que llevarán los jugadores en el siguiente partido, 
+     * puede ser la misma Raqueta o no
+     */
+    
+    private void mostrarCambioRaqueta(Tenista t){
+        System.out.println("       "+t.getNombre()+" cambia su raqueta por: "+
+                           t.getRaqueta().mostrarRaquetaCambiada());
+    }
+    
+    /**
+     * Método que muestra el ganador del torneo
+     * @param ganador El tenista ganador
+     */
+    private void mostrarganadorTorneo (Tenista ganador)
+    {
+        System.out.println("\n");
+        System.out.println("---->>>>  Gana la competición:"+ganador.toString()+"  <<<<----"); 
+        System.out.println("\n"); 
+    }
+    
+    /**
+     * Método que muestra las nuevas zapatillas del Tenista en caso de que cambie las suyas
+     * @param t1 un Tenista
+     */
+    private void comprobacionMostrarZapatilla (Tenista t1){
+       if (t1.elegirZapatillaTenista()){
+            System.out.println("       Zapatillas asignadas: "+t1.getZapatilla().toString());
+        }        
+    }
+    
+    /**
+     * Método que añade un Tenista a la lista de eliminados
+     * @param perdedor un tenista que ha perdido
+     */
     private void añadirEliminado(Tenista perdedor){
        eliminados.add(perdedor);
        perdedor.setposEliminado(eliminados.size());        
     }
     
+    /**
+     * Método que borra el último jugador de la lista de competidores y muestra el
+     * ganador y perdedor de cada partido
+     * @param un Tenista ganador
+     * @param un Tenista perdedor
+     */
     private void borrarUltimoymostrar (Tenista ganador, Tenista perdedor){
        competidores.remove(competidores.size()-1);
        mostrarGanadoryPerdedor(ganador, perdedor);        
@@ -254,19 +279,15 @@ public class Campeonato
        ganador.resetPuntosAcumulados();        
     }
     
-    public ArrayList getCompetidores()
-    {
-        ArrayList <Tenista> copiaCompetidores = new ArrayList<Tenista>(competidores);
-        return copiaCompetidores;
-    }
-    
-    public void reset () throws Throwable 
-    {
-        competidores.clear();
-        zapatillasCampeonato.clear();
-        raquetasCampeonato.clear();
-        eliminados.clear();
-        singletonCampeonato.finalize();
+    /**
+     * Metodo encargado de mostrar las raquetas asignadas a tenistas
+     */
+    public void mostrarRaquetas(){
+        for(Tenista tenistas: competidores)
+        {
+            System.out.println("   **     "+tenistas.getRaqueta().toString()+ 
+                               " asignada a -->> "+tenistas.getNombre());
+        }        
     }
     
     /**
@@ -280,6 +301,9 @@ public class Campeonato
         }
     }
     
+    /**
+     * Método encargado de mostrar las raquetas disponibles del campeonato
+     */
     private void raquetasDisponibles(){
         for(Raqueta raqueta: raquetasCampeonato)
         {
@@ -290,7 +314,6 @@ public class Campeonato
     /**
      * Metodo encargado de mostrar la lista de tenistas eliminados en el campeonato
      */
-
     private void listaTenistas_eliminados ()
     {
         for(Tenista tenistas: eliminados)
@@ -300,35 +323,67 @@ public class Campeonato
     }
     
     /**
-     * Metodo encargado de mostrar las raquetas asignadas a tenistas
+     * Método encargado de borrar una Zapatilla de la lista de zapatillas
      */
-    public void mostrarRaquetas(){
-        for(Tenista tenistas: competidores)
-        {
-            System.out.println("   **     "+tenistas.getRaqueta().toString()+ " asignada a -->> "
-            +tenistas.getNombre());
-        }        
+    public void borrarZapatilla(Zapatilla z)
+    {
+        zapatillasCampeonato.remove(z);
     }
     
+    /**
+     * Método encargado de borrar una Raqueta del treeset de raquetas
+     */
+    public void borrarRaqueta(Raqueta r)
+    {
+        raquetasCampeonato.remove(r);
+    }
+    
+    /**
+     * Método que realiza una copia de la lista de competidores
+     */
+    public ArrayList getCompetidores()
+    {
+        ArrayList <Tenista> copiaCompetidores = new ArrayList<Tenista>(competidores);
+        return copiaCompetidores;
+    }
+    
+    /**
+     * Método que realiza una copia de la lista de zapatillas
+     */
     public ArrayList getZapatillasCampeonato()
     {
         ArrayList <Zapatilla> copiaZapatillas = new ArrayList<Zapatilla>(zapatillasCampeonato);
         return copiaZapatillas;
     }
     
-    public void borrarZapatilla(Zapatilla z)
-    {
-        zapatillasCampeonato.remove(z);
-    }
-    
+    /**
+     * Método que hace una copia del treeset de raquetas
+     */
     public TreeSet getRaquetasCampeonato()
     {
         TreeSet <Raqueta> copiaRaquetas = new TreeSet<Raqueta>(raquetasCampeonato);
         return copiaRaquetas;
     }
     
-    public void borrarRaqueta(Raqueta r)
+    /**
+     * Devuelve el nombre de un Campeonato
+     * @return el nombre de un campeonato
+     */
+    public String getNombre(){
+        return this.nombre;
+    }
+    
+    /**
+     * Método que hace un reset de todas las listas y treeset del campeonato y 
+     * finaliza la instancia campeonato
+     */
+    
+    public void reset () throws Throwable 
     {
-        raquetasCampeonato.remove(r);
+        competidores.clear();
+        zapatillasCampeonato.clear();
+        raquetasCampeonato.clear();
+        eliminados.clear();
+        singletonCampeonato.finalize();
     }
 }
