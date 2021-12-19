@@ -42,7 +42,6 @@ public class Campeonato
      * Método que impide crear mas de un campeonato con el mismo nombre 
      * @param nombre nombre del campeonato
      */
-    
     public static synchronized Campeonato getInstance(String nombre)
     {
         if(singletonCampeonato == null){
@@ -71,7 +70,7 @@ public class Campeonato
     
     /**
      * Método que añade una raqueta al arbol de raquetas
-     * @param r1 una raqueta
+     * @param una raqueta
      */
     public void añadirRaquetas (Raqueta r1)
     {
@@ -80,7 +79,7 @@ public class Campeonato
     
      /**
      * Metodo encargado de asignar las raquetas a los competidores
-     * @return un bool
+     * @return verdadero si se ha asignado una raqueta y falso en caso contrario
      */
     public boolean asignarRaquetas (){
         boolean bandera=false;
@@ -99,7 +98,7 @@ public class Campeonato
     
     /**
      * Método que muestra por pantalla el avance de los partidos, las rondas, 
-     * quien ha ganado y el listado de eliminados
+     * quién ha ganado y el listado de eliminados
      */
     public void controlDeCampeonato() throws ExcepcionRaquetas
     {
@@ -132,7 +131,7 @@ public class Campeonato
     
     /**
      * Método que gestiona la puntuacion de los tenistas tras los partidos y muestra por 
-     * pantalla quien ha ganado y quien ha perdido
+     * pantalla quién ha ganado y quién ha perdido
      */
     public void partidos(int ronda)
     {   
@@ -280,7 +279,7 @@ public class Campeonato
     }
     
     /**
-     * Metodo encargado de mostrar las raquetas asignadas a tenistas
+     * Método encargado de mostrar las raquetas asignadas a tenistas
      */
     public void mostrarRaquetas(){
         for(Tenista tenistas: competidores)
@@ -291,7 +290,7 @@ public class Campeonato
     }
     
     /**
-     * Metodo encargado de mostrar la lista de tenistas que compiten en el campeonato
+     * Método encargado de mostrar la lista de tenistas que compiten en el campeonato
      */
     private void listaTenistas_competidores ()
     {
@@ -312,7 +311,7 @@ public class Campeonato
     }
     
     /**
-     * Metodo encargado de mostrar la lista de tenistas eliminados en el campeonato
+     * Método encargado de mostrar la lista de tenistas eliminados en el campeonato
      */
     private void listaTenistas_eliminados ()
     {
