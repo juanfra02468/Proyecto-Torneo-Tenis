@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.*;
 import java.util.Iterator;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * La clase Campeonato representa el torneo que se va a disputar entre los distintos 
@@ -23,6 +25,7 @@ public class Campeonato extends Comunicacion
     private TreeSet <Raqueta> raquetasCampeonato;
     private Comunicacion comunicacion;
     private static Campeonato singletonCampeonato;
+    private FileWriter writer;
     
     /**
      * Constructor parametrizado de la clase Campeonato
@@ -36,6 +39,10 @@ public class Campeonato extends Comunicacion
         zapatillasCampeonato = new ArrayList <Zapatilla>();
         comunicacion = new Comunicacion();
         raquetasCampeonato = new TreeSet <Raqueta> (new PotenciaComparator());
+        try{writer = new FileWriter("salida.txt");}
+        catch(IOException e){
+            System.err.println("Hubo un error abriendo en el fichero");
+        }
     }
     
     /**
@@ -88,6 +95,7 @@ public class Campeonato extends Comunicacion
     public synchronized boolean asignarRaquetas (){
         boolean bandera=false;
         System.out.println("***** Asignando raquetas a tenistas *****");
+        escribirFichero("***** Asignando raquetas a tenistas *****");
         if (raquetasCampeonato.size()>=competidores.size()){
             bandera=true;
                 for (int i = 0; i<competidores.size(); i++){
@@ -107,12 +115,15 @@ public class Campeonato extends Comunicacion
     public synchronized void controlDeCampeonato() throws ExcepcionRaquetas
     {
         System.out.println("***** Inicio del campeonato: "+nombre+" *****\n");
+        escribirFichero("***** Inicio del campeonato: "+nombre+" *****\n");
         if (asignarRaquetas()){
             mostrarRaquetas();
             int i = 1;
             System.out.println("***** Listado de competidores: ");
+            escribirFichero("***** Listado de competidores: ");
             listaTenistas_competidores();
             System.out.println("***** Listado de raquetas disponibles: ");
+            escribirFichero("***** Listado de raquetas disponibles: ");
             raquetasDisponibles();
             while(competidores.size() != 1){
                System.out.println("\n"); 
@@ -126,6 +137,14 @@ public class Campeonato extends Comunicacion
             System.out.println("***** Listado de eliminados: ");
             Collections.sort(eliminados, Collections.reverseOrder(new PosicionComparator()));
             listaTenistas_eliminados();
+            try
+            {
+                writer.close();
+            }
+            catch (IOException ioe)
+            {
+                ioe.printStackTrace();
+            }
         }
         else{
             throw new ExcepcionRaquetas(); //Excepcion que salta cuando hay más jugadores 
@@ -371,5 +390,23 @@ public class Campeonato extends Comunicacion
     public synchronized void reset () 
     {
         singletonCampeonato=null;
+    }
+    
+    public void escribirFichero(String texto)
+    {
+        try
+        {
+            writer.write(texto);
+        }
+        catch(IOException e)
+        {
+            System.err.println("Error al escribir en fichero");
+        }
+    }
+    
+    public void escribirFicheroPantalla(String texto)
+    {
+        System.out.println(texto);
+        escribirFichero(texto);
     }
 }
