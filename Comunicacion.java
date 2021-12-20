@@ -18,12 +18,15 @@ public class Comunicacion
         subscriptores = new ArrayList <>(); 
     }
     
+    /**
+     * Método para añadir un nuevo medio al ArrayList de subscriptores
+     */ 
     public void añadirMedio(MedioGenerico medio){
         subscriptores.add(medio);
     }
     
     /**
-     * Notifica a los medios y les pasa el resultado del partido
+     * Notifica a los medios y les pasa el resultado del partido, ganador, perdedor y ronda
      */
     public void notificar(Tenista t1, Tenista t2, int ronda){
         Tenista ganador;
