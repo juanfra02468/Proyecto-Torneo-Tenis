@@ -35,7 +35,5 @@ public class TennisDemo {
         //Llamada al método que inicia la simulación del campeonato
         Campeonato1.controlDeCampeonato();
         
-        
-        
     }
 }
