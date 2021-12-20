@@ -35,11 +35,8 @@ public class GolpeadoresTest
     public GolpeadoresTest()
     {
     }
-
     /**
-     * Sets up the test fixture.
-     *
-     * Called before every test case method.
+     * Crea las instancias de 2 tenistas, zapatillas, raquetas y campeonato
      */
     @BeforeEach
     public void setUp()
@@ -76,18 +73,18 @@ public class GolpeadoresTest
         t1.setRaqueta(r1);
         t2.setRaqueta(r2);
     }
-
     /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
+     * Se hace un reset a la instancia campeonato haciendo que esta apunte a null
      */
     @AfterEach
     public void tearDown()
     {
         campeonato.reset();
     }
-    
+    /**
+     * Juega el primer tenista y se comprueban sus puntos acumulados tras acabar y
+     * que este ha cambiado la raqueta, se comprueba lo mismo para el segundo tenista
+     */
     @Test
     public void jugarTest()
     {
@@ -98,7 +95,9 @@ public class GolpeadoresTest
         assertEquals(40321.2, t2.getPuntosAcumulados(), 0.1); 
         assertEquals(false, r2.equals(t2.getRaqueta()));
     }
-    
+    /**
+     * Prueba que tanto el tenista 1 como el tenista 2 cambien sus zapatillas correctamente
+     */
     @Test
     public void elegirZapatillasTest(){
         t1.elegirZapatillaTenista();

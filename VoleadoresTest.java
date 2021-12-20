@@ -35,9 +35,7 @@ public class VoleadoresTest
     }
 
     /**
-     * Sets up the test fixture.
-     *
-     * Called before every test case method.
+     *  Crea las instancias de 2 tenistas, zapatillas, raquetas y campeonato
      */
     @BeforeEach
     public void setUp()
@@ -74,18 +72,18 @@ public class VoleadoresTest
         t3.setRaqueta(r1);
         t4.setRaqueta(r2);
     }
-
     /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
+     * Se hace un reset a la instancia campeonato haciendo que esta apunte a null
      */
     @AfterEach
     public void tearDown()
     {
         campeonato.reset();
     }
-    
+    /**
+     * Juega el tenista 3 y se comprueban sus puntos acumulados tras acabar y
+     * que este ha cambiado la raqueta, se comprueba lo mismo para el tenista 4
+     */    
     @Test
     public void jugarTest()
     {
@@ -96,7 +94,9 @@ public class VoleadoresTest
         assertEquals(44955.84, t4.getPuntosAcumulados(), 0.1); 
         assertEquals(true, r2.equals(t4.getRaqueta()));
     }
-    
+    /**
+     * Prueba que tanto el tenista 3 como el tenista 4 cambien sus zapatillas correctamente
+     */    
     @Test
     public void elegirZapatillasTest(){
         t3.elegirZapatillaTenista();

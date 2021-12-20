@@ -26,11 +26,8 @@ public class ZapatillasAmortiguadasTest
     public ZapatillasAmortiguadasTest()
     {
     }
-
     /**
-     * Sets up the test fixture.
-     *
-     * Called before every test case method.
+     * Se instancian 3 zapatillas esto se va a ejecutar antes de cada prueba
      */
     @BeforeEach
     public void setUp()
@@ -40,21 +37,16 @@ public class ZapatillasAmortiguadasTest
         zapatill3 = new ZapatillasAmortiguadas("Zoom GP Turbo", 43, 7.0);
         zapatill5 = new ZapatillasAmortiguadas("Zoom GP Turbo", 43, 7.0);
     }
-
     /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
+     * Esto se va a ejecutar después de cada prueba
      */
     @AfterEach
     public void tearDown()
     {
-        zapatill5=null;
-        zapatill1=null;
-        zapatill2=null;
-        zapatill3=null;
     }
-
+    /**
+     * Se comprueba que los valores que devuelven las zapatillas al calcular el valor del saque, son correctos
+     */
     @Test
     public void calcularValorSaqueTest()
     {
@@ -62,7 +54,19 @@ public class ZapatillasAmortiguadasTest
         assertEquals(11.87, zapatill1.calcularValorSaque(), 0.1);
         assertEquals(10.8, zapatill2.calcularValorSaque(), 0.1);
     }
-
+    /**
+     * Se comprueba que los valores que devuelven las zapatillas al calcular el valor del resto, son correctos
+     */
+    @Test
+    public void calcularValorRestoTest()
+    {
+        assertEquals(9.1, zapatill3.calcularValorResto(), 0.1);
+        assertEquals(7.15, zapatill1.calcularValorResto(), 0.1);
+        assertEquals(6.5, zapatill2.calcularValorResto(), 0.1);
+    }
+    /**
+     * Se comprueban que zapatillas son iguales y cuales no lo son
+     */    
     @Test
     public void equalsTest()
     {

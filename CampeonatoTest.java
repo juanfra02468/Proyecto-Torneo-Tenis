@@ -47,11 +47,8 @@ public class CampeonatoTest
     public CampeonatoTest()
     {
     }
-
     /**
-     * Sets up the test fixture.
-     *
-     * Called before every test case method.
+     * Creación de las instancias correspondiente al campeonato, raquetas, zapatillas y tenistas
      */
     @BeforeEach
     public void setUp()
@@ -108,18 +105,19 @@ public class CampeonatoTest
         campeonato.añadirZapatilla(z13) ;
         
     }
-
     /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
+     * Se ejecuta después de cada prueba
+     * Utiliza el método reset de campeonato que pone la instancia apuntando a null
      */
     @AfterEach
     public void tearDown()
     {
         campeonato.reset();
     }
-    
+    /**
+     * Se asignan 4 raquetas a los 4 tenistas que tenemos inicialmente, y posteriormente
+     * se comprueba si las raquetas han cambiado y se han asignado las nuevas
+     */    
     @Test
     public void asignarRaquetaTest()
     {
@@ -129,7 +127,11 @@ public class CampeonatoTest
         assertEquals(true, r11.equals(t3.getRaqueta()));
         assertEquals(true, r3.equals(t4.getRaqueta()));
     }
-    
+    /**
+     * Se ejecuta el controlDeCampeonato, se comprueba si el tenista ganador es correcto
+     * se comprueba las raquetas totales que quedan tras terminar el campeonato y se comprueba
+     * la raqueta del tenista ganador
+     */
     @Test
     public void controldeCampeonatoTest() throws ExcepcionRaquetas
     {

@@ -38,7 +38,6 @@ public class RaquetaPotenteTest
         raquetaP2 = new RaquetaPotente("Dunlop CX200", 300.0, 700.0, 630.0, Encordado.ABIERTO);
         raquetaP3 = new RaquetaPotente("Wilson Blade", 300.0, 700.0, 631.0, Encordado.CERRADO);
     }
-
     /**
      * Tears down the test fixture.
      *
@@ -48,7 +47,9 @@ public class RaquetaPotenteTest
     public void tearDown()
     {
     }
-
+    /**
+     * Prueba que dos raquetas sean iguales o no
+     */
     @Test
     public void equalsTest()
     {
@@ -56,21 +57,27 @@ public class RaquetaPotenteTest
         assertEquals(true, raquetaP1.equals(raquetaP1));
         assertEquals(false, raquetaP1.equals(raquetaP3));
     }
-
+    /**
+     * Prueba el funcionamiento del método calcularPotencia y comprueba que es el correcto
+     */
     @Test
     public void calcularPotenciaTest()
     {
         assertEquals(12, raquetaP1.calcularPotencia(), 0.1);
         assertEquals(10.8, raquetaP3.calcularPotencia(), 0.1);
     }
-
+    /**
+     * Prueba el funcionamiento del método calcularVelocidad y comprueba que es el correcto
+     */
     @Test
     public void calcularVelocidadTest()
     {
         assertEquals(9, raquetaP1.calcularVelocidad(), 0.1);
         assertEquals(9, raquetaP3.calcularVelocidad(), 0.1);
     }
-    
+    /**
+     * Prueba el funcionamiento del método calcularControl y comprueba que es el correcto
+     */    
     @Test
     public void calcularControlTest()
     {

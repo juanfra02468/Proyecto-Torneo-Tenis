@@ -29,7 +29,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     
     /**
      * Multiplica la potencia asociada a la raqueta según su longitud
-     * @return potencia asociada a la raqueta según su longitud
+     * @return la potencia asociada a la raqueta según su longitud
      */
     @Override
     public double calcularPotencia ()
