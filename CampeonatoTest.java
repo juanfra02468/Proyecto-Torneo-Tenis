@@ -134,7 +134,7 @@ public class CampeonatoTest
     public void controldeCampeonatoTest() throws ExcepcionRaquetas
     {
         campeonato.controlDeCampeonato();
-        Tenista t = (Tenista)campeonato.getCompetidores().get(0);
+        Tenista t = campeonato.getCompetidores().get(0);
         assertEquals(true, t1.equals(t));
         assertEquals(3, campeonato.getRaquetasCampeonato().size());
         assertEquals(true, r1.equals(t.getRaqueta()));

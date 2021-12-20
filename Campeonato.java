@@ -149,7 +149,7 @@ public class Campeonato extends Comunicacion
            
            System.out.println("  #### Juego ------------>>>: "+i);
            juego(t1, t2);
-           //LLAMADA A LOS MEDIOS
+           //LLAMADA A LOS MEDIOS 
            comunicacion.notificar(t1,t2,ronda);
            
            if(t1.getPuntosAcumulados()==t2.getPuntosAcumulados())
@@ -340,7 +340,7 @@ public class Campeonato extends Comunicacion
     /**
      * Método que realiza una copia de la lista de zapatillas
      */
-    public ArrayList<Zapatilla> getZapatillasCampeonato()
+    public synchronized ArrayList<Zapatilla> getZapatillasCampeonato()
     {
         ArrayList <Zapatilla> copiaZapatillas = new ArrayList<Zapatilla>(zapatillasCampeonato);
         return copiaZapatillas;
@@ -349,7 +349,7 @@ public class Campeonato extends Comunicacion
     /**
      * Método que hace una copia del treeset de raquetas
      */
-    public TreeSet<Raqueta> getRaquetasCampeonato()
+    public synchronized TreeSet<Raqueta> getRaquetasCampeonato()
     {
         TreeSet <Raqueta> copiaRaquetas = new TreeSet<Raqueta>(raquetasCampeonato);
         return copiaRaquetas;
@@ -359,7 +359,7 @@ public class Campeonato extends Comunicacion
      * Devuelve el nombre de un Campeonato
      * @return el nombre de un campeonato
      */
-    public String getNombre(){
+    public synchronized String getNombre(){
         return this.nombre;
     }
     
@@ -368,7 +368,7 @@ public class Campeonato extends Comunicacion
      * finaliza la instancia campeonato
      */
     
-    public void reset () 
+    public synchronized void reset () 
     {
         singletonCampeonato=null;
     }

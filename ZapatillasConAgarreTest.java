@@ -15,9 +15,9 @@ import org.junit.jupiter.api.Test;
  */
 public class ZapatillasConAgarreTest
 {
-    private ZapatillasConAgarre zapatill1;
-    private ZapatillasConAgarre zapatill2;
-    private ZapatillasConAgarre zapatill3;
+    private ZapatillaGenerica zapatill1;
+    private ZapatillaGenerica zapatill2;
+    private ZapatillaGenerica zapatill3;
 
     /**
      * Default constructor for test class ZapatillasConAgarreTest

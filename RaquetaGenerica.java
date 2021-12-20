@@ -10,7 +10,7 @@ import java.util.Iterator;
  * @version 13-11-2021
  */
 
-public abstract class RaquetaGenerica implements Raqueta
+public class RaquetaGenerica implements Raqueta
 {
     // instance variables - replace the example below with your own
     private String modelo;
@@ -99,10 +99,8 @@ public abstract class RaquetaGenerica implements Raqueta
         return velocidad;
     }
     
-    public abstract String mostrarTipo();
-    
     public String mostrarRaquetaCambiada(){
-        return mostrarTipo()+" modelo="+getModelo()+" velocidad="+calcularVelocidad();
+        return getClass().getName()+" modelo="+getModelo()+" velocidad="+calcularVelocidad();
     }
     
     @Override

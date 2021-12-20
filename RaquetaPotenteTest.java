@@ -15,9 +15,9 @@ import org.junit.jupiter.api.Test;
  */
 public class RaquetaPotenteTest
 {
-    private RaquetaPotente raquetaP1;
-    private RaquetaPotente raquetaP2;
-    private RaquetaPotente raquetaP3;
+    private RaquetaGenerica raquetaP1;
+    private RaquetaGenerica raquetaP2;
+    private RaquetaGenerica raquetaP3;
 
     /**
      * Default constructor for test class RaquetaPotenteTest
@@ -47,9 +47,6 @@ public class RaquetaPotenteTest
     @AfterEach
     public void tearDown()
     {
-        raquetaP1=null;
-        raquetaP2=null;
-        raquetaP3=null;
     }
 
     @Test
@@ -72,6 +69,13 @@ public class RaquetaPotenteTest
     {
         assertEquals(9, raquetaP1.calcularVelocidad(), 0.1);
         assertEquals(9, raquetaP3.calcularVelocidad(), 0.1);
+    }
+    
+    @Test
+    public void calcularControlTest()
+    {
+        assertEquals(8.0, raquetaP1.calcularControl(), 0.1);
+        assertEquals(8.0, raquetaP2.calcularControl(), 0.1);
     }
 }
 

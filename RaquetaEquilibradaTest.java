@@ -15,12 +15,12 @@ import org.junit.jupiter.api.Test;
  */
 public class RaquetaEquilibradaTest
 {
-    private Raqueta raquetaE1; 
-    private Raqueta raquetaE2;
-    private Raqueta raquetaE3;
-    private Raqueta raquetaE4;
-    private Raqueta raquetaE5;
-    private Raqueta raquetaE6;
+    private RaquetaGenerica raquetaE1; 
+    private RaquetaGenerica raquetaE2;
+    private RaquetaGenerica raquetaE3;
+    private RaquetaGenerica raquetaE4;
+    private RaquetaGenerica raquetaE5;
+    private RaquetaGenerica raquetaE6;
 
     
     
@@ -75,6 +75,14 @@ public class RaquetaEquilibradaTest
         assertEquals(24.0, raquetaE3.calcularPotencia(), 0.1);
     }
 
+    @Test
+    public void velocidadTest()
+    {
+        assertEquals(4.0, raquetaE1.calcularVelocidad(), 0.1);
+        assertEquals(4.0, raquetaE2.calcularVelocidad(), 0.1);
+        assertEquals(4.0, raquetaE3.calcularVelocidad(), 0.1);
+    }
+    
     @Test
     public void equalsTest()
     {

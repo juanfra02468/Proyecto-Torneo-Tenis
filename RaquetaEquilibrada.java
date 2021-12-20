@@ -86,21 +86,13 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     }
     
     /**
-     * Devuelve una cadena con el tipo de raqueta
-     * @return cadena con el tipo de raqueta
-     */
-    public String mostrarTipo(){
-        return "RaquetaEquilibrada";
-    }
-    
-    /**
      * Devuelve una cadena con el tipo de raqueta que es y los campos especificos de la subclase
      * @return el tipo de raqueta y sus campos especificos
      */
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
-        builder.append("RaquetaEquilibrada");
+        builder.append(getClass().getName());
         builder.append(" (MultiplicadorDePotencia: ");
         builder.append(this.multiplicadorPotencia+")");
         builder.append(" (MultiplicadorDeControl: ");
