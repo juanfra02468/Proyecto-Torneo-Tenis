@@ -15,9 +15,9 @@ import org.junit.jupiter.api.Test;
  */
 public class RaquetaControladaTest
 {
-    private RaquetaControlada raquetaC1;
-    private RaquetaControlada raquetaC2;
-    private RaquetaControlada raquetaC3;
+    private Raqueta raquetaC1;
+    private Raqueta raquetaC2;
+    private Raqueta raquetaC3;
 
     /**
      * Default constructor for test class RaquetaControladaTest

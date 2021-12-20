@@ -115,7 +115,7 @@ public class CampeonatoTest
      * Called after every test case method.
      */
     @AfterEach
-    public void tearDown() throws Throwable 
+    public void tearDown()
     {
         campeonato.reset();
     }

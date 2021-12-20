@@ -49,8 +49,6 @@ public abstract class Tenista
         Campeonato.getInstance("Campeonato de Extremadura").inscripcionCompetidores(this);
     }
     
-    public abstract String tipoTenista();
-    
     /**
      * Invoca al método calcularValorSaque de la clase Zapatilla y suma el resultado 
      * al campo puntosAcumulados
@@ -104,10 +102,18 @@ public abstract class Tenista
     
     protected abstract void golpear();
     
-    public void cambiarRaqueta(){
-        Raqueta r = (Raqueta)Campeonato.getInstance("Campeonato de Extremadura").getRaquetasCampeonato().first();
-        this.setRaqueta(r);
-        Campeonato.getInstance("Campeonato de Extremadura").borrarRaqueta(r);
+    protected void cambiarRaqueta(){
+        Raqueta r = Campeonato.getInstance("Campeonato de Extremadura").getRaquetasCampeonato().first();
+        if (r==null)
+        {
+            System.out.println("       "+this.getNombre()+" no cambia de raqueta ");
+        }
+        else{
+            this.setRaqueta(r);
+            Campeonato.getInstance("Campeonato de Extremadura").borrarRaqueta(r);
+            System.out.println("       "+this.getNombre()+" cambia su raqueta por: "+
+                               this.getRaqueta().mostrarRaquetaCambiada());
+        }
     }
     
     /**
@@ -117,6 +123,7 @@ public abstract class Tenista
        public String toString()
     {
         StringBuilder builder = new StringBuilder();
+        builder.append("    ** Tenista ("+getClass().getName()+")");
         builder.append(" [nombre=");
         builder.append(this.nombre);
         builder.append(", saque=");

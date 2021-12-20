@@ -57,7 +57,7 @@ public class GolpeadoresTest
          r4 =  new RaquetaPotente("Yonex Vcore", 300, 680, 650, Encordado.CERRADO);
          r5 =  new RaquetaControlada("Babolat Drive", 340, 740, 600, Encordado.CERRADO);
          r6 =  new RaquetaControlada("Pure Aero", 340, 680, 720, Encordado.CERRADO);
-        Campeonato campeonato = Campeonato.getInstance("Campeonato de BoliviaTest");
+         campeonato = Campeonato.getInstance("Campeonato de BoliviaTest");
         
         t1.realizarInscripcion();
         t2.realizarInscripcion();
@@ -85,19 +85,7 @@ public class GolpeadoresTest
     @AfterEach
     public void tearDown()
     {
-        t1=null;
-        t2=null;
-        z1=null;
-        z2=null;
-        z7=null;
-        z5=null;
-        z9=null;
-        r1=null;
-        r2=null;
-        r3=null;
-        r4=null;
-        r5=null;
-        r6=null;
+        campeonato.reset();
     }
     
     @Test
@@ -105,7 +93,7 @@ public class GolpeadoresTest
     {
         t1.jugar(t2);
         assertEquals(46657.20, t1.getPuntosAcumulados(), 0.1);
-        assertEquals(false, r1.equals(t1.getRaqueta()));
+        assertEquals(false, r1.equals(t1.getRaqueta())); 
         t2.jugar(t1);
         assertEquals(40321.2, t2.getPuntosAcumulados(), 0.1); 
         assertEquals(false, r2.equals(t2.getRaqueta()));
@@ -116,6 +104,7 @@ public class GolpeadoresTest
         t1.elegirZapatillaTenista();
         assertEquals(false, z2.equals(t1.getZapatilla()));
         assertEquals(true, z5.equals(t1.getZapatilla()));
+        //assertEquals(z5, t1.getZapatilla()); CAMBIAR PRUEBAS
         t2.elegirZapatillaTenista();
         assertEquals(false, z1.equals(t2.getZapatilla()));
         assertEquals(true, z9.equals(t2.getZapatilla()));

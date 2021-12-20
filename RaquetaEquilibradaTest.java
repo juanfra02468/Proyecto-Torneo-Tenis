@@ -15,12 +15,12 @@ import org.junit.jupiter.api.Test;
  */
 public class RaquetaEquilibradaTest
 {
-    private RaquetaEquilibrada raquetaE1;
-    private RaquetaEquilibrada raquetaE2;
-    private RaquetaEquilibrada raquetaE3;
-    private RaquetaEquilibrada raquetaE4;
-    private RaquetaEquilibrada raquetaE5;
-    private RaquetaEquilibrada raquetaE6;
+    private Raqueta raquetaE1; 
+    private Raqueta raquetaE2;
+    private Raqueta raquetaE3;
+    private Raqueta raquetaE4;
+    private Raqueta raquetaE5;
+    private Raqueta raquetaE6;
 
     
     
@@ -57,12 +57,6 @@ public class RaquetaEquilibradaTest
     @AfterEach
     public void tearDown()
     {
-        raquetaE1=null;
-        raquetaE2=null;
-        raquetaE3=null;
-        raquetaE4=null;
-        raquetaE5=null;
-        raquetaE6=null;
     }
     
     @Test

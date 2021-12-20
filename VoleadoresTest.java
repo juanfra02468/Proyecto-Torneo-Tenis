@@ -55,7 +55,7 @@ public class VoleadoresTest
          r4 =  new RaquetaPotente("Yonex Vcore", 300, 680, 650, Encordado.CERRADO);
          r5 =  new RaquetaControlada("Babolat Drive", 340, 740, 600, Encordado.CERRADO);
          r6 =  new RaquetaControlada("Pure Aero", 340, 680, 720, Encordado.CERRADO);
-        Campeonato campeonato = Campeonato.getInstance("Campeonato de BoliviaTest");
+         campeonato = Campeonato.getInstance("Campeonato de BoliviaTest");
         
         t3.realizarInscripcion();
         t4.realizarInscripcion();
@@ -83,19 +83,7 @@ public class VoleadoresTest
     @AfterEach
     public void tearDown()
     {
-        t3=null;
-        t4=null;
-        z1=null;
-        z2=null;
-        z7=null;
-        z5=null;
-        z9=null;
-        r1=null;
-        r2=null;
-        r3=null;
-        r4=null;
-        r5=null;
-        r6=null;
+        campeonato.reset();
     }
     
     @Test

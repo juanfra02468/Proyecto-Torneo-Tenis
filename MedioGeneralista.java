@@ -7,16 +7,15 @@
  * @author David Bonilla
  * @version 19-12-2021
  */
-public class MedioGeneralista
+public class MedioGeneralista extends MedioGenerico
 {
-    private String nombre;
 
     /**
      * Constructor de la clase MedioSensacionalista
      */
     public MedioGeneralista(String nombre)
     {
-        this.nombre=nombre;
+        super(nombre);
     }
 
     /**
@@ -26,7 +25,7 @@ public class MedioGeneralista
      */
     public void actualizar (Tenista ganador, Tenista perdedor, int ronda){
         if (ganador.getRanking()<=2 || perdedor.getRanking()<=2){
-            System.out.println("@@@@@@ El medio generalista "+nombre+" destaca en Deportes que en el "+Campeonato.getInstance("Campeonato de Extremadura").getNombre()+
+            System.out.println("@@@@@@ El medio generalista "+getNombre()+" destaca en Deportes que en el "+Campeonato.getInstance("Campeonato de Extremadura").getNombre()+
             " en la ronda "+ronda+" porque se ha impuesto "+ganador.getNombre()+" a "+perdedor.getNombre()+" por una diferencia "+(ganador.getPuntosAcumulados()-perdedor.getPuntosAcumulados())+
             " puntos.");
         }

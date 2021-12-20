@@ -7,16 +7,14 @@
  * @author David Bonilla
  * @version 19-12-2021
  */
-public class MedioDeportivo
+public class MedioDeportivo extends MedioGenerico
 {
-    private String nombre;
-
     /**
      * Constructor de la clase MedioSensacionalista
      */
     public MedioDeportivo(String nombre)
     {
-        this.nombre=nombre;
+        super(nombre);
     }
 
     /**
@@ -24,7 +22,7 @@ public class MedioDeportivo
      * el nombre del perdedor, el ranking del perdedor y el resultado del partido siempre después de cada partido.
      */
     public void actualizar (Tenista ganador, Tenista perdedor, int ronda){
-        System.out.println("@@@@@@ El medio deportivo "+nombre+" destaca que en el campeonato "+Campeonato.getInstance("Campeonato de Extremadura").getNombre()+
+        System.out.println("@@@@@@ El medio deportivo "+getNombre()+" destaca que en el campeonato "+Campeonato.getInstance("Campeonato de Extremadura").getNombre()+
             " en la ronda "+ronda+" se ha impuesto "+ganador.getNombre()+" que ocupa la posición "+ganador.getRanking()+" en el ranking a "+perdedor.getNombre()+ " que ocupa la posicion "+
             perdedor.getRanking()+" con un marcador de "+ganador.getPuntosAcumulados()+"-"+perdedor.getPuntosAcumulados()+".");
     }

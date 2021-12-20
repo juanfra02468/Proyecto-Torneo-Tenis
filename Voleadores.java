@@ -28,19 +28,6 @@ public class Voleadores extends Tenista
         cambiarRaquetaVelocidad();
     }
     
-    @Override
-    public String tipoTenista(){
-        return "(Voleadores)";
-    }
-    
-    @Override
-    public String toString(){
-        StringBuilder builder = new StringBuilder();
-        builder.append("    ** Tenista (Voleadores)");
-        builder.append(super.toString());
-        return builder.toString();
-    }
-    
     public void cambiarRaquetaVelocidad(){
         boolean bandera = false;
         Iterator <Raqueta> it = Campeonato.getInstance("Campeonato de Extremadura").getRaquetasCampeonato().iterator();
@@ -49,8 +36,14 @@ public class Voleadores extends Tenista
                   if (this.getRaqueta().calcularVelocidad()<r.calcularVelocidad()){
                     this.setRaqueta(r);
                     Campeonato.getInstance("Campeonato de Extremadura").borrarRaqueta(r);
+                    System.out.println("       "+this.getNombre()+" cambia su raqueta por: "+
+                                       this.getRaqueta().mostrarRaquetaCambiada());
                     bandera=true;
                  }
             }
+        
+        if (!bandera){
+            System.out.println("       "+this.getNombre()+" no cambia de raqueta ");
+        }
     }
 }

@@ -39,7 +39,7 @@ public class TablasRaquetas
      * @return potencia asociada a la raqueta según su longitud
      */
     public static Double getMapaLongitudPotencia(double longitud){
-        Double potencia = mapaLongitudPotencia.get((Double)longitud);
+        Double potencia = mapaLongitudPotencia.get(longitud);
         return potencia;
     }
     
@@ -48,7 +48,7 @@ public class TablasRaquetas
      * @return control asociado a la raqueta según su tamaño de cabeza
      */
     public static Double getMapaCabezaControl(double tamcabeza){
-        Double control = mapaCabezaControl.get((Double)tamcabeza);
+        Double control = mapaCabezaControl.get(tamcabeza);
         return control;
     }
 
@@ -57,7 +57,7 @@ public class TablasRaquetas
      * @return velocidad asociada a la raqueta según su peso
      */
     public static Double getMapaPesoVelocidad(double peso){
-        Double velocidad = mapaPesoVelocidad.get((Double)peso);
+        Double velocidad = mapaPesoVelocidad.get(peso);
         return velocidad;
     }
     

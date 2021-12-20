@@ -23,8 +23,19 @@ public class TennisDemo {
         //de tipo campeonato como parámetro;
         InitTennisData data = new InitTennisData(Campeonato1);
         
+        MedioGenerico generalista = new MedioGeneralista("La Tierrina");
+        MedioGenerico deportivo = new MedioDeportivo("Anota");
+        MedioGenerico sensacionalista = new MedioSensacionalista("Adios");
+        
+        Campeonato1.añadirSubscriptor(generalista);
+        Campeonato1.añadirSubscriptor(sensacionalista);
+        Campeonato1.añadirSubscriptor(deportivo);
+
+        
         //Llamada al método que inicia la simulación del campeonato
         Campeonato1.controlDeCampeonato();
+        
+        
         
     }
 }

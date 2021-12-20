@@ -7,16 +7,15 @@ import java.lang.Math;
  * @author David Bonilla
  * @version 19-12-2021
  */
-public class MedioSensacionalista
+public class MedioSensacionalista extends MedioGenerico
 {
-    private String nombre;
 
     /**
      * Constructor de la clase MedioSensacionalista
      */
     public MedioSensacionalista(String nombre)
     {
-        this.nombre=nombre;
+        super(nombre);
     }
 
     /**
@@ -26,7 +25,7 @@ public class MedioSensacionalista
      */
     public void actualizar (Tenista ganador, Tenista perdedor, int ronda){
         if (ganador.getRanking()>3 && perdedor.getRanking()<=3){
-            System.out.println("@@@@@@ El medio sensacionalista "+nombre+" destaca en Deportes que ha habido sorpresa en el "+Campeonato.getInstance("Campeonato de Extremadura").getNombre()+
+            System.out.println("@@@@@@ El medio sensacionalista "+getNombre()+" destaca en Deportes que ha habido sorpresa en el "+Campeonato.getInstance("Campeonato de Extremadura").getNombre()+
             " en la ronda "+ronda+" porque se ha impuesto "+ganador.getNombre()+" a "+perdedor.getNombre()+" cuando les separan "+Math.abs(ganador.getRanking()-perdedor.getRanking())+
             " puestos en el ranking.");
         }

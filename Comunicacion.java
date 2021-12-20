@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class Comunicacion here.
  * 
@@ -8,18 +8,18 @@
 public class Comunicacion
 {
     // instance variables - replace the example below with your own
-    private MedioGeneralista generalista;
-    private MedioDeportivo deportivo;
-    private MedioSensacionalista sensacionalista;
+    private ArrayList <MedioGenerico> subscriptores;   
 
     /**
      * Constructor de la clase Comunicacion
      */
     public Comunicacion()
     {
-        generalista = new MedioGeneralista("La Tierrina");
-        deportivo = new MedioDeportivo("Anota");
-        sensacionalista = new MedioSensacionalista("Adios"); 
+        subscriptores = new ArrayList <>(); 
+    }
+    
+    public void añadirMedio(MedioGenerico medio){
+        subscriptores.add(medio);
     }
     
     /**
@@ -36,8 +36,9 @@ public class Comunicacion
             ganador=t2;
             perdedor=t1;
         }
-        generalista.actualizar(ganador,perdedor, ronda);
-        deportivo.actualizar(ganador,perdedor, ronda);
-        sensacionalista.actualizar(ganador,perdedor,ronda);
+        
+        for (MedioGenerico medio: subscriptores){
+            medio.actualizar(ganador,perdedor,ronda);
+        }
     }
 }
