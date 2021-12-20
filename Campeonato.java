@@ -54,7 +54,7 @@ public class Campeonato extends Comunicacion
      * Método que inscribe a un Tenista al campeonato, añadiendolo a la lista de competidores
      * @param t1 un tenista
      */
-    public void inscripcionCompetidores (Tenista t1)
+    public synchronized void inscripcionCompetidores (Tenista t1)
     {
         competidores.add(t1);
     }
@@ -63,7 +63,7 @@ public class Campeonato extends Comunicacion
      * Método que añade una zapatilla a la lista zapatillas
      * @param z1 una zapatilla
      */
-    public void añadirZapatilla (Zapatilla z1)
+    public synchronized void añadirZapatilla (Zapatilla z1)
     {
         zapatillasCampeonato.add(z1);
     }
@@ -72,12 +72,12 @@ public class Campeonato extends Comunicacion
      * Método que añade una raqueta al arbol de raquetas
      * @param una raqueta
      */
-    public void añadirRaquetas (Raqueta r1)
+    public synchronized void añadirRaquetas (Raqueta r1)
     {
         raquetasCampeonato.add(r1);
     }
     
-    public void añadirSubscriptor(MedioGenerico medio){
+    public synchronized void añadirSubscriptor(MedioGenerico medio){
         comunicacion.añadirMedio(medio);
     }
     
@@ -85,7 +85,7 @@ public class Campeonato extends Comunicacion
      * Metodo encargado de asignar las raquetas a los competidores
      * @return verdadero si se ha asignado una raqueta y falso en caso contrario
      */
-    public boolean asignarRaquetas (){
+    public synchronized boolean asignarRaquetas (){
         boolean bandera=false;
         System.out.println("***** Asignando raquetas a tenistas *****");
         if (raquetasCampeonato.size()>=competidores.size()){
@@ -104,7 +104,7 @@ public class Campeonato extends Comunicacion
      * Método que muestra por pantalla el avance de los partidos, las rondas, 
      * quién ha ganado y el listado de eliminados
      */
-    public void controlDeCampeonato() throws ExcepcionRaquetas
+    public synchronized void controlDeCampeonato() throws ExcepcionRaquetas
     {
         System.out.println("***** Inicio del campeonato: "+nombre+" *****\n");
         if (asignarRaquetas()){
@@ -137,7 +137,7 @@ public class Campeonato extends Comunicacion
      * Método que gestiona la puntuacion de los tenistas tras los partidos y muestra por 
      * pantalla quién ha ganado y quién ha perdido
      */
-    public void partidos(int ronda)
+    public synchronized void partidos(int ronda)
     {   
         Tenista t1;
         Tenista t2;
@@ -176,7 +176,7 @@ public class Campeonato extends Comunicacion
      * @param t1 un tenista
      * @param t2 un tenista
      */  
-    private void juego(Tenista t1, Tenista t2)
+    private synchronized void juego(Tenista t1, Tenista t2)
     {
         System.out.println("    ## Tenista1 ("+t1.getClass().getName()+") ---->>>: "+t1.getNombre());
         comprobacionMostrarZapatilla(t1);
@@ -190,7 +190,7 @@ public class Campeonato extends Comunicacion
      * Método que muestra el ganador y perdedor en el caso de que gane el primer tenista 
      * situado en la lista
      */
-    private void ganaPrimero(Tenista ganador, Tenista perdedor)
+    private synchronized void ganaPrimero(Tenista ganador, Tenista perdedor)
     {
        añadirEliminado(perdedor);        
        borrarUltimoymostrar(ganador, perdedor);
@@ -204,7 +204,7 @@ public class Campeonato extends Comunicacion
      * @param perdedor El Tenista que pierde el partido
      * @param indice La posicion del tenista que se va a borrar.
      */
-    private void ganaUltimo(Tenista ganador, Tenista perdedor, int indice)
+    private synchronized void ganaUltimo(Tenista ganador, Tenista perdedor, int indice)
     {
        añadirEliminado(perdedor);
        competidores.remove(indice);
@@ -216,7 +216,7 @@ public class Campeonato extends Comunicacion
      * Método que muestra el ganador del torneo
      * @param ganador El tenista ganador
      */
-    private void mostrarganadorTorneo (Tenista ganador)
+    private synchronized void mostrarganadorTorneo (Tenista ganador)
     {
         System.out.println("\n");
         System.out.println("---->>>>  Gana la competición:"+ganador.toString()+"  <<<<----\n");  
@@ -226,7 +226,7 @@ public class Campeonato extends Comunicacion
      * Método que muestra las nuevas zapatillas del Tenista en caso de que cambie las suyas
      * @param t1 un Tenista
      */
-    private void comprobacionMostrarZapatilla (Tenista t1){
+    private synchronized void comprobacionMostrarZapatilla (Tenista t1){
        if (t1.elegirZapatillaTenista()){
             System.out.println("       Zapatillas asignadas: "+t1.getZapatilla().toString());
         }        
@@ -236,7 +236,7 @@ public class Campeonato extends Comunicacion
      * Método que añade un Tenista a la lista de eliminados
      * @param perdedor un tenista que ha perdido
      */
-    private void añadirEliminado(Tenista perdedor){
+    private synchronized void añadirEliminado(Tenista perdedor){
        eliminados.add(perdedor);
        perdedor.setposEliminado(eliminados.size());        
     }
@@ -247,7 +247,7 @@ public class Campeonato extends Comunicacion
      * @param un Tenista ganador
      * @param un Tenista perdedor
      */
-    private void borrarUltimoymostrar (Tenista ganador, Tenista perdedor){
+    private synchronized void borrarUltimoymostrar (Tenista ganador, Tenista perdedor){
        competidores.remove(competidores.size()-1);
        mostrarGanadoryPerdedor(ganador, perdedor);        
     }
@@ -258,7 +258,7 @@ public class Campeonato extends Comunicacion
      * @param ganador hace referencia al Tenista que gana el partido
      * @param perdedor hace referencia al Tenista que pierde el partido
      */
-    private void mostrarGanadoryPerdedor(Tenista ganador, Tenista perdedor)
+    private synchronized void mostrarGanadoryPerdedor(Tenista ganador, Tenista perdedor)
     {
        System.out.println("    ## Gana este juego: "+ganador.getNombre()+" con: "
        +ganador.getPuntosAcumulados()+" puntos acumulados.");
@@ -272,7 +272,7 @@ public class Campeonato extends Comunicacion
     /**
      * Método encargado de mostrar las raquetas asignadas a tenistas
      */
-    public void mostrarRaquetas(){
+    public synchronized void mostrarRaquetas(){
         for(Tenista tenistas: competidores)
         {
             System.out.println("   **     "+tenistas.getRaqueta().toString()+ 
@@ -283,7 +283,7 @@ public class Campeonato extends Comunicacion
     /**
      * Método encargado de mostrar la lista de tenistas que compiten en el campeonato
      */
-    private void listaTenistas_competidores ()
+    private synchronized void listaTenistas_competidores ()
     {
         for(Tenista tenistas: competidores)
         {
@@ -294,7 +294,7 @@ public class Campeonato extends Comunicacion
     /**
      * Método encargado de mostrar las raquetas disponibles del campeonato
      */
-    private void raquetasDisponibles(){
+    private synchronized void raquetasDisponibles(){
         for(Raqueta raqueta: raquetasCampeonato)
         {
              System.out.println("      "+raqueta.toString());
@@ -304,7 +304,7 @@ public class Campeonato extends Comunicacion
     /**
      * Método encargado de mostrar la lista de tenistas eliminados en el campeonato
      */
-    private void listaTenistas_eliminados ()
+    private synchronized void listaTenistas_eliminados ()
     {
         for(Tenista tenistas: eliminados)
         {
@@ -315,7 +315,7 @@ public class Campeonato extends Comunicacion
     /**
      * Método encargado de borrar una Zapatilla de la lista de zapatillas
      */
-    public void borrarZapatilla(Zapatilla z)
+    public synchronized void borrarZapatilla(Zapatilla z)
     {
         zapatillasCampeonato.remove(z);
     }
@@ -323,7 +323,7 @@ public class Campeonato extends Comunicacion
     /**
      * Método encargado de borrar una Raqueta del treeset de raquetas
      */
-    public void borrarRaqueta(Raqueta r)
+    public synchronized void borrarRaqueta(Raqueta r)
     {
         raquetasCampeonato.remove(r);
     }
@@ -331,7 +331,7 @@ public class Campeonato extends Comunicacion
     /**
      * Método que realiza una copia de la lista de competidores
      */
-    public ArrayList<Tenista> getCompetidores()
+    public synchronized ArrayList<Tenista> getCompetidores()
     {
         ArrayList <Tenista> copiaCompetidores = new ArrayList<Tenista>(competidores);
         return copiaCompetidores;
