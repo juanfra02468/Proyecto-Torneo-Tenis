@@ -7,7 +7,7 @@ import java.util.Iterator;
  * @author David Bonilla
  * @author Antonio Javier Hidalgo
  * @author Juan Francisco García
- * @version 13-11-2021
+ * @version 21-12-2021
  */
 
 public class RaquetaGenerica implements Raqueta

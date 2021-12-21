@@ -1,11 +1,10 @@
-
 /**
  * Clase que carga los datos con los que simular un campeonato de tenis.
  * 
  * @author Antonio Javier Hidalgo
  * @author Juan Francisco García
  * @author David Bonilla
- * @version 13-11-2021
+ * @version 21-12-2021
  */
 
 /**
@@ -17,8 +16,8 @@
 public class InitTennisData {
 
     public InitTennisData(Campeonato campeonato) {
-    //Descomentar la carga de datos que se quiera probar
-       // cargarDatos1(campeonato);//Produce la salida Salida1_EC3
+        //Descomentar la carga de datos que se quiera probar
+        // cargarDatos1(campeonato);//Produce la salida Salida1_EC3
         cargarDatos2(campeonato);//Produce la salida Salida2_EC3
         
     }

@@ -1,9 +1,11 @@
 
 /**
- * Write a description of class MedioGenerico here.
+ * Clase que representa la superclase MedioGenerico.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 19-12-2021
  */
 public abstract class MedioGenerico
 {

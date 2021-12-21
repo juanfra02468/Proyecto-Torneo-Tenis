@@ -25,9 +25,9 @@ public class MedioGeneralista extends MedioGenerico
      */
     public void actualizar (Tenista ganador, Tenista perdedor, int ronda){
         if (ganador.getRanking()<=2 || perdedor.getRanking()<=2){
-            System.out.println("@@@@@@ El medio generalista "+getNombre()+" destaca en Deportes que en el "+Campeonato.getInstance("Campeonato de Extremadura").getNombre()+
-            " en la ronda "+ronda+" se ha impuesto "+ganador.getNombre()+" a "+perdedor.getNombre()+" por una diferencia "+(ganador.getPuntosAcumulados()-perdedor.getPuntosAcumulados())+
-            " puntos.");
+            Campeonato.getInstance("Campeonato de Extremadura").escribirFicheroPantalla("@@@@@@ El medio generalista "+getNombre()+" destaca en Deportes que en el "+
+            Campeonato.getInstance("Campeonato de Extremadura").getNombre()+" en la ronda "+ronda+" se ha impuesto "+ganador.getNombre()+" a "+perdedor.getNombre()+
+            " por una diferencia "+(ganador.getPuntosAcumulados()-perdedor.getPuntosAcumulados())+" puntos.");
         }
     }
 }

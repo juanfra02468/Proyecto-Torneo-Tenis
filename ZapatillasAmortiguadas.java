@@ -67,8 +67,6 @@ public class ZapatillasAmortiguadas extends ZapatillaGenerica
         this.multiplicadorSaque = multiplicadorSaque;
     }
     
-    
-    
     @Override
     public int hashCode()
     {

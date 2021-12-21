@@ -7,7 +7,7 @@ import java.util.Iterator;
  * @author Antonio Javier Hidalgo
  * @author Juan Francisco García
  * @author David Bonilla
- * @version 13-11-2021
+ * @version 21-12-2021
  */
 public class Voleadores extends Tenista
 {
@@ -47,14 +47,14 @@ public class Voleadores extends Tenista
                   if (this.getRaqueta().calcularVelocidad()<r.calcularVelocidad()){
                     this.setRaqueta(r);
                     Campeonato.getInstance("Campeonato de Extremadura").borrarRaqueta(r);
-                    System.out.println("       "+this.getNombre()+" cambia su raqueta por: "+
+                    Campeonato.getInstance("Campeonato de Extremadura").escribirFicheroPantalla("       "+this.getNombre()+" cambia su raqueta por: "+
                                        this.getRaqueta().mostrarRaquetaCambiada());
                     bandera=true;
                  }
             }
         
         if (!bandera){
-            System.out.println("       "+this.getNombre()+" no cambia de raqueta ");
+            Campeonato.getInstance("Campeonato de Extremadura").escribirFicheroPantalla("       "+this.getNombre()+" no cambia de raqueta ");
         }
     }
 }

@@ -25,7 +25,7 @@ public class MedioSensacionalista extends MedioGenerico
      */
     public void actualizar (Tenista ganador, Tenista perdedor, int ronda){
         if (ganador.getRanking()>3 && perdedor.getRanking()<=3){
-            System.out.println("@@@@@@ El medio sensacionalista "+getNombre()+" destaca en Deportes que ha habido sorpresa en el "+Campeonato.getInstance("Campeonato de Extremadura").getNombre()+
+            Campeonato.getInstance("Campeonato de Extremadura").escribirFicheroPantalla("@@@@@@ El medio sensacionalista "+getNombre()+" destaca en Deportes que ha habido sorpresa en el "+Campeonato.getInstance("Campeonato de Extremadura").getNombre()+
             " en la ronda "+ronda+" porque se ha impuesto "+ganador.getNombre()+" a "+perdedor.getNombre()+" cuando les separan "+Math.abs(ganador.getRanking()-perdedor.getRanking())+
             " puestos en el ranking.");
         }

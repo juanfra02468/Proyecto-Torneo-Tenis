@@ -5,7 +5,7 @@
  * @author Antonio Javier Hidalgo
  * @author Juan Francisco García
  * @author David Bonilla
- * @version 13-11-2021
+ * @version 21-12-2021
  */
 
 public class RaquetaEquilibrada extends RaquetaGenerica

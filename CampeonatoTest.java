@@ -133,7 +133,7 @@ public class CampeonatoTest
      * la raqueta del tenista ganador
      */
     @Test
-    public void controldeCampeonatoTest() throws ExcepcionRaquetas
+    public void controldeCampeonatoTest() throws ExcepcionRaquetas  //Hay veces que falla, no entendemos por qué
     {
         campeonato.controlDeCampeonato();
         Tenista t = campeonato.getCompetidores().get(0);

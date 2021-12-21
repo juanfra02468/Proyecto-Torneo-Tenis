@@ -8,7 +8,7 @@ import java.util.*;
  * @author Antonio Javier Hidalgo
  * @author Juan Francisco García
  * @author David Bonilla
- * @version 13-11-2021
+ * @version 21-12-2021
  */
 
 public abstract class Tenista
@@ -115,12 +115,12 @@ public abstract class Tenista
         Raqueta r = Campeonato.getInstance("Campeonato de Extremadura").getRaquetasCampeonato().first();
         if (r==null)
         {
-            System.out.println("       "+this.getNombre()+" no cambia de raqueta ");
+            Campeonato.getInstance("Campeonato de Extremadura").escribirFicheroPantalla("       "+this.getNombre()+" no cambia de raqueta ");
         }
         else{
             this.setRaqueta(r);
             Campeonato.getInstance("Campeonato de Extremadura").borrarRaqueta(r);
-            System.out.println("       "+this.getNombre()+" cambia su raqueta por: "+
+            Campeonato.getInstance("Campeonato de Extremadura").escribirFicheroPantalla("       "+this.getNombre()+" cambia su raqueta por: "+
                                this.getRaqueta().mostrarRaquetaCambiada());
         }
     }

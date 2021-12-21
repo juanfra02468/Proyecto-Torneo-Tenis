@@ -12,7 +12,7 @@ import java.io.IOException;
  * @author Antonio Javier Hidalgo
  * @author Juan Francisco García
  * @author David Bonilla
- * @version 13-11-2021
+ * @version 21-12-2021
  * 
  */
 
@@ -95,8 +95,7 @@ public class Campeonato extends Comunicacion
      */
     public synchronized boolean asignarRaquetas (){
         boolean bandera=false;
-        System.out.println("***** Asignando raquetas a tenistas *****");
-        escribirFichero("***** Asignando raquetas a tenistas *****");
+        escribirFicheroPantalla("***** Asignando raquetas a tenistas *****");
         if (raquetasCampeonato.size()>=competidores.size()){
             bandera=true;
                 for (int i = 0; i<competidores.size(); i++){
@@ -115,27 +114,24 @@ public class Campeonato extends Comunicacion
      */
     public synchronized void controlDeCampeonato() throws ExcepcionRaquetas
     {
-        System.out.println("***** Inicio del campeonato: "+nombre+" *****\n");
-        escribirFichero("***** Inicio del campeonato: "+nombre+" *****\n");
+        escribirFicheroPantalla("***** Inicio del campeonato: "+nombre+" *****\n");
         if (asignarRaquetas()){
             mostrarRaquetas();
             int i = 1;
-            System.out.println("***** Listado de competidores: ");
-            escribirFichero("***** Listado de competidores: ");
+            escribirFicheroPantalla("***** Listado de competidores: ");
             listaTenistas_competidores();
-            System.out.println("***** Listado de raquetas disponibles: ");
-            escribirFichero("***** Listado de raquetas disponibles: ");
+            escribirFicheroPantalla("***** Listado de raquetas disponibles: ");
             raquetasDisponibles();
             while(competidores.size() != 1){
-               System.out.println("\n"); 
-               System.out.println("***** Ronda---->>>: "+i);
+               escribirFicheroPantalla("\n"); 
+               escribirFicheroPantalla("***** Ronda---->>>: "+i);
                partidos(i);
                i++;
             }
             
             Tenista ganador = competidores.get(0);
             mostrarganadorTorneo(ganador);
-            System.out.println("***** Listado de eliminados: ");
+            escribirFicheroPantalla("***** Listado de eliminados: ");
             Collections.sort(eliminados, Collections.reverseOrder(new PosicionComparator()));
             listaTenistas_eliminados();
             try
@@ -167,7 +163,7 @@ public class Campeonato extends Comunicacion
            t1 = competidores.get(i);
            t2 = competidores.get(competidores.size()-1);
            
-           System.out.println("  #### Juego ------------>>>: "+i);
+           escribirFicheroPantalla("  #### Juego ------------>>>: "+i);
            juego(t1, t2);
            //LLAMADA A LOS MEDIOS 
            if(t1.getPuntosAcumulados() > t2.getPuntosAcumulados()){
@@ -203,9 +199,9 @@ public class Campeonato extends Comunicacion
      */  
     private synchronized void juego(Tenista t1, Tenista t2)
     {
-        System.out.println("    ## Tenista1 ("+t1.getClass().getName()+") ---->>>: "+t1.getNombre());
+        escribirFicheroPantalla("    ## Tenista1 ("+t1.getClass().getName()+") ---->>>: "+t1.getNombre());
         comprobacionMostrarZapatilla(t1);
-        System.out.println("    ## Tenista2 ("+t2.getClass().getName()+") ---->>>: "+t2.getNombre());
+        escribirFicheroPantalla("    ## Tenista2 ("+t2.getClass().getName()+") ---->>>: "+t2.getNombre());
         comprobacionMostrarZapatilla(t2);
         t1.jugar(t2);
         t2.jugar(t1);
@@ -243,8 +239,8 @@ public class Campeonato extends Comunicacion
      */
     private synchronized void mostrarganadorTorneo (Tenista ganador)
     {
-        System.out.println("\n");
-        System.out.println("---->>>>  Gana la competición:"+ganador.toString()+"  <<<<----\n");  
+        escribirFicheroPantalla("\n");
+        escribirFicheroPantalla("---->>>>  Gana la competición:"+ganador.toString()+"  <<<<----\n");  
     }
     
     /**
@@ -253,7 +249,7 @@ public class Campeonato extends Comunicacion
      */
     private synchronized void comprobacionMostrarZapatilla (Tenista t1){
        if (t1.elegirZapatillaTenista()){
-            System.out.println("       Zapatillas asignadas: "+t1.getZapatilla().toString());
+            escribirFicheroPantalla("       Zapatillas asignadas: "+t1.getZapatilla().toString());
         }        
     }
     
@@ -285,10 +281,10 @@ public class Campeonato extends Comunicacion
      */
     private synchronized void mostrarGanadoryPerdedor(Tenista ganador, Tenista perdedor)
     {
-       System.out.println("    ## Gana este juego: "+ganador.getNombre()+" con: "
+       escribirFicheroPantalla("    ## Gana este juego: "+ganador.getNombre()+" con: "
        +ganador.getPuntosAcumulados()+" puntos acumulados.");
     
-       System.out.println("    ## Se elimina: "+perdedor.getNombre()+" con: "
+       escribirFicheroPantalla("    ## Se elimina: "+perdedor.getNombre()+" con: "
        +perdedor.getPuntosAcumulados()+" puntos acumulados. Tenista eliminado num: "
        +eliminados.size() + "\n");
        ganador.resetPuntosAcumulados();        
@@ -300,7 +296,7 @@ public class Campeonato extends Comunicacion
     public synchronized void mostrarRaquetas(){
         for(Tenista tenistas: competidores)
         {
-            System.out.println("   **     "+tenistas.getRaqueta().toString()+ 
+            escribirFicheroPantalla("   **     "+tenistas.getRaqueta().toString()+ 
                                " asignada a -->> "+tenistas.getNombre());
         }        
     }
@@ -312,7 +308,7 @@ public class Campeonato extends Comunicacion
     {
         for(Tenista tenistas: competidores)
         {
-             System.out.println(tenistas.toString());
+             escribirFicheroPantalla(tenistas.toString());
         }
     }
     
@@ -322,7 +318,7 @@ public class Campeonato extends Comunicacion
     private synchronized void raquetasDisponibles(){
         for(Raqueta raqueta: raquetasCampeonato)
         {
-             System.out.println("      "+raqueta.toString());
+             escribirFicheroPantalla("      "+raqueta.toString());
         }  
     }
     
@@ -333,7 +329,7 @@ public class Campeonato extends Comunicacion
     {
         for(Tenista tenistas: eliminados)
         {
-             System.out.println(tenistas.toString());
+             escribirFicheroPantalla(tenistas.toString());
         }
     }
     
@@ -412,7 +408,8 @@ public class Campeonato extends Comunicacion
     
     public void escribirFicheroPantalla(String texto)
     {
-        System.out.println(texto);
         escribirFichero(texto);
+        escribirFichero("\n");
+        System.out.println(texto);
     }
 }

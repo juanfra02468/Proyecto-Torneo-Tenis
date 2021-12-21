@@ -1,13 +1,14 @@
 import java.util.ArrayList;
 /**
- * Write a description of class Comunicacion here.
+ * Clase que representa la comunicacion entre los medios y el campeonato.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 19-12-2021
  */
 public class Comunicacion
 {
-    // instance variables - replace the example below with your own
     private ArrayList <MedioGenerico> subscriptores;   
 
     /**
