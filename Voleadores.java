@@ -2,10 +2,12 @@
 import java.util.Iterator;
 
 /**
- * Write a description of class TenistaVoleador here.
+ * La clase Voleadores representa los tenistas de tipo Voleadores
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 13-11-2021
  */
 public class Voleadores extends Tenista
 {

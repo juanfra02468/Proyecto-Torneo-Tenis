@@ -31,7 +31,7 @@ public abstract class Tenista
      * con los valores pasados por parametro
      */     
     public Tenista(String nombre, ZapatillaGenerica zapatilla, double saque,
-    double resto,int ranking, String pais, double numPie)
+                   double resto,int ranking, String pais, double numPie)
     {
         this.nombre = nombre;
         this.zapatilla = zapatilla;
@@ -102,7 +102,10 @@ public abstract class Tenista
         golpear();
         cambiarRaqueta();
     }
-    //Metodo que heredara la clase golpeadores
+    
+    /**
+     * Permite a los tenistas de tipo golpeador, poder realizar la función de golpear
+     */
     protected abstract void golpear();
     
     /**

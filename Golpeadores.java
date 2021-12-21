@@ -1,9 +1,11 @@
 
 /**
- * Write a description of class TenistaGolpeador here.
+ * La clase Golpeadores representa los tenistas de tipo Golpeadores
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Javier Hidalgo
+ * @author Juan Francisco García
+ * @author David Bonilla
+ * @version 13-11-2021
  */
 public class Golpeadores extends Tenista
 {
