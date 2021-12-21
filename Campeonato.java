@@ -39,8 +39,11 @@ public class Campeonato extends Comunicacion
         zapatillasCampeonato = new ArrayList <Zapatilla>();
         comunicacion = new Comunicacion();
         raquetasCampeonato = new TreeSet <Raqueta> (new PotenciaComparator());
-        try{writer = new FileWriter("salida.txt");}
-        catch(IOException e){
+        try{
+            writer = new FileWriter("salida.txt");
+        }
+        catch(IOException e)
+        {
             System.err.println("Hubo un error abriendo en el fichero");
         }
     }
