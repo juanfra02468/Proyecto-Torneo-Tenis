@@ -28,7 +28,7 @@ public class Voleadores extends Tenista
         this.setPuntosAcumulados(puntos);
     }
     /**
-     * Metodo que llama al metodo cambiar raqueta velocidad
+     * Metodo que llama al metodo cambiarRaquetaVelocidad
      */
     @Override
     public void cambiarRaqueta(){
