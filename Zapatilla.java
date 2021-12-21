@@ -59,9 +59,5 @@ public interface Zapatilla
      * @param valor El numero de pie de la zapatilla
      */  
     public void setNumero(double numero);
-    
-    /**
-     * Muestra las zapatillas con todas sus características incluido su tipo
-     */
-    public String toString();
+
 }

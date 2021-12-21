@@ -94,9 +94,4 @@ public interface Raqueta
      */
     public String mostrarRaquetaCambiada();
     
-    /**
-     * Muestra una raqueta con sus características y el tipo incluido
-     */
-    public String toString();
-    
 }

@@ -23,9 +23,9 @@ class PotenciaComparator implements Comparator<Raqueta>{
             if(r1.calcularPotencia()==r2.calcularPotencia())
                 return r2.getModelo().compareTo(r1.getModelo());
             else if (r1.calcularPotencia()>r2.calcularPotencia())
-                return -1;
-            else 
                 return 1;
+            else 
+                return -1;
                 
     } 
 
