@@ -16,18 +16,27 @@ public class Voleadores extends Tenista
                       double resto,int ranking, String pais, double numPie){
         super(nombre,zapatilla,saque,resto,ranking,pais,numPie);
     }
-    
+     /**
+     * Metodo encargado de obtener los puntos de los tenista de tipo 
+     * voleadores
+     */
     @Override
     public void golpear(){
         double puntos = this.getPuntosAcumulados()+this.getRaqueta().calcularPotencia()*0.15;
         this.setPuntosAcumulados(puntos);
     }
-    
+    /**
+     * Metodo que llama al metodo cambiar raqueta velocidad
+     */
     @Override
     public void cambiarRaqueta(){
         cambiarRaquetaVelocidad();
     }
     
+    /**
+     * Metodo encargado de cambiar la velocidad de la raqueta al hacer el 
+     * cambio de raqueta en el campeonato
+     */
     public void cambiarRaquetaVelocidad(){
         boolean bandera = false;
         Iterator <Raqueta> it = Campeonato.getInstance("Campeonato de Extremadura").getRaquetasCampeonato().iterator();

@@ -43,7 +43,10 @@ public abstract class Tenista
         this.numPie = numPie;
         this.raqueta = null;
     }
-    
+    /**
+     * Metodo encargado de la inscripcion de los jugadores en
+     * el campeonato de Extremadura
+     */
     public void realizarInscripcion()
     {
         Campeonato.getInstance("Campeonato de Extremadura").inscripcionCompetidores(this);
@@ -99,9 +102,13 @@ public abstract class Tenista
         golpear();
         cambiarRaqueta();
     }
-    
+    //Metodo que heredara la clase golpeadores
     protected abstract void golpear();
     
+    /**
+     * Metodo encargado de cambiar la raqueta del tenista cada vez que empiece 
+     * una nueva ronda del torneo.
+     */
     protected void cambiarRaqueta(){
         Raqueta r = Campeonato.getInstance("Campeonato de Extremadura").getRaquetasCampeonato().first();
         if (r==null)
@@ -142,6 +149,34 @@ public abstract class Tenista
         builder.append("       "+this.raqueta.toString());
         builder.append("\n");
         return builder.toString();
+    }
+        
+    /**
+     * Realiza la asignacion de una zapatilla a un tenista dependiendo de su numero de pie 
+     * en el Campeonato.
+     * @param zapatillasCampeonato Lista de Zapatillas que pueden elegir los tenistas 
+     * en el campeonato.
+     */  
+    public boolean elegirZapatillaTenista (){
+        boolean bandera = false;
+        Iterator <Zapatilla> it = Campeonato.getInstance("Campeonato de Extremadura").getZapatillasCampeonato().iterator();
+        while(it.hasNext() && !bandera){
+                Zapatilla z = it.next();
+                if (this.getNumPie()==z.getNumero()){
+                        this.setZapatilla(z);
+                        Campeonato.getInstance("Campeonato de Extremadura").borrarZapatilla(z);
+                        bandera=true;
+                }
+            }
+        return bandera;
+    }
+    
+    /**
+     * Permite poner a 0 el campo puntos acumulados de un Tenista
+     */        
+    public void resetPuntosAcumulados()
+    {
+        this.puntosAcumulados = 0;
     }
     
     /**
@@ -214,14 +249,6 @@ public abstract class Tenista
     public void setPuntosAcumulados(double puntosAcumulados)
     {
         this.puntosAcumulados = puntosAcumulados;
-    }
-    
-    /**
-     * Permite poner a 0 el campo puntos acumulados de un Tenista
-     */        
-    public void resetPuntosAcumulados()
-    {
-        this.puntosAcumulados = 0;
     }
     
     /**
@@ -327,26 +354,6 @@ public abstract class Tenista
     public void setPais(String pais)
     {
         this.pais = pais;
-    }
-    
-    /**
-     * Realiza la asignacion de una zapatilla a un tenista dependiendo de su numero de pie 
-     * en el Campeonato.
-     * @param zapatillasCampeonato Lista de Zapatillas que pueden elegir los tenistas 
-     * en el campeonato.
-     */  
-    public boolean elegirZapatillaTenista (){
-        boolean bandera = false;
-        Iterator <Zapatilla> it = Campeonato.getInstance("Campeonato de Extremadura").getZapatillasCampeonato().iterator();
-        while(it.hasNext() && !bandera){
-                Zapatilla z = it.next();
-                if (this.getNumPie()==z.getNumero()){
-                        this.setZapatilla(z);
-                        Campeonato.getInstance("Campeonato de Extremadura").borrarZapatilla(z);
-                        bandera=true;
-                }
-            }
-        return bandera;
     }
 
      /**
