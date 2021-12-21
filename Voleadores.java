@@ -36,8 +36,8 @@ public class Voleadores extends Tenista
     }
     
     /**
-     * Metodo encargado de cambiar la velocidad de la raqueta al hacer el 
-     * cambio de raqueta en el campeonato
+     * Metodo encargado de cambiar la raqueta a los tenistas Voleadores en caso de que se encuentre una
+     * raqueta con mayor velocidad que la que tiene el tenista hasta ahora
      */
     public void cambiarRaquetaVelocidad(){
         boolean bandera = false;
