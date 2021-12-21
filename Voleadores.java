@@ -14,7 +14,7 @@ public class Voleadores extends Tenista
     /**
      * Constructor for objects of class TenistaVoleador
      */
-    public Voleadores(String nombre, ZapatillaGenerica zapatilla, double saque,
+    public Voleadores(String nombre, Zapatilla zapatilla, double saque,
                       double resto,int ranking, String pais, double numPie){
         super(nombre,zapatilla,saque,resto,ranking,pais,numPie);
     }

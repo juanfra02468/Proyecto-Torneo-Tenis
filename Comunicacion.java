@@ -28,18 +28,7 @@ public class Comunicacion
     /**
      * Notifica a los medios y les pasa el resultado del partido, ganador, perdedor y ronda
      */
-    public void notificar(Tenista t1, Tenista t2, int ronda){
-        Tenista ganador;
-        Tenista perdedor;
-        if (t1.getPuntosAcumulados()>t2.getPuntosAcumulados()){
-            ganador=t1;
-            perdedor=t2;
-        }
-        else{
-            ganador=t2;
-            perdedor=t1;
-        }
-        
+    public void notificar(Tenista ganador, Tenista perdedor, int ronda){
         for (MedioGenerico medio: subscriptores){
             medio.actualizar(ganador,perdedor,ronda);
         }

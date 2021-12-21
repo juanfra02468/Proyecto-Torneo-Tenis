@@ -14,7 +14,7 @@ public class Golpeadores extends Tenista
      * Crea un nuevo objeto de la clase golpeadores e invoca al constructor 
      * de la clase Zapatilla con los valores pasados por parametros
      */
-    public Golpeadores(String nombre, ZapatillaGenerica zapatilla, double saque,
+    public Golpeadores(String nombre, Zapatilla zapatilla, double saque,
                        double resto,int ranking, String pais, double numPie){
         super(nombre,zapatilla,saque,resto,ranking,pais,numPie);
     }

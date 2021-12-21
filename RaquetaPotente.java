@@ -72,12 +72,8 @@ public class RaquetaPotente extends RaquetaGenerica
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
-        builder.append(getClass().getName()+"(Encordado:");
-        builder.append(getEncordado());
-        builder.append(" (MultiplicadorDePotencia: ");
-        builder.append(getEncordado().getMultiplicadorPotencia()+")");
-        builder.append(" (MultiplicadorDeControl: ");
-        builder.append(getEncordado().getMultiplicadorControl()+")");
+        builder.append(getClass().getName());
+        builder.append(getEncordado().toString());
         builder.append("\n");
         builder.append(super.toString());
         return builder.toString();

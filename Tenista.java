@@ -13,7 +13,6 @@ import java.util.*;
 
 public abstract class Tenista
 {
-    // instance variables - replace the example below with your own
     private String nombre;
     private Zapatilla zapatilla;
     private double saque;
@@ -30,7 +29,7 @@ public abstract class Tenista
      * Crea un nuevo objeto de la clase Tenista e invoca al constructor de la clase Zapatilla,
      * con los valores pasados por parametro
      */     
-    public Tenista(String nombre, ZapatillaGenerica zapatilla, double saque,
+    public Tenista(String nombre, Zapatilla zapatilla, double saque,
                    double resto,int ranking, String pais, double numPie)
     {
         this.nombre = nombre;

@@ -170,7 +170,12 @@ public class Campeonato extends Comunicacion
            System.out.println("  #### Juego ------------>>>: "+i);
            juego(t1, t2);
            //LLAMADA A LOS MEDIOS 
-           notificar(t1,t2,ronda);
+           if(t1.getPuntosAcumulados() > t2.getPuntosAcumulados()){
+               notificar(t1,t2,ronda);
+           }
+           else{
+               notificar(t2,t1,ronda);
+           }
            
            if(t1.getPuntosAcumulados()==t2.getPuntosAcumulados())
            {

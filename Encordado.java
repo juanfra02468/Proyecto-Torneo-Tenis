@@ -35,4 +35,29 @@ public enum Encordado
     public double getMultiplicadorControl(){
         return multiplicadorControl;
     }
+    
+    private String tipoEncordado()
+    {
+        if(getMultiplicadorPotencia() == 2.0)
+        {
+            return "Abierto";
+        }
+        else
+        {
+            return "Cerrado";
+        }
+    }
+    
+    @Override
+    public String toString()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("(Encordado: ");
+        builder.append(tipoEncordado());
+        builder.append(" (MultiplicadorDePotencia: ");
+        builder.append(getMultiplicadorPotencia()+")");
+        builder.append(" (MultiplicadorDeControl: ");
+        builder.append(getMultiplicadorControl()+")");
+        return builder.toString();
+    }
 }
