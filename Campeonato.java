@@ -23,7 +23,6 @@ public class Campeonato extends Comunicacion
     private ArrayList <Tenista> eliminados;
     private ArrayList <Zapatilla> zapatillasCampeonato;
     private TreeSet <Raqueta> raquetasCampeonato;
-    private Comunicacion comunicacion;
     private static Campeonato singletonCampeonato;
     private FileWriter writer;
     
@@ -37,7 +36,6 @@ public class Campeonato extends Comunicacion
         competidores = new ArrayList <Tenista>();
         eliminados = new ArrayList <Tenista>();
         zapatillasCampeonato = new ArrayList <Zapatilla>();
-        comunicacion = new Comunicacion();
         raquetasCampeonato = new TreeSet <Raqueta> (new PotenciaComparator());
         try{
             writer = new FileWriter("salida.txt");
@@ -88,7 +86,7 @@ public class Campeonato extends Comunicacion
     }
     
     public synchronized void añadirSubscriptor(MedioGenerico medio){
-        comunicacion.añadirMedio(medio);
+        añadirMedio(medio);
     }
     
      /**
@@ -172,7 +170,7 @@ public class Campeonato extends Comunicacion
            System.out.println("  #### Juego ------------>>>: "+i);
            juego(t1, t2);
            //LLAMADA A LOS MEDIOS 
-           comunicacion.notificar(t1,t2,ronda);
+           notificar(t1,t2,ronda);
            
            if(t1.getPuntosAcumulados()==t2.getPuntosAcumulados())
            {
